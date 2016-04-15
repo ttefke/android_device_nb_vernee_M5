@@ -145,6 +145,11 @@ on post-fs
     swapon_all /fstab.vernee_M5
     write /proc/sys/vm/page-cluster 0
 
+    mkdir /nvdata/md     0771 system radio
+    mkdir /nvdata/md_cmn 0771 system radio
+    mkdir /nvdata/media  0771 media audio
+    restorecon_recursive /nvdata/
+
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
 
