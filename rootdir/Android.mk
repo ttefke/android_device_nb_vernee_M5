@@ -34,6 +34,7 @@ $(call add-rootdir-targets, \
     factory_init.rc \
     files_contexts.bin \
     fstab.mt6755 \
+    fstab.vernee_M5 \
     init.aee.rc \
     init.common_svc.rc \
     init.connectivity.rc \

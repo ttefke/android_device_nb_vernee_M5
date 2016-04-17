@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     factory_init.rc \
     file_contexts.bin \
     fstab.mt6755 \
+    fstab.vernee_M5 \
     init.rc \
     init.aee.rc \
     init.common_svc.rc \

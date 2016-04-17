@@ -141,6 +141,9 @@ on post-fs
     chown system system /protect_s
     chmod 0770 /protect_s
 
+    swapon_all /fstab.vernee_M5
+    write /proc/sys/vm/page-cluster 0
+
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
 
@@ -755,6 +758,11 @@ on boot
     chown system /dev/ttyGS0
     chmod 660 /dev/ttyGS1
     chown system /dev/ttyGS1
+
+    # Tune I/O
+    write /sys/block/mmcblk0/queue/add_random 0
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 128
 
 
 on property:ro.board.platform=mt6753
