@@ -268,4 +268,7 @@
        <item>"0,1"</item>
        <item>"7,1"</item>
     </string-array>
+
+    <!-- Mediatek radios are why this option exists... :/ -->
+    <bool name="config_user_notification_of_restrictied_mobile_access">false</bool>
 </resources>
