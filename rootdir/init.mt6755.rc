@@ -86,6 +86,7 @@ on charger
     start fuelgauged
     start kpoc_charger
     start servicemanager
+    write /sys/class/android_usb/android0/enable 1
 
 on fs
 	mkdir /drvinfo 0777 system system
