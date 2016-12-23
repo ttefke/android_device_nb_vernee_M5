@@ -56,9 +56,11 @@ typedef enum
 
 typedef enum
 {
-    HDMI_SCALE_ADJUSTMENT_SUPPORT = 0x01,
-    HDMI_ONE_RDMA_LIMITATION = 0x02,
-	HDMI_PHONE_GPIO_REUSAGE       = 0x04,
+	HDMI_SCALE_ADJUSTMENT_SUPPORT = 0x01,
+	HDMI_ONE_RDMA_LIMITATION = 0x02,
+	HDMI_PHONE_GPIO_REUSAGE  = 0x04,
+	/*bit3-bit6: channal count; bit7-bit9: sample rate; bit10-bit11: bitwidth*/
+	HDMI_FACTORY_MODE_NEW	 = 0x1000,
 } HDMI_CAPABILITY;
 
 typedef enum
@@ -351,7 +353,7 @@ typedef struct
 #define MTK_MHL_GET_DCAP                        HDMI_IOWR(90, unsigned int)
 #define MTK_MHL_GET_3DINFO                      HDMI_IOWR(91, unsigned int)
 #define MTK_HDMI_HDCP                           HDMI_IOWR(92, unsigned int)
-#define MTK_HDMI_AUDIO_FORMAT                   HDMI_IOWR(93, unsigned int)
+
 
 #define MTK_HDMI_FACTORY_CHIP_INIT              HDMI_IOWR(94, int)
 #define MTK_HDMI_FACTORY_JUDGE_CALLBACK         HDMI_IOWR(95, int)

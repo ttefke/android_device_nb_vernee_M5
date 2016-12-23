@@ -7,7 +7,7 @@ extern "C" {
 
 #include "val_types_public.h"
 
-#define MTK_VDEC_PROP_WAITKEYFRAME                 "mtk.vdec.waitkeyframeforplayback"
+#define MTK_VDEC_PROP_WAITKEYFRAME                 "mtk.vdec.waitkeyframeforplay"
 #define MTK_VDEC_VALUE_WAITKEYFRAME_AT_START       (1)
 #define MTK_VDEC_VALUE_WAITKEYFRAME_FOR_SEEK       (1 << 1)
 
@@ -26,6 +26,19 @@ typedef enum _VDEC_DRV_FBSTSTUS {
 }
 VDEC_DRV_FBSTSTUS;
 
+/**
+ * @par Enumeration
+ *   VDEC_DRV_FBSTSTUS
+ * @par Description
+ *   This is the item for frame buffer status
+ */
+typedef enum _VDEC_DRV_FBTYPE
+{
+    VDEC_DRV_FBTYPE_NORMAL      = 0,          ///< normal type
+    VDEC_DRV_FBTYPE_3D_SBS      = 1,   /// < side by side 3D frame
+    VDEC_DRV_FBTYPE_3D_TAB      = 2,   /// < top and bottim 3D frame
+}
+VDEC_DRV_FBTYPE;
 
 /**
  * @par Enumeration
@@ -257,6 +270,7 @@ typedef enum _VDEC_DRV_QUERY_TYPE_T {
 	VDEC_DRV_QUERY_TYPE_BUFFER_CONTROL,     /* /< Query VDEC_DRV_QUERY_TYPE_BUFFER_CONTROL */
 	VDEC_DRV_QUERY_TYPE_FEATURE_SUPPORTED,   /* /< Query VDEC_DRV_QUERY_TYPE_FEATURE_SUPPORTED */
 	VDEC_DRV_QUERY_TYPE_CPUCORE_FREQUENCY,   /* /< Query VDEC_DRV_QUERY_TYPE_CPUCORE_FREQUENCY */
+	VDEC_DRV_QUERY_TYPE_UFO_SUPPORT,         /* /< Query VDEC_DRV_QUERY_TYPE_UFO_SUPPORT */
 } VDEC_DRV_QUERY_TYPE_T;
 
 
@@ -316,8 +330,8 @@ typedef enum _VDEC_DRV_GET_TYPE_T {
 	VDEC_DRV_GET_TYPE_FREE_INPUT_BUFFER,            /* /< free input buffer */
 	VDEC_DRV_GET_TYPE_QUERY_VIDEO_INTERLACING,      /* /< query video interlace information */
 	VDEC_DRV_GET_TYPE_QUERY_VIDEO_DPB_SIZE,         /* /< query video DPB size */
-        VDEC_DRV_SET_TYPE_SET_WAIT_KEYFRAME,            ///< set wait keyframe mode, default 0, 1 = wait at start/flush, 2 = wait at seek mode, 3 = always wait
-	VDEC_DRV_GET_TYPE_CODEC_PROPERTY                /* /< get teh codec specific property for decode flow*/
+	VDEC_DRV_GET_TYPE_CODEC_PROPERTY,                /* /< get teh codec specific property for decode flow*/
+	VDEC_DRV_GET_TYPE_ERRORMB_MAP
 } VDEC_DRV_GET_TYPE_T;
 
 typedef enum _VDEC_DRV_CODEC_PROPERTY_T {
@@ -390,8 +404,10 @@ typedef enum _VDEC_DRV_SET_TYPE_T {
 	/* /< use the max suppoerted size as output buffer size. for smooth */
 	VDEC_DRV_SET_TYPE_SET_FIXEDMAXOUTPUTBUFFER,
 	VDEC_DRV_SET_TYPE_SET_UFO_DECODE,
+        VDEC_DRV_SET_TYPE_SET_WAIT_KEYFRAME,            /* /< set wait keyframe mode, default 0, 1 = wait at start/flush, 2 = wait at seek mode, 3 = always wait */
 	VDEC_DRV_SET_TYPE_SET_CALLBACK,
-    VDEC_DRV_SET_TYPE_SET_FULL_SPEED,
+	VDEC_DRV_SET_TYPE_SET_FULL_SPEED,
+        VDEC_DRV_SET_TYPE_SET_KERNEL_LOG_COUNT,
 } VDEC_DRV_SET_TYPE_T;
 
 
@@ -444,6 +460,7 @@ typedef enum _VDEC_DRV_INPUTBUF_T {
 	VDEC_DRV_INPUT_BUF_INIT_CONFIG_DATA                 = (1 << 0), /*/ < init data, most case this is video header only*/
 	VDEC_DRV_INPUT_BUF_EOS                              = (1 << 1), /*/ < input buffer with EOS flag*/
 	VDEC_DRV_INPUT_BUF_INVALID_TIMESTAMP                = (1 << 2), /*/ < input buffer with invalid timestamp flag*/
+	VDEC_DRV_INPUT_BUF_DATACORRUPT                      = (1 << 3) /* / <input buffer is corrupted*/
 } VDEC_DRV_INPUTBUF_T;
 
 /**
@@ -707,6 +724,28 @@ typedef struct __VDEC_DRV_PROPERTY_T {
  *  Pointer of VDEC_DRV_PROPERTY_T
  */
 typedef VDEC_DRV_PROPERTY_T * P_VDEC_DRV_PROPERTY_T;
+
+/**
+* @par Structure
+ *  VDEC_DRV_ERROR_MB_INFO_T
+ * @par Description
+ *  Decode error MB info
+ */
+typedef struct __VDEC_DRV_ERROR_MB_INFO_T
+{
+    VAL_UINT32_T u4ErrorFrameNum;
+    VAL_UINT32_T u4ErrorStartMB;
+    VAL_UINT32_T u4ErrorMBCount;
+} VDEC_DRV_ERROR_MB_INFO_T;
+
+/**
+ * @par Structure
+ *  P_VDEC_DRV_ERROR_MB_INFO_T
+ * @par Description
+ *  Pointer of VDEC_DRV_ERROR_MB_INFO_T
+ */
+typedef VDEC_DRV_ERROR_MB_INFO_T *P_VDEC_DRV_ERROR_MB_INFO_T;
+
 
 /**
 * @par Structure

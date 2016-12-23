@@ -1,3 +1,16 @@
+/*
+ * Copyright (C) 2015 MediaTek Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ */
+
 #ifndef _KD_IMGSENSOR_DATA_H
 #define _KD_IMGSENSOR_DATA_H
 
@@ -189,8 +202,12 @@ typedef enum {
 	SENSOR_FEATURE_GET_SENSOR_PDAF_CAPACITY,
 	SENSOR_FEATURE_DEBUG_IMGSENSOR,
 	SENSOR_FEATURE_SET_HDR_SHUTTER,
-    SENSOR_FEATURE_SET_ISO,
-    SENSOR_FEATURE_SET_PDAF,
+	SENSOR_FEATURE_SET_ISO,
+	SENSOR_FEATURE_SET_PDAF,
+	SENSOR_FEATURE_SET_SHUTTER_FRAME_TIME,
+	SENSOR_FEATURE_SET_SHUTTER_BUF_MODE,
+	SENSOR_FEATURE_SET_GAIN_BUF_MODE,
+	SENSOR_FEATURE_SET_I2C_BUF_MODE_EN,
 	SENSOR_FEATURE_MAX
 } ACDK_SENSOR_FEATURE_ENUM;
 
@@ -268,7 +285,8 @@ typedef enum {
 
 typedef enum {
 	MIPI_OPHY_NCSI2 = 0,
-	MIPI_OPHY_CSI2 = 1,
+	MIPI_OPHY_CSI2  = 1,
+	MIPI_CPHY       = 2,
 } SENSOR_MIPI_TYPE_ENUM;
 
 typedef enum {
@@ -402,6 +420,7 @@ typedef struct {
 	MUINT8 SensorModeNum;
 	MUINT8 IHDR_Support;
 	MUINT16 IHDR_LE_FirstLine;
+	MUINT8 ZHDR_Mode;
 	SENSOR_SETTLEDELAY_MODE_ENUM SettleDelayMode;
 	MUINT8 PDAF_Support;
 	MUINT8 DPCM_INFO;
@@ -413,6 +432,7 @@ typedef struct {
 	MUINT8 SCAM_CRC_En;
 	MUINT8 SCAM_SOF_src;
 	MUINT32 SCAM_Timout_Cali;
+	MUINT32 SensorMIPIDeskew;
 } ACDK_SENSOR_INFO_STRUCT, *PACDK_SENSOR_INFO_STRUCT;
 
 typedef struct {
@@ -493,6 +513,7 @@ typedef struct {
 	MUINT8 SensorModeNum;
 	MUINT8 IHDR_Support;
 	MUINT16 IHDR_LE_FirstLine;
+	MUINT8 ZHDR_Mode;
 	SENSOR_SETTLEDELAY_MODE_ENUM SettleDelayMode;
 	MUINT8 PDAF_Support;
 	MUINT8 DPCM_INFO;
@@ -509,6 +530,7 @@ typedef struct {
 	MUINT8 SCAM_CRC_En;
 	MUINT8 SCAM_SOF_src;
 	MUINT32 SCAM_Timout_Cali;
+	MUINT32 SensorMIPIDeskew;
 } ACDK_SENSOR_INFO2_STRUCT, *PACDK_SENSOR_INFO2_STRUCT;
 
 
@@ -690,6 +712,8 @@ typedef struct {
 	MUINT16 VC3_SIZEH;
 	MUINT16 VC3_SIZEV;
 } SENSOR_VC_INFO_STRUCT, *pSENSOR_VC_INFO_STRUCT;
+
+
 typedef struct {
 	MUINT32 ABS_GAIN_GR;
 	MUINT32 ABS_GAIN_R;

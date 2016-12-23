@@ -73,6 +73,7 @@ typedef enum __VENC_DRV_VIDEO_FORMAT_T {
 	VENC_DRV_VIDEO_FORMAT_JPEG,                 /* /< JPEG picture format */
 	VENC_DRV_VIDEO_FORMAT_HEVC,                 /* /< HEVC video format */
 	VENC_DRV_VIDEO_FORMAT_H264SEC,              /* /<: Secure H.264 */
+        VENC_DRV_VIDEO_FORMAT_H263VT,               /* /<: H.263 VT*/
 	VENC_DRV_VIDEO_FORMAT_MAX = 0xFFFFFFFF      /* /< Max VENC_DRV_VIDEO_FORMAT_T value */
 } VENC_DRV_VIDEO_FORMAT_T;
 
@@ -492,6 +493,7 @@ typedef struct __VENC_DRV_PARAM_ENC_EXTRA_T {
 	VAL_UINT32_T            u4BitRate;          /* /< [IN/OUT] BitRate kbps */
 	VAL_UINT32_T            u4FrameRateQ16;     /* /< [IN/OUT] Frame rate in Q16 format */
 	VAL_UINT32_T            u4UseMBAFF;         /* /< [IN/OUT] Use MBAFF */
+        VAL_UINT32_T            u4BitrateMode;
 } VENC_DRV_PARAM_ENC_EXTRA_T;
 
 /**

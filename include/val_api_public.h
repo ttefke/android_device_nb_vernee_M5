@@ -318,6 +318,18 @@ VAL_RESULT_T eVideoLockHW(VAL_HW_LOCK_T *a_prParam, VAL_UINT32_T  a_u4ParamSize)
  */
 VAL_RESULT_T eVideoUnLockHW(VAL_HW_LOCK_T *a_prParam, VAL_UINT32_T  a_u4ParamSize);
 
+/**
+ * @par Function
+ *   eVideoIncLogCount
+ * @par Description
+ *   The single/multiple instance usage function, to increase or decrease kernel log detect count
+ * @param
+ *   a_prParam          [IN] Indicate to increase or decrease kernel log detect count
+ * @par Returns
+ *   VAL_RESULT_T       [OUT] VAL_RESULT_NO_ERROR for success, VAL_RESULT_UNKNOWN_ERROR for fail
+ */
+VAL_RESULT_T eVideoIncLogCount( VAL_BOOL_T *a_prParam);
+
 
 /**
  * @par Function

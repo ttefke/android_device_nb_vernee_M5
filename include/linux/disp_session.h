@@ -1,8 +1,8 @@
 #ifndef __DISP_SESSION_H
 #define __DISP_SESSION_H
+#include <linux/types.h>
 
 #define DISP_SESSION_DEVICE	"mtk_disp_mgr"
-
 
 #define DISP_NO_ION_FD                 ((int)(~0U>>1))
 #define DISP_NO_USE_LAEYR_ID           ((int)(~0U>>1))
@@ -21,8 +21,6 @@
 #define DISP_SESSION_DEV(id) ((id)&0xff)
 #define MAKE_DISP_SESSION(type, dev) (unsigned int)((type)<<16 | (dev))
 
-
-
 /* /============================================================================= */
 /* structure declarations */
 /* /=========================== */
@@ -36,7 +34,8 @@ typedef enum {
 	DISP_IF_HDMI = 7,
 	DISP_IF_HDMI_SMARTBOOK,
 	DISP_IF_MHL,
-	DISP_IF_EPD
+	DISP_IF_EPD,
+	DISP_IF_SLIMPORT
 } DISP_IF_TYPE;
 
 typedef enum {
@@ -76,6 +75,10 @@ typedef enum {
 	DISP_FORMAT_UYVY = MAKE_DISP_FORMAT_ID(13, 2),
 	DISP_FORMAT_YUV420_P = MAKE_DISP_FORMAT_ID(14, 2),
 	DISP_FORMAT_YV12 = MAKE_DISP_FORMAT_ID(16, 1),	/* BPP = 1.5 */
+	DISP_FORMAT_PARGB8888 = MAKE_DISP_FORMAT_ID(17, 4),
+	DISP_FORMAT_PABGR8888 = MAKE_DISP_FORMAT_ID(18, 4),
+	DISP_FORMAT_PRGBA8888 = MAKE_DISP_FORMAT_ID(19, 4),
+	DISP_FORMAT_PBGRA8888 = MAKE_DISP_FORMAT_ID(20, 4),
 	DISP_FORMAT_BPP_MASK = 0xFF,
 } DISP_FORMAT;
 
@@ -186,39 +189,52 @@ typedef struct {
 	int lcm_fps;
 } disp_session_vsync_config;
 
+struct layer_dirty_roi {
+	__u16 dirty_x;
+	__u16 dirty_y;
+	__u16 dirty_w;
+	__u16 dirty_h;
+};
+
 typedef struct disp_input_config_t {
-	unsigned int layer_id;
-	unsigned int layer_enable;
-	DISP_BUFFER_SOURCE buffer_source;
 	void *src_base_addr;
 	void *src_phy_addr;
-	unsigned int src_direct_link;
+	DISP_BUFFER_SOURCE buffer_source;
+	DISP_BUFFER_TYPE security;
 	DISP_FORMAT src_fmt;
-	unsigned int src_use_color_key;
-	unsigned int src_color_key;
-	unsigned int src_pitch;
-	unsigned int src_offset_x, src_offset_y;
-	unsigned int src_width, src_height;
+	DISP_ALPHA_TYPE src_alpha;
+	DISP_ALPHA_TYPE dst_alpha;
+	DISP_YUV_RANGE_ENUM yuv_range;
 
-	unsigned int tgt_offset_x, tgt_offset_y;
-	unsigned int tgt_width, tgt_height;
 	DISP_ORIENTATION layer_rotation;
 	DISP_LAYER_TYPE layer_type;
 	DISP_ORIENTATION video_rotation;
 
-	unsigned int isTdshp;	/* set to 1, will go through tdshp first, then layer blending, then to color */
+	__u32 next_buff_idx;
 
-	unsigned int next_buff_idx;
-	int identity;
-	int connected_type;
-	DISP_BUFFER_TYPE security;
-	unsigned int alpha_enable;
-	unsigned int alpha;
-	unsigned int sur_aen;
-	DISP_ALPHA_TYPE src_alpha;
-	DISP_ALPHA_TYPE dst_alpha;
-	unsigned int frm_sequence;
-	DISP_YUV_RANGE_ENUM yuv_range;
+	__u32 src_color_key;
+	__u32 frm_sequence;
+
+	void  *dirty_roi_addr;
+	__u16 dirty_roi_num;
+
+	__u16 src_pitch;
+	__u16 src_offset_x, src_offset_y;
+	__u16 src_width, src_height;
+	__u16 tgt_offset_x, tgt_offset_y;
+	__u16 tgt_width, tgt_height;
+
+	__u8 alpha_enable;
+	__u8 alpha;
+	__u8 sur_aen;
+	__u8 src_use_color_key;
+	__u8 layer_id;
+	__u8 layer_enable;
+	__u8 src_direct_link;
+
+	__u8 isTdshp;
+	__u8 identity;
+	__u8 connected_type;
 } disp_input_config;
 
 typedef struct disp_output_config_t {
@@ -346,6 +362,8 @@ typedef enum {
 
 typedef enum {
 	DISP_FEATURE_TIME_SHARING = 0x00000001,
+	DISP_FEATURE_HRT = 0x00000002,
+	DISP_FEATURE_PARTIAL = 0x00000004,
 } DISP_FEATURE;
 
 typedef struct disp_caps_t {
@@ -364,6 +382,22 @@ typedef struct disp_session_buf_t {
 	unsigned int session_id;
 	unsigned int buf_hnd[3];
 } disp_session_buf_info;
+
+typedef struct layer_config_t {
+	unsigned int ovl_id;
+	DISP_FORMAT src_fmt;
+	unsigned int dst_offset_x, dst_offset_y;
+	unsigned int dst_width, dst_height;
+} layer_config;
+
+typedef struct disp_layer_info_t {
+	layer_config * input_config[2];
+	int disp_mode[2];
+	int layer_num[2];
+	int gles_head[2];
+	int gles_tail[2];
+	int hrt_num;
+} disp_layer_info;
 
 /* IOCTL commands. */
 #define DISP_IOW(num, dtype)     _IOW('O', num, dtype)
@@ -396,5 +430,5 @@ typedef struct disp_session_buf_t {
 #define DISP_IOCTL_GET_DISPLAY_CAPS			DISP_IOW(218, disp_caps_info)
 #define DISP_IOCTL_INSERT_SESSION_BUFFERS			DISP_IOW(219, disp_session_buf_info)
 #define	DISP_IOCTL_FRAME_CONFIG			DISP_IOW(220, disp_session_output_config)
-
+#define DISP_IOCTL_QUERY_VALID_LAYER			DISP_IOW(221, disp_layer_info)
 #endif				/* __DISP_SESSION_H */

@@ -850,6 +850,8 @@ typedef enum
     ISP_CMD_MARK_IRQ_REQUEST,                    /* mark for a specific register befor wait for the interrupt if needed */
     ISP_CMD_GET_MARK2QUERY_TIME,             /* query time information between read and mark */
     ISP_CMD_FLUSH_IRQ_REQUEST,                    /* flush signal */
+    ISP_CMD_WAIT_DUMPIMEM,                    /* wait for dumping imem dbg msg */
+    ISP_CMD_WRITE_DUMPIMEM,                    /* write type for dump imem dbg msg */
 }ISP_CMD_ENUM;
 //
 #define ISP_RESET_CAM_P1    _IO  (ISP_MAGIC, ISP_CMD_RESET_CAM_P1)
@@ -888,6 +890,8 @@ typedef enum
 #define ISP_MARK_IRQ_REQUEST        _IOWR(ISP_MAGIC,ISP_CMD_MARK_IRQ_REQUEST,ISP_WAIT_IRQ_STRUCT)
 #define ISP_GET_MARK2QUERY_TIME     _IOWR(ISP_MAGIC,ISP_CMD_GET_MARK2QUERY_TIME,ISP_WAIT_IRQ_STRUCT)
 #define ISP_FLUSH_IRQ_REQUEST       _IOW(ISP_MAGIC,ISP_CMD_FLUSH_IRQ_REQUEST,ISP_WAIT_IRQ_STRUCT)
+#define ISP_WAIT_DUMPIMEM       _IO(ISP_MAGIC,ISP_CMD_WAIT_DUMPIMEM)
+#define ISP_WRITE_DUMPIMEM       _IOW(ISP_MAGIC,ISP_CMD_WRITE_DUMPIMEM,int)
 
 #define ISP_WAKELOCK_CTRL     _IOWR (ISP_MAGIC, ISP_CMD_WAKELOCK_CTRL,      unsigned int)
 

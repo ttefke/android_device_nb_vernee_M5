@@ -17,21 +17,29 @@ typedef struct {
     char name[MMProfileEventNameMaxLen + 1];
 } MMProfile_EventInfo_t;
 
+struct MMProfile_EventSetting_t {
+	MMP_Event event;
+	unsigned int enable;
+	unsigned int recursive;
+	unsigned int ftrace;
+};
+
+struct MMProfile_EventLog_t {
+	MMP_Event event;
+	MMP_LogType type;
+	unsigned int data1;
+	unsigned int data2;
+};
+
 typedef struct {
     unsigned int lock;
     unsigned int id;
     unsigned int timeLow;
     unsigned int timeHigh;
     unsigned int flag;
-#if 0 //#ifdef MMPROFILE_KERNEL_64
-    unsigned long long data1;
-    unsigned long long data2;
-    unsigned long long meta_data_cookie;
-#else
     unsigned int data1;
     unsigned int data2;
     unsigned int meta_data_cookie;
-#endif
 } MMProfile_Event_t;
 
 typedef struct {
@@ -74,21 +82,23 @@ typedef struct {
 
 #define MMP_IOC_MAGIC 'M'
 
-#define MMP_IOC_ENABLE          _IOW(MMP_IOC_MAGIC, 1, int)
-#define MMP_IOC_START           _IOW(MMP_IOC_MAGIC, 2, int)
-#define MMP_IOC_TIME            _IOW(MMP_IOC_MAGIC, 3, int)
-#define MMP_IOC_REGEVENT        _IOWR(MMP_IOC_MAGIC, 4, int)
-#define MMP_IOC_FINDEVENT       _IOWR(MMP_IOC_MAGIC, 5, int)
-#define MMP_IOC_ENABLEEVENT     _IOW(MMP_IOC_MAGIC, 6, int)
-#define MMP_IOC_LOG             _IOW(MMP_IOC_MAGIC, 7, int)
-#define MMP_IOC_DUMPEVENTINFO   _IOR(MMP_IOC_MAGIC, 8, int)
-#define MMP_IOC_METADATALOG     _IOW(MMP_IOC_MAGIC, 9, int)
-#define MMP_IOC_DUMPMETADATA    _IOR(MMP_IOC_MAGIC, 10, int)
-#define MMP_IOC_SELECTBUFFER    _IOW(MMP_IOC_MAGIC, 11, int)
-#define MMP_IOC_TRYLOG          _IOWR(MMP_IOC_MAGIC, 12, int)
-#define MMP_IOC_ISENABLE        _IOR(MMP_IOC_MAGIC, 13, int)
-#define MMP_IOC_REMOTESTART     _IOR(MMP_IOC_MAGIC, 14, int)
-#define MMP_IOC_TEST            _IOWR(MMP_IOC_MAGIC, 100, int)
+/* Note: MMP_IOC_DUMPEVENTINFO, arg points to a buffer: sizeof(MMProfile_EventInfo_t)*MMProfileMaxEventCount */
+/* Note: MMP_IOC_DUMPMETADATA, arg points to a buffer: MMProfileGlobals.meta_buffer_size */
+#define MMP_IOC_ENABLE          _IOW(MMP_IOC_MAGIC, 1, unsigned int)
+#define MMP_IOC_START           _IOW(MMP_IOC_MAGIC, 2, unsigned int)
+#define MMP_IOC_TIME            _IOR(MMP_IOC_MAGIC, 3, unsigned long long)
+#define MMP_IOC_REGEVENT        _IOWR(MMP_IOC_MAGIC, 4, MMProfile_EventInfo_t)
+#define MMP_IOC_FINDEVENT       _IOWR(MMP_IOC_MAGIC, 5, MMProfile_EventInfo_t)
+#define MMP_IOC_ENABLEEVENT     _IOW(MMP_IOC_MAGIC, 6, struct MMProfile_EventSetting_t)
+#define MMP_IOC_LOG             _IOW(MMP_IOC_MAGIC, 7, struct MMProfile_EventLog_t)
+#define MMP_IOC_DUMPEVENTINFO   _IOR(MMP_IOC_MAGIC, 8, MMProfile_EventInfo_t)
+#define MMP_IOC_METADATALOG     _IOW(MMP_IOC_MAGIC, 9, MMProfile_MetaLog_t)
+#define MMP_IOC_DUMPMETADATA    _IOR(MMP_IOC_MAGIC, 10, MMProfile_MetaLog_t)
+#define MMP_IOC_SELECTBUFFER    _IOW(MMP_IOC_MAGIC, 11, unsigned int)
+#define MMP_IOC_TRYLOG          _IOWR(MMP_IOC_MAGIC, 12, unsigned int)
+#define MMP_IOC_ISENABLE        _IOR(MMP_IOC_MAGIC, 13, unsigned int)
+#define MMP_IOC_REMOTESTART     _IOW(MMP_IOC_MAGIC, 14, unsigned int)
+#define MMP_IOC_TEST            _IOWR(MMP_IOC_MAGIC, 100, unsigned int)
 
 // fix build warning: unused
 //static void MMProfileInitBuffer(void);
