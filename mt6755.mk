@@ -36,17 +36,17 @@ PRODUCT_COPY_FILES += \
 
 # Root
 PRODUCT_PACKAGES += \
-    fstab.mt6735 \
-    init.mt6735.rc \
-    init.mt6735.modem.rc \
-    init.mt6735.usb.rc \
+    fstab.mt6755 \
+    init.mt6755.rc \
+    init.mt6755.modem.rc \
+    init.mt6755.usb.rc \
     meta_init.rc \
     meta_init.modem.rc \
     meta_init.project.rc \
     factory_init.rc \
     factory_init.usb.rc \
     factory_init.project.rc \
-    ueventd.mt6735.rc
+    ueventd.mt6755.rc
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -83,7 +83,7 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     power.default \
-    power.mt6735
+    power.mt6755
 
 # Radio dependencies
 PRODUCT_PACKAGES += \
@@ -136,5 +136,5 @@ PRODUCT_COPY_FILES += \
 
 # Build proprietary bits when available
 ifneq ($(MTKPATH),)
-$(call inherit-product-if-exists, $(MTKPATH)/config/mt6735.mk)
+$(call inherit-product-if-exists, $(MTKPATH)/config/mt6755.mk)
 endif
