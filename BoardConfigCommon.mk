@@ -26,13 +26,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 TARGET_BOARD_PLATFORM ?= mt6755
 
 # Architecture
-ifeq ($(FORCE_32_BIT),true)
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
-else
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -44,7 +37,6 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
