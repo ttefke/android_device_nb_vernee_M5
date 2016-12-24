@@ -9,10 +9,16 @@
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/secro     0640    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/seccfg    0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo   0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/otp       0640    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram     0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/para      0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/logo      0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/frp       0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/ppl       0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md1img    0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md1dsp    0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md1arm7   0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md3img    0660    root    system
 
 # OTP
 /dev/otp                 0660 system system
@@ -71,8 +77,8 @@
 /dev/ccci_pcm_tx          0660   audio      audio
 /dev/ccci_aud             0660   audio      audio
 /dev/ccci2_aud            0660   audio      audio
+/dev/ccci3_aud            0660   audio      audio
 /dev/eemcs_aud            0660   audio      audio
-/dev/irtx                 0660   system     system
 
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
@@ -110,3 +116,5 @@
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
+
+/dev/esfp0              0666   root       root
