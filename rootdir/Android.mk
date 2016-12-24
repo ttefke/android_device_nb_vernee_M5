@@ -15,7 +15,4 @@ $(call add-rootdir-targets, \
     init.mt6755.rc \
     init.mt6755.modem.rc \
     init.mt6755.usb.rc \
-    factory_init.rc \
-    factory_init.usb.rc \
-    factory_init.project.rc \
     ueventd.mt6755.rc)
