@@ -1,7 +1,7 @@
-type af7133d_exec, exec_type, file_type;
-type af7133d, domain;
+type st480_exec, exec_type, file_type;
+type st480, domain;
 
-init_daemon_domain(af7133d)
+init_daemon_domain(st480)
 
-allow af7133d msensor_device:chr_file rw_file_perms;
-allow af7133d gsensor_device:chr_file rw_file_perms;
+allow st480 msensor_device:chr_file rw_file_perms;
+allow st480 gsensor_device:chr_file rw_file_perms;
