@@ -34,6 +34,12 @@ PRODUCT_PACKAGES += \
     init.mt6755.usb.rc \
     ueventd.mt6755.rc
 
+# ADB Debugging
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    ro.secure=0
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
