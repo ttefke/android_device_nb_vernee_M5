@@ -106,9 +106,6 @@ PRODUCT_PACKAGES += \
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # Mediatek logging service
 PRODUCT_PACKAGES += \
-    MTKLogger \
-    emdlogger1 \
-    mdlogger \
     mobile_log_d \
     netdiag \
     tcpdump
