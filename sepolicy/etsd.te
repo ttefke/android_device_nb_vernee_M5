@@ -1,0 +1,26 @@
+# aka.jiang init 20160308
+# Policy File of /system/bin/etsd Excutable File
+
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type etsd, domain;
+type etsd_exec, exec_type, file_type;
+
+# ==============================================
+# Policy Rule
+# ==============================================
+init_daemon_domain(etsd);
+binder_use(etsd);
+binder_call(etsd, system_server);
+binder_call(etsd, fingerprintd);
+use_keystore(etsd);
+
+allow etsd permission_service:service_manager find;
+allow etsd etsd_data_file:chr_file { getattr read write ioctl open };
+allow etsd keystore:keystore_key { add_auth };
+allow etsd fingerprintd_data_file:dir rw_dir_perms;
+allow etsd fingerprintd_data_file:file { create_file_perms };
+allow etsd etsd_service:service_manager add;
+allow etsd fingerprintd_data_file:file { open read write };
