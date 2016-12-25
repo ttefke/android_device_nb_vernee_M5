@@ -54,7 +54,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml
+    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio_em.xml:system/etc/audio_em.xml
 
 # Display
 PRODUCT_PACKAGES += \
