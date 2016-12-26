@@ -35,11 +35,13 @@ PRODUCT_PACKAGES += \
     init.mt6755.usb.rc \
     ueventd.mt6755.rc
 
+ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     ro.secure=0
+endif
 
 # Audio
 PRODUCT_PACKAGES += \
