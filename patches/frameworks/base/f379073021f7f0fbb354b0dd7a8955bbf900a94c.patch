@@ -1,0 +1,56 @@
+From f379073021f7f0fbb354b0dd7a8955bbf900a94c Mon Sep 17 00:00:00 2001
+From: fire855 <thefire855@gmail.com>
+Date: Sun, 31 Jul 2016 20:20:40 +0200
+Subject: [PATCH] Show carrier name instead of numeric operator Thanks to
+ @DerTeufel
+
+Change-Id: I2ce4349cecfc2b9eda8acb33aeaafdeb43673cb7
+---
+ .../statusbar/policy/MobileSignalController.java       | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/policy/MobileSignalController.java b/packages/SystemUI/src/com/android/systemui/statusbar/policy/MobileSignalController.java
+index f7d6f85..5e4a420 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/policy/MobileSignalController.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/policy/MobileSignalController.java
+@@ -91,6 +91,13 @@ public MobileSignalController(Context context, Config config, boolean hasMobileD
+ 
+         String networkName = info.getCarrierName() != null ? info.getCarrierName().toString()
+                 : mNetworkNameDefault;
++
++        if (isNumeric(networkName)) {
++            String displayName = info.getDisplayName() != null? info.getDisplayName().toString()
++                : mNetworkNameDefault;
++            networkName = displayName;
++        }
++
+         mLastState.networkName = mCurrentState.networkName = networkName;
+         mLastState.networkNameData = mCurrentState.networkNameData = networkName;
+         mLastState.enabled = mCurrentState.enabled = hasMobileData;
+@@ -99,6 +106,13 @@ public MobileSignalController(Context context, Config config, boolean hasMobileD
+         updateDataSim();
+     }
+ 
++    private boolean isNumeric(String str) {
++         for (char c : str.toCharArray()) {
++             if (!Character.isDigit(c)) return false;
++         }
++         return true;
++     }
++
+     public void setConfiguration(Config config) {
+         mConfig = config;
+         mapIconSets();
+@@ -339,10 +353,10 @@ void updateNetworkName(boolean showSpn, String spn, String dataSpn,
+         StringBuilder str = new StringBuilder();
+         StringBuilder strData = new StringBuilder();
+         if (showPlmn && plmn != null) {
+-            str.append(plmn);
++            if (!isNumeric(plmn)) str.append(plmn);
+             strData.append(plmn);
+         }
+-        if (showSpn && spn != null) {
++        if (/*showSpn &&*/ spn != null) {
+             if (str.length() != 0) {
+                 str.append(mNetworkNameSeparator);
+             }
