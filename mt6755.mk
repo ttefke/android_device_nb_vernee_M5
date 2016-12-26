@@ -68,11 +68,14 @@ PRODUCT_PACKAGES += \
     FMRadio
 
 # GPS
+$(call inherit-product, device/common/gps/gps_us_supl.mk)
+
 PRODUCT_PACKAGES += \
     libcurl
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml \
+    $(LOCAL_PATH)/configs/slp_conf:system/etc/slp_conf
 
 # Mediatek platform
 PRODUCT_PACKAGES += \
