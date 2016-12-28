@@ -35,6 +35,13 @@ PRODUCT_PACKAGES += \
     init.mt6755.usb.rc \
     ueventd.mt6755.rc
 
+# Recovery Ramdisk
+PRODUCT_PACKAGES += \
+    init.recovery.mt6755.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/sbin/fuelgauged_static:recovery/root/sbin/fuelgauged_static
+
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \

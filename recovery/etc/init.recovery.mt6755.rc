@@ -1,3 +1,7 @@
+on fs
+    chmod 0666 /dev/kmsg
+    start fuelgauged
+
 on init
 #	fake to CDP case
 #	write /sys/module/musb_hdrc/parameters/musb_skip_charge_detect 1
@@ -22,3 +26,6 @@ on init
 on property:ro.debuggable=1
 # 	restore cmode to normal for making USB enumeration
 	write /sys/devices/platform/mt_usb/cmode 1
+
+service fuelgauged /sbin/fuelgauged_static
+    seclabel u:r:init:s0
