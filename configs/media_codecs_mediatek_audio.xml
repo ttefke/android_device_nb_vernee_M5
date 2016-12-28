@@ -96,24 +96,8 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="decoder-lies-about-number-of-channels" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.AUDIO.DECODER.FLAC" type="audio/flac" />
-        <MediaCodec name="OMX.MTK.AUDIO.DECODER.APE" type="audio/ape" >
-            <Quirk name="decoder-lies-about-number-of-channels" />
-            <Quirk name="supports-multiple-frames-per-input-buffer" />
-        </MediaCodec>
         <MediaCodec name="OMX.MTK.AUDIO.DECODER.ALAC" type="audio/alac" />
-  
-        <!-- DOLBY_UDC -->
-        <MediaCodec name="OMX.dolby.ac3.decoder" >
-            <Type name="audio/ac3" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
-        <MediaCodec name="OMX.dolby.ec3.decoder" >
-            <Type name="audio/eac3" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
-        <!-- DOLBY_UDC END -->
+
     </Decoders>
 
     <Encoders>
