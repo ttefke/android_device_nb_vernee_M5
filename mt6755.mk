@@ -106,7 +106,16 @@ PRODUCT_PACKAGES += \
     terservice
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/bin/mtkrild:system/bin/mtkrild \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/libmal.so:system/lib/libmal.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib64/libmal.so:system/lib64/libmal.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/libmdfx.so:system/lib/libmdfx.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib64/libmdfx.so:system/lib64/libmdfx.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/librilmtk.so:system/lib/librilmtk.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib64/librilmtk.so:system/lib64/librilmtk.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/mtk-ril.so:system/lib/mtk-ril.so \
+    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib64/mtk-ril.so:system/lib64/mtk-ril.so
 
 # Wifi
 PRODUCT_PACKAGES += \
