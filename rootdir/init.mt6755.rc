@@ -1,5 +1,6 @@
 import init.mt6755.usb.rc
 import init.mt6755.modem.rc
+import init.target.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug mode=755
@@ -91,10 +92,6 @@ on post-fs-data
     chown root system /sys/class/misc/md32/md32_mobile_log
     chmod 0660 /sys/class/misc/md32/md32_mobile_log
     write /sys/class/misc/md32/md32_boot 1
-
-    # radvd
-    mkdir /data/misc/radvd 0770 system system
-    chmod 444 /etc/radvd/radvd.conf
 
     # Graphics
     chmod 666 /dev/mali0
@@ -654,31 +651,13 @@ on property:ro.board.platform=mt6753
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1300000
 
-# start ged_srv
-on property:sys.boot_completed=1
-    start ged_srv
-
-service ged_srv /system/bin/ged_srv
-    class core
-    user system
-    group system
-    disabled
-
-on property:sys.boot_completed=1
-    start gas_srv
-
-service gas_srv /system/bin/gas_srv
-    class core
-    user system
-    group system
-    disabled
-
 service nvram_daemon /system/bin/nvram_daemon
     class main
     user root
     group system
     oneshot
 
+# SPM firmware loader
 service spm_script /system/bin/spm_loader
     class core
     user root
@@ -863,26 +842,11 @@ service geomagneticd /system/bin/geomagneticd
     group system input
     class main
 
-service NvRAMAgent /system/bin/nvram_agent_binder
-    class main
-    user system
-    group system
-
-service thermalloadalgod /system/bin/thermalloadalgod
-    class main
-    user system
-    group system
-
 # Thermal
 service thermal_manager /system/bin/thermal_manager
     class main
     user root
     oneshot
-
-service thermald /system/bin/thermald
-    class main
-    user system
-    group system
 
 service fuelgauged /system/bin/fuelgauged
     class main
@@ -901,6 +865,25 @@ service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
     class core
 
 # Graphics
+# start ged_srv
+on property:sys.boot_completed=1
+    start ged_srv
+
+service ged_srv /system/bin/ged_srv
+    class core
+    user system
+    group system
+    disabled
+
+on property:sys.boot_completed=1
+    start gas_srv
+
+service gas_srv /system/bin/gas_srv
+    class core
+    user system
+    group system
+    disabled
+
 service pq /system/bin/pq
     class main
     user system
@@ -911,16 +894,11 @@ service guiext-server /system/bin/guiext-server
     user system
     group system graphics
 
-service program_binary /system/bin/program_binary_service
-    class late_start
-    user system
-    group graphics
-    oneshot
-
 # Charger mode
 service charger /sbin/healthd -c
     class charger
     critical
+    seclabel u:r:healthd:s0
 
 # Fingerprint
 service etsd /system/bin/etsd
