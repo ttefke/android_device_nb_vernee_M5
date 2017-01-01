@@ -54,8 +54,6 @@ BOARD_USES_MTK_AUDIO := true
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USES_64_BIT_BINDER := true
 
 # Bluetooth
