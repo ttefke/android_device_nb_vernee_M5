@@ -20,7 +20,6 @@ ro.telephony.ril_class=MT6755
 
 # Wifi
 wifi.interface=wlan0
-wifi.tethering.interface=ap
 wifi.direct.interface=p2p0
 
 # Graphics
