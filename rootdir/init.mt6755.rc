@@ -249,6 +249,46 @@ on post-fs-data
     chmod 0660 /dev/wmtWifi
     chown system system /dev/wmtWifi
 
+    #add for acc
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsdata
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsrange
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsbandwidth
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsopmode
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_mode
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_frame
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_framecount
+    chown system system /sys/bus/platform/drivers/gsensor/cpsdata
+    chown system system /sys/bus/platform/drivers/gsensor/cpsrange
+    chown system system /sys/bus/platform/drivers/gsensor/cpsbandwidth
+    chown system system /sys/bus/platform/drivers/gsensor/cpsopmode
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_mode
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_data_frame
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_framecount
+    #add for mag
+    chmod 0660 /sys/bus/platform/drivers/msensor/rawdata
+    chown system system /sys/bus/platform/drivers/msensor/rawdata
+    #add for gyro
+    chown system system /sys/bus/platform/drivers/gyroscope/rawdata
+    chown system system /sys/bus/platform/drivers/gyroscope/datarate
+    chown system system /sys/bus/platform/drivers/gyroscope/range
+    chown system system /sys/bus/platform/drivers/gyroscope/powermode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_mode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_framecoun
+    chown system system /sys/bus/platform/drivers/gyroscope/rawdata
+    chown system system /sys/bus/platform/drivers/gyroscope/datarate
+    chown system system /sys/bus/platform/drivers/gyroscope/range
+    chown system system /sys/bus/platform/drivers/gyroscope/powermode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_mode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_framecount
+
+    #smartpa
+    chown system system /dev/i2c_smartpa
+    chown system system /dev/nxpspk
+    chmod 777 /dev/i2c_smartpa
+    chmod 777 /dev/nxpspk
+
     #Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
 
@@ -782,6 +822,12 @@ service ami304d /system/bin/ami304d
     disabled
     class main
 
+service bmibmmd /system/bin/bmibmmd
+    disabled
+    user system
+    group system
+    class main
+
 service memsicd /system/bin/memsicd
     disabled
     user system
@@ -840,6 +886,16 @@ service geomagneticd /system/bin/geomagneticd
     disabled
     user system
     group system input
+    class main
+
+service memsicp /system/bin/memsicp
+   	user system
+    group system
+    class main
+
+service memsicpf /system/bin/memsicpf
+   	user system
+    group system
     class main
 
 # Thermal
@@ -910,6 +966,15 @@ service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
     group system
+
+service gx_fpd /system/bin/gx_fpd
+    class late_start
+    user root
+    group root system
+
+service fp /system/bin/fpserver
+    class main
+    user root
 
 on property:sys.boot_completed=1
 # Set preferred IO scheduler after boot
