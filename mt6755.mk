@@ -72,6 +72,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
+# Mediatek platform
+PRODUCT_PACKAGES += \
+   libmtk_symbols
+
 # Power
 PRODUCT_PACKAGES += \
     power.default \
