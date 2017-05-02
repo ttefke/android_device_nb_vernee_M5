@@ -88,3 +88,7 @@ PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/configs/audio/audio_param/VolumeGainMap_AudioParam.xml:system/vendor/etc/audio_param/VolumeGainMap_AudioParam.xml \
     device/nb/vernee_M5/configs/audio/audio_param/VolumeGainMap_ParamUnitDesc.xml:system/vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml \
     device/nb/vernee_M5/configs/audio/audio_param/Volume_ParamUnitDesc.xml:system/vendor/etc/audio_param/Volume_ParamUnitDesc.xml
+
+# Storage
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
