@@ -20,7 +20,7 @@ PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/configs/media/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml \
     device/nb/vernee_M5/configs/media/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
     device/nb/vernee_M5/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/nb/vernee_M5/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
+    device/nb/vernee_M5/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
