@@ -18,6 +18,10 @@ persist.radio.fd.off.r8.counter=5
 
 ro.telephony.ril_class=MT6755
 
+# Media
+media.stagefright.legacyencoder=1
+media.stagefright.less-secure=1
+
 # Wifi
 wifi.interface=wlan0
 wifi.direct.interface=p2p0
