@@ -1,3 +1,6 @@
+# Bluetooth
+qcom.bluetooth.soc=rome
+
 # RIL
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
