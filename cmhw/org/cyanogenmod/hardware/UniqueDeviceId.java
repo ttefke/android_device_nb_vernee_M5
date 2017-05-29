@@ -16,7 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.hardware.util.FileUtils;
+import org.cyanogenmod.internal.util.FileUtils;
 
 /**
  * Generate a unique but deterministic ID for this hardware, based on unchangeable
