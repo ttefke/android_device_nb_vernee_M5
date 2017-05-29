@@ -209,7 +209,7 @@ type adbd_data_file, file_type, data_file_type;
 type autokd_data_file, file_type, data_file_type;
 
 #fuse
-type fuseblk,sdcard_type,fs_type,mlstrustedobject;
+#type fuseblk,sdcard_type,fs_type,mlstrustedobject;
 
 # debuggerd mrdump allocfile
 #type debuggerd_data_file, file_type, data_file_type;
