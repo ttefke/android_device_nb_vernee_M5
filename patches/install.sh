@@ -12,16 +12,6 @@ for dir in $dirs ; do
 	echo " "
 done
 
-dirs="build"
-
-for dir in $dirs ; do
-	cd $rootdirectory
-	cd $dir
-	echo "Applying $dir patches..."
-	git am $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
-	echo " "
-done
-
 dirs="frameworks/av"
 
 for dir in $dirs ; do
