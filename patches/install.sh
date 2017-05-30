@@ -22,6 +22,16 @@ for dir in $dirs ; do
 	echo " "
 done
 
+dirs="frameworks/native"
+
+for dir in $dirs ; do
+	cd $rootdirectory
+	cd $dir
+	echo "Applying $dir patches..."
+	git am $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
+	echo " "
+done
+
 dirs="system/core"
 
 for dir in $dirs ; do
