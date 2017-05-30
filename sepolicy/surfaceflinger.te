@@ -80,4 +80,4 @@ allow surfaceflinger mtk_perf_service:service_manager find;
 allow surfaceflinger pq_service:service_manager { find };
 
 # HWC need to write mhl 4k information to debug node of GED
-allow surfaceflinger debugfs:file { open write read };
+#allow surfaceflinger debugfs:file { open write read };

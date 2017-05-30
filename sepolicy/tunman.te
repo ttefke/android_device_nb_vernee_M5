@@ -27,8 +27,8 @@ allow tunman tunman_prop:property_service set;
 unix_socket_connect(tunman, netd, netd)
 
 # Multiple instance detection (fs lock)
-allow tunman shell_data_file:dir { search write add_name};
-allow tunman shell_data_file:file { create open read write lock };
+#allow tunman shell_data_file:dir { write add_name};
+allow tunman shell_data_file:file { create read write lock };
 
 #allow tunman system_data_file:dir { search write add_name};
 #allow tunman system_data_file:file { create open read write lock};

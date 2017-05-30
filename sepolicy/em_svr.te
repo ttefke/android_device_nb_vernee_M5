@@ -64,7 +64,7 @@ allow em_svr kernel:system module_request;
 allow em_svr fuse:dir create_dir_perms;
 allow em_svr fuse:file create_file_perms;
 #allow em_svr tmpfs:lnk_file read;
-allow em_svr debugfs:file read;
+#allow em_svr debugfs:file read;
 
 # Date: 2015/08/09
 # Operation : M Migration

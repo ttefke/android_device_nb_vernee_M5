@@ -196,7 +196,7 @@ allow system_server dex2oat_exec:file r_file_perms;
 # Date: WK14.47
 # Operation : CTS
 # Purpose : for executing recovery.dex
-allow system_server system_data_file:file execute;
+#allow system_server system_data_file:file execute;
 
 # Date: WK14.47
 # Operation : MTBF

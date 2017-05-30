@@ -7,4 +7,4 @@
 # Purpose : Chrome belong to GMS package. 
 #           it is blocked by selinux, need isolated_app to open permission.
 allow isolated_app untrusted_app_tmpfs:file write;
-allow isolated_app custom_file:file execute;
+#allow isolated_app custom_file:file execute;

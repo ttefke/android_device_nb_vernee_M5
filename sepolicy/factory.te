@@ -137,7 +137,7 @@ allow factory irtx_device:chr_file { read write ioctl open };
 allow factory devpts:chr_file { read write getattr ioctl };
 allow factory vfat:dir search;
 allow factory hrm_device:chr_file { read ioctl open };
-allow factory debugfs:file { read write open };
+#allow factory debugfs:file { read write open };
 
 # Date: WK14.47
 # Operation : Migration
