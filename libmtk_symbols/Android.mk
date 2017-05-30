@@ -17,6 +17,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := mtk_audio.cpp
-LOCAL_SHARED_LIBRARIES := libbinder libutils liblog libgui libui libicuuc
+LOCAL_SRC_FILES := mtk_audio.cpp xlog.c
+LOCAL_SHARED_LIBRARIES := libbinder libcutils libutils liblog libgui libui libicuuc
 include $(BUILD_SHARED_LIBRARY)
