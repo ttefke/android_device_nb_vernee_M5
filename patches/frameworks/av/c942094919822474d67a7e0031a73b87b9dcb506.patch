@@ -1,0 +1,35 @@
+From c942094919822474d67a7e0031a73b87b9dcb506 Mon Sep 17 00:00:00 2001
+From: Diogo Ferreira <defer@cyngn.com>
+Date: Tue, 30 May 2017 21:43:20 +0200
+Subject: [PATCH] libstagefright: mtk: Use vendor extensions to check if we
+ should fixup cropping
+
+Change-Id: I9775992b4961ade724961e658f783e5733d29c6a
+---
+ media/libstagefright/ACodec.cpp | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/media/libstagefright/ACodec.cpp b/media/libstagefright/ACodec.cpp
+index 92e2847e6..8c567924d 100644
+--- a/media/libstagefright/ACodec.cpp
++++ b/media/libstagefright/ACodec.cpp
+@@ -5143,6 +5143,16 @@ status_t ACodec::getPortFormat(OMX_U32 portIndex, sp<AMessage> &notify) {
+                             rect.nHeight = videoDef->nFrameHeight;
+                         }
+ 
++#ifdef MTK_HARDWARE
++                    if (!strncmp(mComponentName.c_str(), "OMX.MTK.", 8) && mOMX->getConfig(
++                            mNode, (OMX_INDEXTYPE) 0x7f00001c /* OMX_IndexVendorMtkOmxVdecGetCropInfo */,
++                            &rect, sizeof(rect)) != OK) {
++                        rect.nLeft = 0;
++                        rect.nTop = 0;
++                        rect.nWidth = videoDef->nFrameWidth;
++                        rect.nHeight = videoDef->nFrameHeight;
++                    }
++#endif
+                         if (rect.nLeft < 0 ||
+                             rect.nTop < 0 ||
+                             rect.nLeft + rect.nWidth > videoDef->nFrameWidth ||
+-- 
+2.11.1
+

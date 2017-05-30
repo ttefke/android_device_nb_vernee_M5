@@ -1,0 +1,48 @@
+From e7ac98d6826afe6dad141beef85311b36040705f Mon Sep 17 00:00:00 2001
+From: Diogo Ferreira <diogo@underdev.org>
+Date: Wed, 16 Mar 2016 19:04:48 +0000
+Subject: [PATCH] build: Add MTK support
+
+When setting BOARD_USES_MTK_HARDWARE, a global MTK_HARDWARE define will
+be available to all target modules.
+
+Change-Id: Id2a2996139a31afb6eb37f7ee24202587cb4beb1
+---
+ core/config.mk     |  3 +++
+ core/mtk_target.mk | 13 +++++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 core/mtk_target.mk
+
+diff --git a/core/config.mk b/core/config.mk
+index 9344958c9..4fd5bdada 100644
+--- a/core/config.mk
++++ b/core/config.mk
+@@ -566,6 +566,9 @@ endif
+ # Rules for QCOM targets
+ include $(BUILD_SYSTEM)/qcom_target.mk
+ 
++# Rules for MTK targets
++include $(BUILD_SYSTEM)/mtk_target.mk
++
+ # ###############################################################
+ # Set up final options.
+ # ###############################################################
+diff --git a/core/mtk_target.mk b/core/mtk_target.mk
+new file mode 100644
+index 000000000..7c3ba1f62
+--- /dev/null
++++ b/core/mtk_target.mk
+@@ -0,0 +1,13 @@
++ifeq ($(BOARD_USES_MTK_HARDWARE),true)
++    mtk_flags := -DMTK_HARDWARE
++
++    TARGET_GLOBAL_CFLAGS += $(mtk_flags)
++    TARGET_GLOBAL_CPPFLAGS += $(mtk_flags)
++    CLANG_TARGET_GLOBAL_CFLAGS += $(mtk_flags)
++    CLANG_TARGET_GLOBAL_CPPFLAGS += $(mtk_flags)
++
++    2ND_TARGET_GLOBAL_CFLAGS += $(mtk_flags)
++    2ND_TARGET_GLOBAL_CPPFLAGS += $(mtk_flags)
++    2ND_CLANG_TARGET_GLOBAL_CFLAGS += $(mtk_flags)
++    2ND_CLANG_TARGET_GLOBAL_CPPFLAGS += $(mtk_flags)
++endif

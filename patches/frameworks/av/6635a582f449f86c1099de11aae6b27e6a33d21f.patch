@@ -1,0 +1,30 @@
+From 6635a582f449f86c1099de11aae6b27e6a33d21f Mon Sep 17 00:00:00 2001
+From: Diogo Ferreira <defer@cyngn.com>
+Date: Wed, 23 Mar 2016 17:45:20 +0000
+Subject: [PATCH] omx: softcodecs: Support HAL_PIXEL_FORMAT_RGBX_8888
+
+Adds support for the HAL_PIXEL_FORMAT_RGBX_8888 format used by
+mediatek's hardware.
+
+Fixes several CTS tests where interaction between hardware and software
+encoders and decoders is tested.
+
+Change-Id: Ie3267c7d34706c49ad415ebc04ad05f2f2ef3506
+---
+ media/libstagefright/omx/SoftVideoEncoderOMXComponent.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/media/libstagefright/omx/SoftVideoEncoderOMXComponent.cpp b/media/libstagefright/omx/SoftVideoEncoderOMXComponent.cpp
+index 8ea7a6e2a..dc3ed393f 100644
+--- a/media/libstagefright/omx/SoftVideoEncoderOMXComponent.cpp
++++ b/media/libstagefright/omx/SoftVideoEncoderOMXComponent.cpp
+@@ -606,6 +606,9 @@ const uint8_t *SoftVideoEncoderOMXComponent::extractGraphicBuffer(
+             break;
+         case HAL_PIXEL_FORMAT_RGBA_8888:
+         case HAL_PIXEL_FORMAT_BGRA_8888:
++#ifdef MTK_HARDWARE
++        case HAL_PIXEL_FORMAT_RGBX_8888:
++#endif
+             ConvertRGB32ToPlanar(
+                     dst, dstStride, dstVStride,
+                     (const uint8_t *)bits, width, height, srcStride,

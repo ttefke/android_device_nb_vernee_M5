@@ -2,7 +2,47 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="frameworks/base"
+dirs="bionic"
+
+for dir in $dirs ; do
+	cd $rootdirectory
+	cd $dir
+	echo "Applying $dir patches..."
+	git apply $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
+	echo " "
+done
+
+dirs="build"
+
+for dir in $dirs ; do
+	cd $rootdirectory
+	cd $dir
+	echo "Applying $dir patches..."
+	git apply $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
+	echo " "
+done
+
+dirs="frameworks/av"
+
+for dir in $dirs ; do
+	cd $rootdirectory
+	cd $dir
+	echo "Applying $dir patches..."
+	git apply $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
+	echo " "
+done
+
+dirs="system/core"
+
+for dir in $dirs ; do
+	cd $rootdirectory
+	cd $dir
+	echo "Applying $dir patches..."
+	git apply $rootdirectory/device/cyanogen/mt6755-common/patches/$dir/*.patch
+	echo " "
+done
+
+dirs="system/sepolicy"
 
 for dir in $dirs ; do
 	cd $rootdirectory
