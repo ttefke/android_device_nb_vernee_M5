@@ -42,10 +42,10 @@ allow nfc nfc_data_file:file { read getattr open rename write ioctl setattr crea
 # Operation : Refine
 # Purpose   : Set NFC permission to access SD card for debug purpose.
 
-allow nfc sdcard_internal:dir { write remove_name search create add_name };
-allow nfc sdcard_internal:file { read write getattr open rename create };
-allow nfc sdcard_external:dir { write add_name search };
-allow nfc sdcard_external:file { read write getattr open create };
+#allow nfc sdcard_internal:dir { write remove_name search create add_name };
+#allow nfc sdcard_internal:file { read write getattr open rename create };
+#allow nfc sdcard_external:dir { write add_name search };
+#allow nfc sdcard_external:file { read write getattr open create };
 
 
 # ==============================================

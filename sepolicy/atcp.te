@@ -338,8 +338,8 @@ allow atcp mnt_media_rw_file:dir search;
 # Operation : Migration 
 # Purpose : for L early bring-up
 allow atcp kernel:system syslog_mod;
-allow atcp sdcard_internal:dir create_dir_perms;
-allow atcp sdcard_internal:file create_file_perms;
+#allow atcp sdcard_internal:dir create_dir_perms;
+#allow atcp sdcard_internal:file create_file_perms;
 allow atcp platform_app:fd use;
 allow atcp platform_app_tmpfs:file write;
 #allow atcp unlabeled:lnk_file read;
@@ -412,8 +412,8 @@ allow atcp mnt_media_rw_file:lnk_file create_file_perms;
 # Operation : Migration 
 # Purpose : for L early bring-up
 allow atcp shell_exec:file execute_no_trans;
-allow atcp sdcard_internal:dir { write search read create open add_name };
-allow atcp sdcard_internal:file { write create open getattr };
+#allow atcp sdcard_internal:dir { write search read create open add_name };
+#allow atcp sdcard_internal:file { write create open getattr };
 allow atcp self:packet_socket { write ioctl setopt read getopt create };
 allow atcp fuse:dir { remove_name write search read remove_name open add_name create};
 allow atcp fuse:file { rename write getattr read create open unlink};
