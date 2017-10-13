@@ -14,4 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo full_M5-userdebug
+add_lunch_combo lineage_M5-eng
+add_lunch_combo lineage_M5-userdebug
+add_lunch_combo lineage_M5-user

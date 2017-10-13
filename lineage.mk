@@ -13,11 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Inherit from LineageOS
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+
+# Inherit from M5
 $(call inherit-product, device/vernee/M5/device.mk)
 
-PRODUCT_NAME := full_M5
+# Set devices name and vendor variables
+PRODUCT_NAME := lineage_M5
 PRODUCT_DEVICE := M5
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := M5
 PRODUCT_MANUFACTURER := vernee
+
+TARGET_VENDOR := vernee
+TARGET_VENDOR_PRODUCT_NAME := M5
+TARGET_VENDOR_DEVICE_NAME := M5
