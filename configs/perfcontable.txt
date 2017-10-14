@@ -1,0 +1,9 @@
+#CAUTION:
+#CMD NAME AND CMD ID IS 1-1 MAPPING, PLEASE CHECK IF IT WILL RUIN THE CMDS IN perfservice_types.h
+#
+#cmd name,                cmd ID, entry,             compare, max value, min value, normal value, sport value
+CMD_SET_CPU_UP_THRESHOLD, 20, /proc/hps/up_threshold, less, 100, 0
+CMD_SET_CPU_DOWN_THRESHOLD, 21, /proc/hps/down_threshold, less, 100, 0
+CMD_SET_CPUFREQ_HISPEED_FREQ, 12, /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq, more, 1950000, 0
+CMD_SET_CPUFREQ_MIN_SAMPLE_TIME, 13, /sys/devices/system/cpu/cpufreq/interactive/min_sample_time, more, 800000, 0
+CMD_SET_CPUFREQ_ABOVE_HISPEED_DELAY, 14, /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay, less, 200000, 0

@@ -1,0 +1,2 @@
+CMD_SET_CPU_CORE_MIN com.imangi.templerun2 3
+CMD_SET_CLUSTER_CPU_CORE_MAX, com.tencent.mtt, 1, 0

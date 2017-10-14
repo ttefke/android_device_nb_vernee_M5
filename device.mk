@@ -65,6 +65,9 @@ $(call inherit-product, device/nb/vernee_M5/media/media.mk)
 # Internet access
 $(call inherit-product, device/nb/vernee_M5/ip/ip.mk)
 
+# Other configuration files
+$(call inherit-product, device/nb/vernee_M5/configs/configs.mk)
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
