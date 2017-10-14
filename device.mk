@@ -27,3 +27,6 @@ $(call inherit-product-if-exists, vendor/vernee/M5/device-vendor.mk)
 
 # Audio
 $(call inherit-product, device/nb/vernee_M5/configs/audio/audio_param/audio.mk)
+
+# Bluetooth
+$(call inherit-product, device/nb/vernee_M5/bluetooth/bluetooth.mk)
