@@ -76,7 +76,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/hw/radio.fm.mt6735.so:system/lib/hw/radio.fm.mt6755.so
 
 # GPS
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_PACKAGES += \
     libcurl \
@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml \
-    $(LOCAL_PATH)/configs/slp_conf:system/etc/slp_conf
+    $(LOCAL_PATH)/configs/slp_conf:system/etc/slp_conf \
+    $(LOCAL_PATH)/configs/WMT_SOC.cfg:system/vendor/firmware/WMT_SOC.cfg
 
 # Mediatek platform
 PRODUCT_PACKAGES += \

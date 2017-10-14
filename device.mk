@@ -36,10 +36,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Init
-PRODUCT_COPY_FILES += \ #TODO DATEIEN DURCH ORIGINALE ERSETZEN
-    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
