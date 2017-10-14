@@ -18,3 +18,15 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_CYANOGEN_COMMON),mt6755)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
+
+ifneq (,$(filter M5,$(TARGET_DEVICE)))
+  include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
+
+# Some modules depend on $(KERNEL_OUT)/usr
+# This folder is not created when using a prebuilt kernel
+# So let's create it
+ifneq ($(TARGET_PREBUILT_KERNEL),)
+  $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr:
+	mkdir -p $@
+endif
