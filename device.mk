@@ -30,3 +30,6 @@ $(call inherit-product, device/nb/vernee_M5/configs/audio/audio_param/audio.mk)
 
 # Bluetooth
 $(call inherit-product, device/nb/vernee_M5/bluetooth/bluetooth.mk)
+
+# Carrier configs
+$(call inherit-product, device/nb/vernee_M5/configs/carrier/carrier.mk)
