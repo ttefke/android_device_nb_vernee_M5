@@ -12,4 +12,5 @@ PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/configs/perfcontable.txt:/system/vendor/etc/perfcontable.txt \
     device/nb/vernee_M5/configs/perfservapplist.txt:/system/vendor/etc/perfservapplist.txt \
     device/nb/vernee_M5/configs/perfservscntbl.txt:/system/vendor/etc/perfservscntbl.txt \
-    device/nb/vernee_M5/configs/recovery.fstab:/system/vendor/etc/recovery.fstab
+    device/nb/vernee_M5/configs/recovery.fstab:/system/vendor/etc/recovery.fstab \
+    device/nb/vernee_M5/configs/emdlogger_usb_config.prop:system/vendor/etc/emdlogger_usb_config.prop

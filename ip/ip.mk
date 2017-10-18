@@ -12,4 +12,6 @@ PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/ip/dhcp6c.conf:system/vendor/etc/wide-dhcpv6/dhcp6c.conf \
     device/nb/vernee_M5/ip/dhcp6c.script:system/vendor/etc/wide-dhcpv6/dhcp6c.script \
     device/nb/vernee_M5/ip/dhcp6cDNS.conf:system/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf \
-    device/nb/vernee_M5/ip/dhcp6s.conf:system/vendor/etc/wide-dhcpv6/dhcp6s.conf
+    device/nb/vernee_M5/ip/dhcp6s.conf:system/vendor/etc/wide-dhcpv6/dhcp6s.conf \
+    device/nb/vernee_M5/ip/radvd.conf:system/vendor/etc/radvd/radvd.conf \
+    device/nb/vernee_M5/ip/radvd_chiptest.conf:system/vendor/etc/radvd/radvd_chiptest.conf
