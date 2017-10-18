@@ -258,6 +258,9 @@ vendor/priv-app/Stk1/oat/arm64/Stk1.odex
 vendor/priv-app/WfoService/WfoService.apk
 vendor/priv-app/WfoService/oat/arm64/WfoService.odex
 
+#MediaTek booster
+etc/permissions/com.mediatek.runningbooster.xml
+framework/mediatek-feature-runningbooster.jar
 
 
 
