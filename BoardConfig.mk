@@ -17,6 +17,9 @@ ifneq ($(MTKPATH),)
 -include $(MTKPATH)/BoardConfigVendor.mk
 endif
 
+# include non-open-source-parts
+include vendor/nb/vernee_M5/vernee_M5-vendor.mk
+
 
 TARGET_CYANOGEN_COMMON := mt6755
 
@@ -67,25 +70,27 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 TARGET_USES_64_BIT_BINDER := true
 
-BOARD_KERNEL_BASE := #TODO: Set value
-BOARD_KERNEL_PAGESIZE := #TODO: Set value
-BOARD_KERNEL_CMDLINE := #TODO: Set value
-BOARD_MKBOOTIMG_ARGS := #TODO: Set value
+BOARD_KERNEL_BASE := 0x40078000#TODO: Set value
+BOARD_KERNEL_PAGESIZE := 2048#TODO: Set value
+BOARD_KERNEL_CMDLINE := console=tty0 console=ttyMT0,921600n1 root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O androidboot.hardware=mt6755 androidboot.verifiedbootstate=orange bootopt=64S3,32N2,64N2 androidboot.selinux=disabled printk.disable_uart=1 bootprof.pl_t=1005 bootprof.lk_t=8513 boot_reason=0 androidboot.serialno=KOG9K17912D01321 androidboot.bootreason=power_key gpt=1 usb2jtag_mode=0
+#TODO: Set value
+BOARD_MKBOOTIMG_ARGS :=  --board 1478934223 --ramdisk_offset 0x04f88000 --second_offset 0x00e88000 --tags_offset 0x03f88000#TODO: Set value
 
 # Kernel props
 TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/prebuilt/kernel/kernel #TODO: Add prebuilt kernel
 TARGET_BOOTLOADER_BOARD_NAME := M5 #TODO: is this value correct?
 
 # Partition details
-BOARD_BOOTIMAGE_PARTITION_SIZE := #TODO: Set value
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := #TODO: Set value
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := #TODO: Set value
-BOARD_CACHEIMAGE_PARTITION_SIZE := #TODO: Set value
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := #TODO: Set value
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := #TODO: Set value
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := #TODO: Set value
-BOARD_USERDATAIMAGE_PARTITION_SIZE := #TODO: Set value
-BOARD_FLASH_BLOCK_SIZE := #TODO: Set value
+#TODO: Set correct values
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE := 452984832
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27879521280
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 
 # Bluetooth
