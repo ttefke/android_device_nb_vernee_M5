@@ -124,10 +124,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 
-# Versioning
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mediatek.version.release=$(MTK_BUILD_VERNO) \
-    ro.mediatek.chip_ver=$(MTK_CHIP_VER)
-
 # Inherit the rest from mt6755-common
 $(call inherit-product, device/nb/vernee_M5/mt6755.mk)
