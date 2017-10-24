@@ -72,13 +72,32 @@ TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE := 0x40078000#TODO: Set value
 BOARD_KERNEL_PAGESIZE := 2048#TODO: Set value
-BOARD_KERNEL_CMDLINE := console=tty0 console=ttyMT0,921600n1 root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O androidboot.hardware=mt6755 androidboot.verifiedbootstate=orange bootopt=64S3,32N2,64N2 androidboot.selinux=disabled printk.disable_uart=1 bootprof.pl_t=1005 bootprof.lk_t=8513 boot_reason=0 androidboot.serialno=KOG9K17912D01321 androidboot.bootreason=power_key gpt=1 usb2jtag_mode=0
+
+BOARD_KERNEL_CMDLINE := console=tty0
+BOARD_KERNEL_CMDLINE += console=ttyMT0,921600n1
+BOARD_KERNEL_CMDLINE += root=/dev/ram
+BOARD_KERNEL_CMDLINE += vmalloc=496M
+BOARD_KERNEL_CMDLINE += slub_max_order=0
+BOARD_KERNEL_CMDLINE += slub_debug=O
+BOARD_KERNEL_CMDLINE += androidboot.hardware=mt6755
+BOARD_KERNEL_CMDLINE += androidboot.verifiedbootstate=orange
+BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE += printk.disable_uart=1
+BOARD_KERNEL_CMDLINE += bootprof.pl_t=1005
+BOARD_KERNEL_CMDLINE += bootprof.lk_t=8513
+BOARD_KERNEL_CMDLINE += boot_reason=0
+BOARD_KERNEL_CMDLINE += androidboot.serialno=KOG9K17912D01321
+BOARD_KERNEL_CMDLINE += androidboot.bootreason=power_key
+BOARD_KERNEL_CMDLINE += gpt=1
+BOARD_KERNEL_CMDLINE += usb2jtag_mode=0
+
 #TODO: Set value
 BOARD_MKBOOTIMG_ARGS :=  --board 1478934223 --ramdisk_offset 0x04f88000 --second_offset 0x00e88000 --tags_offset 0x03f88000#TODO: Set value
 
 # Kernel props
-TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/prebuilt/kernel/kernel #TODO: Add prebuilt kernel
-TARGET_BOOTLOADER_BOARD_NAME := M5 #TODO: is this value correct?
+TARGET_PREBUILT_KERNEL := device/vernee/M5/prebuilt/kernel/kernel #TODO: Add real prebuilt kernel
+
 
 # Partition details
 #TODO: Set correct values
