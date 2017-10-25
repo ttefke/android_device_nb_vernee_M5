@@ -95,6 +95,7 @@ ifeq ($(MTK_GPS_SUPPORT), yes)
 else
     BOARD_GPS_LIBRARIES := false
 endif
+BOARD_MEDIATEK_USES_GPS := true
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true

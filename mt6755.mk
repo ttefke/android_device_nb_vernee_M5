@@ -85,7 +85,9 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 PRODUCT_PACKAGES += \
-    libcurl
+    libcurl \
+    libepos \
+    gps.mt6755
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml \
