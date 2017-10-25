@@ -19,7 +19,7 @@ binder_use(guiext-server)
 #binder_call(guiext-server, {domain -init})
 
 # to allocate GraphicBuffer
-#allow guiext-server surfaceflinger:binder call;
+allow guiext-server surfaceflinger:binder call;
 allow guiext-server surfaceflinger:fd use;
 allow guiext-server gpu_device:chr_file { open read write ioctl };
 
@@ -27,13 +27,13 @@ allow guiext-server gpu_device:chr_file { open read write ioctl };
 allow guiext-server guiext-server_service:service_manager add;
 
 # for dump
-#allow guiext-server system_server:binder call;
+allow guiext-server system_server:binder call;
 
 # for MiraVision
 allow guiext-server graphics_device:chr_file { open read write ioctl };
 
 # for CTS
-#allow guiext-server platform_app:binder call;
+allow guiext-server platform_app:binder call;
 allow guiext-server app_data_file:file write;
 
 # for SVP secure memory allocation
@@ -50,3 +50,7 @@ allow guiext-server permission_service:service_manager find;
 
 # allow guiext-server to read/write fifo
 allow guiext-server surfaceflinger:fifo_file {read write};
+
+# Nougat
+allow guiext-server rootfs:lnk_file { getattr };
+allow guiext-server ion_device:chr_file { open read write ioctl };

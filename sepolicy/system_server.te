@@ -273,13 +273,19 @@ allow system_server teei_client_device:chr_file r_file_perms;
 # Purpose : # Date : WK15.42
 # Operation : Migration
 # Purpose : RGX 1.5 DDK requires client to have fifo R/W and sync_device permission
-allow system_server surfaceflinger:fifo_file rw_file_perms; 
+allow system_server surfaceflinger:fifo_file rw_file_perms;
 allow system_server sw_sync_device:chr_file { read write getattr open ioctl };
 
 # Date : WK15.44
 # Operation : Bug Fix
 # Purpose : Allow LocationManagerService connect to agpsd socket
 allow system_server mtk_agpsd:unix_stream_socket connectto;
+
+# Date : 2015/10/27
+# Operation : Feature Developing
+# Purpose : allow system_server to find mw_blacklist
+# Package: com.mediatek.multiwindow.service
+allow system_server mtk_mwblacklist_service:service_manager find;
 
 # Date : WK15.47
 # Operation : Feature developing
@@ -291,5 +297,16 @@ allow system_server mtkFlpDaemon_data_file:sock_file rw_file_perms;
 allow system_server mtkFlpDaemon_data_file:dir create_file_perms;
 allow system_server mtkFlpDaemon_data_file:dir rw_dir_perms;
 
-binder_call(system_server, etsd)
+# ET320 etsd
+binder_call(system_server,etsd)
 allow system_server etsd_service:service_manager find;
+allow fingerprintd etsd_service:service_manager find;
+
+#Persist
+allow system_server protect_s_data_file:dir r_dir_perms;
+
+# Nougat
+allow system_server debugfs:dir { read open };
+allow system_server unlabeled:file unlink;
+allow system_server wmt_prop:file { read open getattr };
+allow system_server wifi_data_file:sock_file { unlink };

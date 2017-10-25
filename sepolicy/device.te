@@ -161,6 +161,7 @@ type otp_device, dev_type;
 type qemu_pipe_device, dev_type;
 type icusb_device, dev_type;
 type irtx_device, dev_type;
+type irrx_device, dev_type;
 type pmic_ftm_device, dev_type;
 type shf_device, dev_type;
 type keyblock_device, dev_type;
@@ -191,9 +192,14 @@ type dsp_block_device, dev_type;
 type ppl_block_device, dev_type;
 type nvcfg_block_device, dev_type;
 type teei_fp_device, dev_type;
+type teei_client_device, dev_type;
 type teei_config_device, dev_type;
 type teei_vfs_device, dev_type;
 type teei_rpmb_device, dev_type;
 type ancservice_device, dev_type;
 type mbim_device, dev_type;
 type audio_ipi_device, dev_type;
+type tfa9890_device, dev_type;
+
+# Fingerprint device
+type esfp0_device, dev_type, mlstrustedobject;

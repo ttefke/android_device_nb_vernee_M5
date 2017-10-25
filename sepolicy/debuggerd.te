@@ -39,8 +39,8 @@ allow debuggerd shell_exec:file { execute execute_no_trans };
 allow debuggerd dex2oat_exec:file { execute execute_no_trans };
 
 # aee db dir and db files
-#allow debuggerd sdcard_internal:dir create_dir_perms;
-#allow debuggerd sdcard_internal:file create_file_perms;
+allow debuggerd sdcard_internal:dir create_dir_perms;
+allow debuggerd sdcard_internal:file create_file_perms;
 
 #data/anr
 allow debuggerd anr_data_file:dir create_dir_perms;
@@ -207,4 +207,3 @@ allow debuggerd teei_client_device:chr_file rw_file_perms;
 #scp file dumpstate
 allow debuggerd sysfs_scp:dir search;
 allow debuggerd sysfs_scp:file { read open };
-

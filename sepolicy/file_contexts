@@ -34,7 +34,6 @@
 /data/mediaserver(/.*)? u:object_r:mediaserver_data_file:s0
 /data/misc/acdapi(/.*)? u:object_r:acdapi_data_file:s0
 /data/misc/akmd_set.txt u:object_r:akmd8963_access_file1:s0
-/data/misc/st480_set.txt u:object_r:st480_access_file1:s0
 /data/misc/mblog(/.*)? u:object_r:logmisc_data_file:s0
 /data/misc/xlog(/.*)? u:object_r:xlog_data_file:s0
 /data/misc/PDC.ini u:object_r:akmd8963_access_file2:s0
@@ -102,9 +101,8 @@
 /dev/cpu_dma_latency(/.*)? u:object_r:cpu_dma_latency_device:s0
 /dev/devmap(/.*)? u:object_r:devmap_device:s0
 /dev/dummy_cam_cal(/.*)? u:object_r:dummy_cam_cal_device:s0
+/dev/DW9763AF(/.*)? u:object_r:DW9763AF_device:s0
 /dev/DW9714AF(/.*)? u:object_r:DW9714AF_device:s0
-/dev/DW9763AF(/.*)? u:object_r:DW9714AF_device:s0
-/dev/BU64244GWZAF(/.*)? u:object_r:BU64244GWZAF_device:s0
 /dev/DW9814AF(/.*)? u:object_r:DW9814AF_device:s0
 /dev/AK7345AF(/.*)? u:object_r:AK7345AF_device:s0
 /dev/DW9714A(/.*)? u:object_r:DW9714A_device:s0
@@ -190,6 +188,7 @@
 /dev/pro_info(/.*)? u:object_r:pro_info_device:s0
 /dev/protect_f(/.*)? u:object_r:protect_f_device:s0
 /dev/protect_s(/.*)? u:object_r:protect_s_device:s0
+/protect_s/properties(/.*)? u:object_r:persist_property_file:s0
 /dev/psaux(/.*)? u:object_r:psaux_device:s0
 /dev/ptmx(/.*)? u:object_r:ptmx_device:s0
 /dev/ptyp.* u:object_r:ptyp_device:s0
@@ -324,6 +323,7 @@
 /dev/offloadservice(/.*)? u:object_r:offloadservice_device:s0
 /dev/audio_ipi(/.*)? u:object_r:audio_ipi_device:s0
 /dev/irtx u:object_r:irtx_device:s0
+/dev/ir-learning u:object_r:irrx_device:s0
 /dev/spm(/.*)? u:object_r:spm_device:s0
 
 /dev/xt_qtaguid(/.*)? u:object_r:xt_qtaguid_device:s0
@@ -362,6 +362,7 @@
 /dev/emmcrpmb0 u:object_r:teei_rpmb_device:s0
 /dev/teei_fp u:object_r:teei_fp_device:s0
 /dev/mbim u:object_r:mbim_device:s0
+/dev/i2c_smartpa u:object_r:tfa9890_device:s0
 
 #############################
 # sysfs files
@@ -376,7 +377,9 @@
 /sys/devices/platform/msensor/driver(/.*)?	u:object_r:sysfs_msensor_file:s0
 /sys/bus/platform/drivers/mtk-kpd(/.*)?	u:object_r:sysfs_keypad_file:s0
 /sys/power/vcorefs/pwr_ctrl -- u:object_r:sysfs_vcorefs_pwrctrl:s0
+/sys/devices/virtual/misc/md32(/.*)?  u:object_r:sysfs_md32:s0
 /sys/devices/virtual/misc/scp(/.*)?  u:object_r:sysfs_scp:s0
+/sys/devices/platform/mtk_disp_mgr.0/rgb       u:object_r:livedisplay_sysfs:s0
 
 
 #############################
@@ -388,6 +391,9 @@
 /system/bin/aal u:object_r:aal_exec:s0
 /system/bin/aee_core_forwarder u:object_r:aee_core_forwarder_exec:s0
 /system/bin/akmd09911 u:object_r:akmd09911_exec:s0
+#ly_zhangtao add for mag sensor start
+/system/bin/mxg2320d u:object_r:mxg2320d_exec:s0
+#ly_zhangtao add for mag sensor end
 /system/bin/akmd09912 u:object_r:akmd09912_exec:s0
 /system/bin/akmd8963 u:object_r:akmd8963_exec:s0
 /system/bin/akmd8975 u:object_r:akmd8975_exec:s0
@@ -519,43 +525,18 @@
 # Wallpaper file for smartbook
 /data/system/users/[0-9]+/smartbook_wallpaper	u:object_r:wallpaper_file:s0
 
+#lockscreen wallpaper add by Tauren
+/data/system/users/[0-9]+/lockscreen   u:object_r:wallpaper_file:s0
+
 #fat on nand image
 /fat(/.*)?  u:object_r:fon_image_data_file:s0
 
+#smart audio pa 
+/system/bin/smart_audio.sh  u:object_r:smart_audio_exec:s0
+
+# Fingerprint device
+/dev/esfp0(/.*)? u:object_r:esfp0_device:s0
+
 # aka.jiang add for fingerprint ET3XX 20160308
 /system/bin/etsd  u:object_r:etsd_exec:s0
-/dev/esfp0 	  u:object_r:etsd_data_file:s0
-
-#########################################
-# Platform dependent label definitions
-#
-
-# define raw block partition label
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/proinfo		u:object_r:nvram_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/nvram		u:object_r:nvram_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/nvdata		u:object_r:nvdata_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/frp		u:object_r:frp_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/expdb		u:object_r:expdb_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/misc2		u:object_r:misc2_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/logo		u:object_r:logo_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/para		u:object_r:para_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/tee1		u:object_r:tee_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/tee2		u:object_r:tee_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/seccfg		u:object_r:seccfg_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/secro		u:object_r:secro_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/system		u:object_r:system_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/userdata		u:object_r:userdata_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/cache		u:object_r:cache_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/recovery		u:object_r:recovery_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/protect1		u:object_r:protect1_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/protect2		u:object_r:protect2_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/keystore		u:object_r:keystore_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/oemkeystore	u:object_r:oemkeystore_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/boot	        u:object_r:boot_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/persist		u:object_r:persist_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/md1img		u:object_r:md_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/md1dsp		u:object_r:dsp_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/md1arm7		u:object_r:md_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/md3img		u:object_r:md_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/ppl		u:object_r:ppl_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/nvcfg		u:object_r:nvcfg_block_device:s0
+/dev/esfp0       u:object_r:etsd_data_file:s0

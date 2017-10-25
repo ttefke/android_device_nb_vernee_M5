@@ -64,7 +64,6 @@ allow em_svr kernel:system module_request;
 allow em_svr fuse:dir create_dir_perms;
 allow em_svr fuse:file create_file_perms;
 #allow em_svr tmpfs:lnk_file read;
-#allow em_svr debugfs:file read;
 
 # Date: 2015/08/09
 # Operation : M Migration
@@ -84,3 +83,6 @@ binder_call(em_svr, surfaceflinger)
 # Operation : M Migration
 # Purpose : add policy for system data file access
 allow em_svr system_data_file:file open;
+
+# Nougat
+allow em_svr rootfs:lnk_file { getattr };

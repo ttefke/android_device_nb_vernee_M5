@@ -78,6 +78,24 @@ allow system_app devmap_device:chr_file { read ioctl open };
 allow system_app graphics_device:chr_file { read write ioctl open };
 allow system_app graphics_device:dir search;
 
+# Date: W1602
+# Operation: IR-Learning Feature
+# Purpose: [IR-Learning][ConsumerIrHostService will use irtx_device device node]
+# Package: com.mediatek.hardware.consumerir
+allow system_app irtx_device:chr_file { read write ioctl open };
+
+# Date: W1602
+# Operation: IR-Learning Feature
+# Purpose: [IR-Learning][ConsumerIrHostService will use irrx_device device node]
+# Package: com.mediatek.hardware.consumerir
+allow system_app irrx_device:chr_file { read write ioctl open };
+
+# Date: W1602
+# Operation: IR-Learning Feature
+# Purpose: [IR-Learning][ConsumerIrHostService will need to add service]
+# Package: com.mediatek.hardware.consumerir
+allow system_app mtk_consumerir_service:service_manager add;
+
 # Data : 2014/09/09
 # Operation : Migration
 # Purpose : [Privacy protection lock][com.mediatek.ppl need to bind ppl_agent service to read/write nvram file]
@@ -135,7 +153,6 @@ allow system_app ril_volte_stack_rcsuaproxy_prop:property_service set;
 allow system_app rcs_ua_proxy_socket:sock_file write;
 allow system_app volte_rcs_ua:unix_stream_socket connectto;
 
-
 # Date : 2014/11/19
 # Operation: SQC
 # Purpose: [Settings][RenderThread][operate device file failed]
@@ -191,6 +208,13 @@ allow system_app thermal_manager_data_file:dir { search getattr open read write 
 # Purpose: [HotKnot] Allow HotKnot service to start/stop hotknot_native_service
 allow system_app hotknot_prop:property_service set;
 
+# Date : 2015/10/27
+# Operation : Feature Developing
+# Purpose : allow system_app to find mw_blacklist
+# Package: com.mediatek.multiwindow.service
+allow system_app mtk_mwblacklist_service:service_manager add;
+allow system_app mtk_mwblacklist_service:service_manager find;
+
 # Date : 2015/06/12
 # Operation: TEEI integration
 # Purpose: access for fp device and client device of TEEI
@@ -203,10 +227,15 @@ allow system_app teei_client_device:chr_file r_file_perms;
 # Purpose: [SystemUI] Allow IMG GPU to touch sw_sync
 allow system_app sw_sync_device:chr_file { read write getattr open };
 
-#add by liliang.bao begin
+# Date : 2015/12/9
+# Operation: Xiehaifei
+# Purpose: for et320 kernel uevent
+# Package: android.ui
+allow system_app self:netlink_kobject_uevent_socket { create ioctl read getattr setattr bind connect getopt setopt shutdown };
+
+# FM Radio
 allow system_app fm_device:chr_file rw_file_perms;
-# allow system_app sysfs:file write;
+
 allow system_app nvram_data_file:lnk_file read;
 allow system_app nvdata_file:dir search;
 allow system_app nvdata_file:file {read getattr open};
-

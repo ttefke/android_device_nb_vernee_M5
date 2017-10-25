@@ -30,8 +30,8 @@ init_daemon_domain(netdiag)
 # Operation : Migration 
 # Purpose : for L early bring-up
 allow netdiag shell_exec:file execute_no_trans;
-#allow netdiag sdcard_internal:dir { write search read create open add_name };
-#allow netdiag sdcard_internal:file { write create open getattr };
+allow netdiag sdcard_internal:dir { write search read create open add_name };
+allow netdiag sdcard_internal:file { write create open getattr };
 allow netdiag self:packet_socket { write ioctl setopt read getopt create };
 allow netdiag fuse:dir { remove_name write search read remove_name open add_name create};
 allow netdiag fuse:file { rename write getattr read create open unlink};
@@ -94,3 +94,7 @@ allow netdiag self:udp_socket connect;
 allow netdiag system_server:binder call;
 allow system_server netdiag:fd use;
 binder_use(netdiag)
+
+# Nougat
+allow netdiag proc_net:file r_file_perms;
+allow netdiag rootfs:lnk_file { getattr };

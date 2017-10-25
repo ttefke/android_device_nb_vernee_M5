@@ -19,6 +19,7 @@ net_domain(viarild)
 allow viarild self:netlink_route_socket nlmsg_write;
 allow viarild kernel:system module_request;
 unix_socket_connect(viarild, property, init)
+#set_prop(viarild, init)
 allow viarild self:capability { setuid net_admin net_raw };
 allow viarild alarm_device:chr_file rw_file_perms;
 allow viarild cgroup:dir create_dir_perms;
@@ -47,8 +48,8 @@ allow viarild persist_ril_prop:property_service set;
 allow viarild cdma_prop:property_service set;
 allow viarild ril_cdma_report_prop:property_service set;
 allow viarild ril_mux_report_case_prop:property_service set;
-auditallow viarild system_radio_prop:property_service set;
 auditallow viarild net_radio_prop:property_service set;
+auditallow viarild system_radio_prop:property_service set;
 
 # Read/Write to uart driver (for GPS)
 allow viarild gps_device:chr_file rw_file_perms;

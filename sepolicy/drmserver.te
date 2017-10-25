@@ -13,7 +13,7 @@ allow drmserver platform_app:dir search;
 allow drmserver platform_app:file { read getattr open };
 allow drmserver property_socket:sock_file write;
 allow drmserver radio_data_file:file { read getattr open };
-#allow drmserver sdcard_internal:file open;
+allow drmserver sdcard_internal:file open;
 #allow drmserver tmpfs:lnk_file read;
 
 #Add by rui.hu
@@ -113,7 +113,8 @@ allow drmserver system_app_data_file:file read;
 # Add by : Jackie
 # Date : WK15.35
 # Operation : Migration
-# Purpose : allow drmserver access file stored in sdcard like /mnt/media_rw/
+# Purpose : allow drmserver access file stored in sdcard like
+#           /mnt/media_rw/
 allow drmserver vfat:file open;
 allow drmserver mnt_media_rw_file:dir search;
 
@@ -125,4 +126,3 @@ allow drmserver mnt_media_rw_file:dir search;
 # with calling pid
 allow drmserver nfc:dir search;
 allow drmserver nfc:file { read getattr open };
-

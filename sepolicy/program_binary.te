@@ -34,7 +34,7 @@ allow program_binary program_binary_service:service_manager add;
 # Date : 2015/1/6
 # Operation : New
 # Purpose : To allow binder call to system server.
-#allow program_binary system_server:binder call;
+allow program_binary system_server:binder call;
 
 # Date : 2015/3/19
 # Operation : New

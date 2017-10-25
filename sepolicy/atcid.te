@@ -57,3 +57,6 @@ allow atci_service pq:binder call;
 allow atcid rilproxy_atci_socket:sock_file write;
 allow atcid rilproxy:unix_stream_socket connectto;
 allow atcid self:capability sys_time;
+
+# Nougat
+allow atcid sysfs:file { read open };

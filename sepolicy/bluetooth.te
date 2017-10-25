@@ -24,3 +24,8 @@ allow bluetooth platform_app_tmpfs:file write;
 allow bluetooth surfaceflinger:fifo_file { read write };
 
 allow bluetooth rilproxy:unix_stream_socket connectto;
+
+# Date: 2015/9/23
+# Operation: Program binary service
+# Purpose : Add permission for program binary service find from ServiceManager.
+allow bluetooth program_binary_service:service_manager find;

@@ -78,6 +78,3 @@ allow surfaceflinger mtk_perf_service:service_manager find;
 # Operation : Migration
 # Purpose : allow surfaceflinger to find pq_service
 allow surfaceflinger pq_service:service_manager { find };
-
-# HWC need to write mhl 4k information to debug node of GED
-#allow surfaceflinger debugfs:file { open write read };

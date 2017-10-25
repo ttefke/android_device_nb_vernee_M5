@@ -20,7 +20,8 @@ net_domain(tunman)
 unix_socket_connect(netdomain, tunman, tunman)
 
 # Allows us to set 'tunman.protocol' property
-unix_socket_connect(tunman, property, init) 
+unix_socket_connect(tunman, property, init)
+#set_prop(tunman, init)
 allow tunman tunman_prop:property_service set;
 
 # Allows us to talk to netd

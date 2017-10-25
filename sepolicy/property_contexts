@@ -64,7 +64,6 @@ debug.bq.dump u:object_r:debug_bq_dump_prop:s0
 #=============allow mux==============
 ril.mux.      u:object_r:gsm0710muxd_prop:s0
 
-
 #=============allow atcp==============
 atcp.                   u:object_r:atcp_prop:s0
 #persist.sys.dongle.usb. u:object_r:persist_sys_dongle_usb_prop:s0
@@ -138,7 +137,6 @@ persist.service.atci.   u:object_r:persist_service_atci_prop:s0
 #=============allow volte_rcs_ua==============
 ril.volte.stack.rcsuaproxy u:object_r:ril_volte_stack_rcsuaproxy_prop:s0
 
-
 #=============allow ipod==============
 ctl.ipod                u:object_r:ctl_ipod_prop:s0
 ctl.ipo_swap            u:object_r:ctl_ipo_swap_prop:s0
@@ -160,6 +158,9 @@ ctl.s62xd     u:object_r:ctl_s62xd_prop:s0
 ctl.bmm056d     u:object_r:ctl_bmm056d_prop:s0
 ctl.akmd8963     u:object_r:ctl_akmd8963_prop:s0
 ctl.akmd09911     u:object_r:ctl_akmd09911_prop:s0
+#ly_zhangtao add for mag sensor start
+ctl.mxg2320d      u:object_r:ctl_mxg2320d_prop:s0
+#ly_zhangtao add for mag sensor end
 ctl.akmd09912     u:object_r:ctl_akmd09912_prop:s0
 ctl.geomagneticd     u:object_r:ctl_geomagneticd_prop:s0
 ctl.orientationd     u:object_r:ctl_orientationd_prop:s0
@@ -238,3 +239,6 @@ persist.ims.simulate   u:object_r:mtk_em_ims_simulate_prop:s0
 
 #=============allow em set protocol================
 persist.auto_answer   u:object_r:mtk_em_auto_answer_prop:s0
+
+#=============allow smart audio pa  deamon  ==============
+smart_audio.        u:object_r:smart_audio_prop:s0

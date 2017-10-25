@@ -79,3 +79,7 @@ allow mnld mnld_data_file:fifo_file create_file_perms;
 allow mnld mtkFlpDaemon:unix_dgram_socket sendto;
 allow mnld mtkFlpDaemon_data_file:dir create_dir_perms;
 allow mnld mtkFlpDaemon_data_file:sock_file create_file_perms;
+
+# Nougat
+allow mnld wmt_prop:file r_file_perms;
+allow mnld rootfs:lnk_file { getattr };

@@ -16,14 +16,8 @@ init_daemon_domain(mtkmal)
 # Date : WK15.33
 # Operation : Migration 
 # Purpose : for MTKMAL
-
-# Basic
 allow mtkmal socket_device:sock_file write;
-allow mtkmal device:dir write;
-allow mtkmal device:dir add_name;
-allow mtkmal device:lnk_file create;
-allow mtkmal device:dir remove_name;
-allow mtkmal device:lnk_file unlink;
+
 # ==============================================
 # TODO: NOT to use device iimmediately, instead of a new label for /dev/radio
 # allow mtkmal XXX_radio_device:chr_file { open read write ioctl };
@@ -42,9 +36,6 @@ allow mtkmal mal_data_file:file create_file_perms;
 # ATCP
 allow mtkmal devpts:chr_file { open read write ioctl };
 allow mtkmal devpts:chr_file { getattr setattr };
-
-# Netlink
-allow mtkmal self:netlink_route_socket { bind create write nlmsg_read };
 
 # RILPROXY
 allow mtkmal rilproxy:unix_stream_socket connectto;
@@ -85,7 +76,6 @@ allow mtkmal system_file:file execute_no_trans;
 allow mtkmal shell_exec:file { read execute open execute_no_trans };
 
 # ePDGa
-allow mtkmal devpts:chr_file setattr;
 allow mtkmal epdg_wod:unix_stream_socket connectto;
 allow mtkmal wod_sim_socket:sock_file write;
 allow mtkmal wod_action_socket:sock_file write;
@@ -94,6 +84,7 @@ allow mtkmal device:dir write;
 allow mtkmal device:dir add_name;
 allow mtkmal self:netlink_route_socket { write nlmsg_write read bind create nlmsg_read };
 allow mtkmal device:lnk_file create;
+allow mtkmal device:lnk_file unlink;
 
 #for RAN access wpa
 unix_socket_send(mtkmal, wpa, wpa)
