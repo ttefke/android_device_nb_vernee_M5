@@ -1,4 +1,6 @@
+#
 # Copyright (C) 2016 fire855 <thefire855@gmail.com>
+# Copyright (C) 2017 Maxim <hqdevnews@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +19,19 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := mtk_audio.cpp xlog.c
-LOCAL_SHARED_LIBRARIES := libbinder libcutils libutils liblog libgui libui libicuuc
+
+LOCAL_SRC_FILES := \
+    icu55.c \
+    mtk_audio.cpp \
+    mtk_bionic.cpp \
+    mtk_gui.cpp \
+    mtk_omx.cpp \
+    mtk_ui.cpp \
+    mtk_wvm.cpp \
+    mtk_xlog.cpp
+
+# only for 64bit libraries
+LOCAL_SRC_FILES_64 := mtk_parcel.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libc liblog libgui libui libicuuc libicui18n libmedia
 include $(BUILD_SHARED_LIBRARY)
