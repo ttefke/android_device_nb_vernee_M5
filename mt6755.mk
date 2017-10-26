@@ -66,8 +66,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio_em.xml:system/etc/audio_em.xml
+    $(LOCAL_PATH)/configs/audio/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio/audio_em.xml:system/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:system/etc/default_volume_tables.xml \
+    $(LOCAL_PATH)/configs/audio/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
 
 # Display
 PRODUCT_PACKAGES += \
