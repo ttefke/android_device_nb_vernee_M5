@@ -85,11 +85,23 @@ tmpfs on /storage type tmpfs (rw,seclabel,relatime,mode=755,gid=1000)
 /data/media on /mnt/runtime/read/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,uid=1023,gid=1023,multiuser)
 /data/media on /mnt/runtime/write/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,uid=1023,gid=1023,multiuser)
 
-tobias@tobias-MS-7885:~/LineageOS/device/vernee/M5$ adb shell /system/bin/df
+tobias@tobias-MS-7885:~/LineageOS/device/vernee/M5$ adb shell /system/bin/df -a
 Filesystem                                                  1K-blocks    Used Available Use% Mounted on
+rootfs                                                              0       0         0   0% /
 tmpfs                                                         1962612     752   1961860   1% /dev
+devpts                                                              0       0         0   0% /dev/pts
+proc                                                                0       0         0   0% /proc
+sysfs                                                               0       0         0   0% /sys
+selinuxfs                                                           0       0         0   0% /sys/fs/selinux
+debugfs                                                             0       0         0   0% /sys/kernel/debug
+none                                                                0       0         0   0% /acct
 tmpfs                                                         1962612       0   1962612   0% /mnt
+none                                                                0       0         0   0% /config
+none                                                                0       0         0   0% /dev/cpuctl
+pstore                                                              0       0         0   0% /sys/fs/pstore
 /dev/block/dm-0                                               3499436 3058360    424692  88% /system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache    499912    1748    487844   1% /cache
-/dev/block/dm-1                                              55167360 5353420  49781172  10% /data
-/data/media                                                  55167360 5353420  49781172  10% /storage/emulated
+adb                                                                 0       0         0   0% /dev/usb-ffs/adb
+tmpfs                                                         1962612       0   1962612   0% /storage
+/dev/block/dm-1                                              55167360 5421712  49712880  10% /data
+/data/media                                                  55167360 5421712  49712880  10% /storage/emulated
