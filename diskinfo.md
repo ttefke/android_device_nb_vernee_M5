@@ -1,5 +1,4 @@
 Information extracted by using diskinfo app:
-
 ========================================================================================
 
 Partition name   |  Total space  |  Partition number  | Partition type  | File system  | Mount point | Access type  | Block size  | Additional information
