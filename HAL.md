@@ -20,3 +20,7 @@ MSensorlib           | qmcX983d memsicd3680x afx133d mmc328x akm8975 ami304 yama
 Sensors              | sensor
 Sub_backup_lens      | dummy_lens
 Sub_imgsensor        | ov8856_mipi_raw gc8024_mipi_raw gc8034_mipi_raw
+WLAN                 | CONSYS_MT6755
+GPS                  | MTK_GPS_MT6755
+LED                  | mt65xx
+MIC                  | mt6397
