@@ -25,7 +25,7 @@ $(call inherit-product, device/nb/vernee_M5/device.mk)
 # Set devices name and vendor variables
 PRODUCT_NAME := lineage_vernee_M5
 PRODUCT_DEVICE := vernee_M5
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := vernee
 PRODUCT_MODEL := vernee_M5
 PRODUCT_MANUFACTURER := vernee
 
