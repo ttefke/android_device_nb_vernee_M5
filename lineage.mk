@@ -20,15 +20,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit from M5
-$(call inherit-product, device/vernee/M5/device.mk)
+$(call inherit-product, device/nb/vernee_M5/device.mk)
 
 # Set devices name and vendor variables
-PRODUCT_NAME := lineage_M5
-PRODUCT_DEVICE := M5
+PRODUCT_NAME := lineage_vernee_M5
+PRODUCT_DEVICE := vernee_M5
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := M5
+PRODUCT_MODEL := vernee_M5
 PRODUCT_MANUFACTURER := vernee
 
 TARGET_VENDOR := vernee
-TARGET_VENDOR_PRODUCT_NAME := M5
-TARGET_VENDOR_DEVICE_NAME := M5
+TARGET_VENDOR_PRODUCT_NAME := vernee_M5
+TARGET_VENDOR_DEVICE_NAME := vernee_M5

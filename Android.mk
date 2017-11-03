@@ -19,7 +19,7 @@ ifeq ($(TARGET_CYANOGEN_COMMON),mt6755)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
 
-ifneq (,$(filter M5,$(TARGET_DEVICE)))
+ifneq (,$(filter vernee_M5,$(TARGET_DEVICE)))
   include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
 

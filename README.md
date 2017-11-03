@@ -1,4 +1,4 @@
-Device configuration for Vernee M5 (M5)
+Device configuration for Vernee M5 (vernee_M5)
 ===========================================
 
 ![Vernee M5](https://gloimg.yoshop.com/yoshop/pdm-product-pic/Electronic/2017/08/18/goods-img/1506378437033552600.jpg "Vernee M5")

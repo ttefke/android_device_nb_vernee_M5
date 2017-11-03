@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=M5
-VENDOR=vernee
+DEVICE=vernee_M5
+VENDOR=nb
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

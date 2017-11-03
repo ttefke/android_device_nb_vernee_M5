@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=M5
-VENDOR=vernee
+DEVICE=vernee_M5
+VENDOR=nb
 
 INITIAL_COPYRIGHT_YEAR=2017
 

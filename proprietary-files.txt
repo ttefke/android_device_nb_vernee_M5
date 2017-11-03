@@ -42,8 +42,6 @@ priv-app/DeviceInfo/oat/arm64/DeviceInfo.odex
 
 # GmsCore
 priv-app/GmsCore/GmsCore.apk
-priv-app/GmsCore/oat/arm/GmsCore.odex
-priv-app/GmsCore/oat/arm64/GmsCore.odex
 
 # NbAgingTest
 priv-app/NbAgingTest/NbAgingTest.apk
