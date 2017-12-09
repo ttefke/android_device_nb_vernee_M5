@@ -43,7 +43,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-MTK_PROJECT_CONFIG := $(COMMON_PATH)/configs/ProjectConfig.mk
+MTK_PROJECT_CONFIG := $(COMMON_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
