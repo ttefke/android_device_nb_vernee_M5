@@ -121,6 +121,7 @@ MTK_HWC_VERSION := 1.5.0
 # Mediatek support
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
+MTK_HARDWARE := true
 
 # Media
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
