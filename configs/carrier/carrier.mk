@@ -1,6 +1,5 @@
 # Copy carrier configuration files
 PRODUCT_COPY_FILES += \
-    device/nb/vernee_M5/configs/carrier/apns-conf.xml:system/etc/apns-conf.xml \
     device/nb/vernee_M5/configs/carrier/spn-conf.xml:system/etc/spn-conf.xml \
     device/nb/vernee_M5/configs/carrier/cdma_ecc_list.xml:system/vendor/etc/cdma_ecc_list.xml \
     device/nb/vernee_M5/configs/carrier/cdma_ecc_list_ss.xml:system/vendor/etc/cdma_ecc_list_ss.xml \
