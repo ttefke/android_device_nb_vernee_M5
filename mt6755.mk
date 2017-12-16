@@ -33,7 +33,8 @@ PRODUCT_PACKAGES += \
     init.mt6755.rc \
     init.mt6755.modem.rc \
     init.mt6755.usb.rc \
-    ueventd.mt6755.rc
+    ueventd.mt6755.rc \
+    atStartCit.sh
 
 # Recovery Ramdisk
 PRODUCT_PACKAGES += \

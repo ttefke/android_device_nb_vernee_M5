@@ -16,3 +16,11 @@ $(call add-rootdir-targets, \
     init.mt6755.modem.rc \
     init.mt6755.usb.rc \
     ueventd.mt6755.rc)
+
+# atStartCit.sh
+include $(CLEAR_VARS)
+LOCAL_MODULE       := atStartCit.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := system/bin/atStartCit.sh
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/system/bin/atStartCit.sh
+include $(BUILD_PREBUILT)
