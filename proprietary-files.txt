@@ -52,7 +52,6 @@ priv-app/SimProcessor/SimProcessor.apk
 priv-app/SimProcessor/oat/arm64/SimProcessor.odex
 
 # binaries from bin
-bin/atStartCit.sh
 bin/badblocks
 bin/fp_ca
 bin/gzip_static
@@ -71,7 +70,6 @@ etc/runningbooster/platform_list.txt
 etc/trustzone.bin
 
 # Some stuff we just take for experimental purposes
-recovery-from-boot.p
 etc/preferred-apps/google.xml
 etc/sysconfig/google.xml
 media/shutanimation.zip
