@@ -35,8 +35,8 @@
 
 - partition_index: SYS1
   partition_name: pgpt
-  file_name: NONE
-  is_download: false
+  file_name: pgpt.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x0
   physical_start_addr: 0x0
@@ -137,8 +137,8 @@
 
 - partition_index: SYS7
   partition_name: expdb
-  file_name: NONE
-  is_download: false
+  file_name: expdb.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x6c00000
   physical_start_addr: 0x6c00000
@@ -154,8 +154,8 @@
 
 - partition_index: SYS8
   partition_name: frp
-  file_name: NONE
-  is_download: false
+  file_name: frp.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x7600000
   physical_start_addr: 0x7600000
@@ -171,8 +171,8 @@
 
 - partition_index: SYS9
   partition_name: ppl
-  file_name: NONE
-  is_download: false
+  file_name: ppl.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x7700000
   physical_start_addr: 0x7700000
@@ -189,7 +189,7 @@
 - partition_index: SYS10
   partition_name: reserved2
   file_name: reserved2.bin
-  is_download: false
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x7740000
   physical_start_addr: 0x7740000
@@ -206,7 +206,7 @@
 - partition_index: SYS11
   partition_name: misc2
   file_name: misc.img
-  is_download: false
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x7800000
   physical_start_addr: 0x7800000
@@ -223,7 +223,7 @@
 - partition_index: SYS11
   partition_name: oeminfo
   file_name: oeminfo.bin
-  is_download: false
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x8000000
   physical_start_addr: 0x8000000
@@ -240,7 +240,7 @@
 - partition_index: SYS12
   partition_name: nvcfg
   file_name: nvcfg.bin
-  is_download: false
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0xc000000
   physical_start_addr: 0xc000000
@@ -256,8 +256,8 @@
 
 - partition_index: SYS13
   partition_name: persist
-  file_name: NONE
-  is_download: false
+  file_name: persist.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0xc800000
   physical_start_addr: 0xc800000
@@ -274,7 +274,7 @@
 - partition_index: SYS14
   partition_name: nvdata
   file_name: nvdata.bin
-  is_download: false
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0xf800000
   physical_start_addr: 0xf800000
@@ -290,8 +290,8 @@
 
 - partition_index: SYS15
   partition_name: reserved3
-  file_name: NONE
-  is_download: false
+  file_name: reserved3.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x11800000
   physical_start_addr: 0x11800000
@@ -324,8 +324,8 @@
 
 - partition_index: SYS17
   partition_name: nff
-  file_name: NONE
-  is_download: false
+  file_name: nff.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x14000000
   physical_start_addr: 0x14000000
@@ -341,8 +341,8 @@
 
 - partition_index: SYS18
   partition_name: rrecord
-  file_name: NONE
-  is_download: false
+  file_name: rrecord.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x14800000
   physical_start_addr: 0x14800000
@@ -358,8 +358,8 @@
 
 - partition_index: SYS19
   partition_name: patch
-  file_name: NONE
-  is_download: false
+  file_name: patch.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x15800000
   physical_start_addr: 0x15800000
@@ -375,8 +375,8 @@
 
 - partition_index: SYS20
   partition_name: bootfail_info
-  file_name: NONE
-  is_download: false
+  file_name: bootfail_info.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x17800000
   physical_start_addr: 0x17800000
@@ -392,8 +392,8 @@
 
 - partition_index: SYS21
   partition_name: reserved4
-  file_name: NONE
-  is_download: false
+  file_name: reserved4.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x17a00000
   physical_start_addr: 0x17a00000
@@ -409,8 +409,8 @@
 
 - partition_index: SYS22
   partition_name: drvinfo
-  file_name: NONE
-  is_download: false
+  file_name: drvinfo.img
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x18000000
   physical_start_addr: 0x18000000
@@ -426,8 +426,8 @@
 
 - partition_index: SYS23
   partition_name: log
-  file_name: NONE
-  is_download: false
+  file_name: log.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x18800000
   physical_start_addr: 0x18800000
@@ -443,8 +443,8 @@
 
 - partition_index: SYS24
   partition_name: reserved5
-  file_name: NONE
-  is_download: false
+  file_name: reserved5.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x1c800000
   physical_start_addr: 0x1c800000
@@ -460,8 +460,8 @@
 
 - partition_index: SYS25
   partition_name: protect1
-  file_name: NONE
-  is_download: false
+  file_name: protect1.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x20800000
   physical_start_addr: 0x20800000
@@ -477,8 +477,8 @@
 
 - partition_index: SYS26
   partition_name: protect2
-  file_name: NONE
-  is_download: false
+  file_name: protect2.bin
+  is_download: true
   type: EXT4_IMG
   linear_start_addr: 0x21000000
   physical_start_addr: 0x21000000
@@ -494,8 +494,8 @@
 
 - partition_index: SYS27
   partition_name: seccfg
-  file_name: NONE
-  is_download: false
+  file_name: seccfg
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x21800000
   physical_start_addr: 0x21800000
@@ -511,8 +511,8 @@
 
 - partition_index: SYS28
   partition_name: efuse
-  file_name: NONE
-  is_download: false
+  file_name: efuse.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x21840000
   physical_start_addr: 0x21840000
@@ -528,8 +528,8 @@
 
 - partition_index: SYS29
   partition_name: reserved6
-  file_name: NONE
-  is_download: false
+  file_name: reserved6.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x218c0000
   physical_start_addr: 0x218c0000
@@ -545,8 +545,8 @@
 
 - partition_index: SYS30
   partition_name: oemkeystore
-  file_name: NONE
-  is_download: false
+  file_name: oemkeystore.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x22000000
   physical_start_addr: 0x22000000
@@ -562,8 +562,8 @@
 
 - partition_index: SYS31
   partition_name: proinfo
-  file_name: NONE
-  is_download: false
+  file_name: proinfo.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x22800000
   physical_start_addr: 0x22800000
@@ -630,8 +630,8 @@
 
 - partition_index: SYS35
   partition_name: md3img
-  file_name: NONE
-  is_download: false
+  file_name: md3img.img
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x24f00000
   physical_start_addr: 0x24f00000
@@ -664,8 +664,8 @@
 
 - partition_index: SYS37
   partition_name: reserved7
-  file_name: NONE
-  is_download: false
+  file_name: reserved7.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x25900000
   physical_start_addr: 0x25900000
@@ -800,8 +800,8 @@
 
 - partition_index: SYS45
   partition_name: keystore
-  file_name: NONE
-  is_download: false
+  file_name: keystore.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0x29800000
   physical_start_addr: 0x29800000
@@ -866,8 +866,8 @@
 
 - partition_index: SYS49
   partition_name: flashinfo
-  file_name: NONE
-  is_download: false
+  file_name: flashinfo.img
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0xFFFF0080
   physical_start_addr: 0xFFFF0080
@@ -883,8 +883,8 @@
 
 - partition_index: SYS50
   partition_name: sgpt
-  file_name: NONE
-  is_download: false
+  file_name: sgpt.bin
+  is_download: true
   type: NORMAL_ROM
   linear_start_addr: 0xFFFF0000
   physical_start_addr: 0xFFFF0000
