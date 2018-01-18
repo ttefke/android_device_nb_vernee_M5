@@ -14,14 +14,16 @@
 # limitations under the License.
 #
 
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#LOCAL_KERNEL := device/nb/vernee_M5/prebuilt/kernel/kernel #TODO: Add prebuilt kernel
-#else
-#LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-#endif
+# Prebuilt kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/nb/vernee_M5/boot.img-kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
 
-#PRODUCT_COPY_FILES += \
-#	$(LOCAL_KERNEL):kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
 
 $(call inherit-product-if-exists, vendor/nb/vernee_M5/device-vendor.mk)
 
