@@ -12,7 +12,7 @@
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/otp       0640    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram     0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/para      0660    root    system
-/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/logo      0660    root    system
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/logo      0640    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/frp       0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/ppl       0660    root    system
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md1img    0660    root    system
@@ -21,7 +21,7 @@
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/md3img    0660    root    system
 
 # OTP
-/dev/otp                 0660 system system
+/dev/otp                  0660   system     system
 
 # Connectivity
 /dev/stpwmt               0660   system     system
@@ -53,6 +53,11 @@
 # Trusty driver
 /dev/trusty-ipc-dev0      0660   system     keystore
 
+# TrustonicTEE driver
+/dev/mobicore             0600   system     system
+/dev/mobicore-user        0666   system     system
+/dev/t-base-tui           0666   system     system
+
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
 /dev/ttyUSB0              0660   radio      radio
@@ -63,7 +68,6 @@
 
 # Anyone can read the logs, but if they're not in the "logs"
 # group, then they'll only see log entries for their UID.
-/dev/xLog                 0600   root       root
 /dev/log/ksystem          0600   root       log
 
 /dev/ccci*                0660   radio      radio
@@ -79,6 +83,8 @@
 /dev/ccci2_aud            0660   audio      audio
 /dev/ccci3_aud            0660   audio      audio
 /dev/eemcs_aud            0660   audio      audio
+/dev/irtx                 0660   system     system
+/dev/ir-learning          0660   system     system
 
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
@@ -116,5 +122,3 @@
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
-
-/dev/esfp0              0666   root       root

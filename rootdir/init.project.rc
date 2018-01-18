@@ -1,0 +1,169 @@
+# MTK project .rc configure
+
+import init.c2k.rc
+import init.mt6755.usb.rc
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on post-fs-data
+
+
+
+
+
+
+
+
+
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/GT9761AF
+    chown system camera /dev/GT9761AF
+	
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+
+
+
+#Define device for ATCID
+    chmod 660 /dev/ttyGS0
+    chown system /dev/ttyGS0
+    chmod 660 /dev/ttyGS1
+    chown system /dev/ttyGS1
+
+#add by liliang.bao
+    chmod 0666 /sys/tp/isKeyRevert
+    chmod 0666 /sys/tp/isNavBarEnable
+    chmod 0666 /sys/tp/isKeyDisEnable
+    chown system system /sys/tp/isKeyRevert
+    chown system system /sys/tp/isNavBarEnable
+    chown system system /sys/tp/isKeyDisEnable
+#add by cz
+    chmod 0666 /sys/tp/SMWP
+    chmod 0666 /sys/tp/GESTURE
+    chown system system /sys/tp/SMWP
+    chown system system /sys/tp/GESTURE
+
+
+
+#    chmod 0660 /dev/spm
+#    chown system system /dev/spm
+
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+
+service atci_service /system/bin/atci_service
+	socket atci-service stream 660 radio system
+	socket atci-serv-fw stream 660 radio system
+	user root
+        disabled
+	group radio system
+service atcid-daemon-u /system/bin/atcid
+	user system
+	group radio system media
+	disabled
+	oneshot
+
+service atcid-daemon-e /system/bin/atcid
+	user root
+	group radio system
+	disabled
+	oneshot
+
+on early_property:ro.build.type=eng
+start atci_service
+start atcid-daemon-e
+service audio-daemon /system/bin/audiocmdservice_atci
+    class main
+    socket atci-audio stream 660 media system
+    user media
+    group nvram media system sdcard_rw
+    disabled
+    oneshot
+
+
+
+
+
+
+
+service spm_script /system/bin/spm_loader
+    user root
+    group root
+    class core
+    oneshot
+
+
+on init
+    chmod 0777 /dev/fpsensor
+    chown system system /dev/fpsensor
+	 
+	 chmod 0777 /dev/cs_spi
+    chown system system /dev/cs_spi
+on post-fs-data
+    mkdir /data/fpsensor
+    chown system system /data/fpsensor
+    chown system system /data/fpsensor/socket
+    chmod 0774  /data/fpsensor
+    chmod 0774  /data/fpsensor/socket
+
+# goodix fingerprint
+on fs
+#on init
+	chmod 0777 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
+on post-fs-data
+    mkdir /data/gf_data
+    chown system system /data/gf_data
+    chmod 0774  /data/gf_data
+
+service goodixfpd /system/bin/goodixfingerprintd
+    class main
+    user system
+    group media_rw system
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group system   
+
+

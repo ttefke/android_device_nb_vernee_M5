@@ -1,0 +1,19 @@
+import meta_init.c2k.rc
+
+on post-fs
+#INTERNAL_START
+
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+on boot
+
+
+
+service spm_script /vendor/bin/spm_loader
+    user root
+    group root
+    oneshot
+
+#INTERNAL_END
