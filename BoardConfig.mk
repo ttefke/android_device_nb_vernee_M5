@@ -94,10 +94,6 @@ BOARD_KERNEL_CMDLINE += usb2jtag_mode=0
 
 BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x40080000 --ramdisk_offset 0x4920000
 
-# Kernel props
-TARGET_PREBUILT_KERNEL := device/nb/vernee_M5/prebuilt/kernel/kernel #TODO: Add real prebuilt kernel
-
-
 # Partition details
 #TODO: Set correct values
 TARGET_USERIMAGES_USE_EXT4 := true
