@@ -14,9 +14,11 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := device/nb/vernee_M5
+
 # Prebuilt kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/nb/vernee_M5/boot.img-kernel
+LOCAL_KERNEL := $(LOCAL_PATH)/boot.img-kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -28,7 +30,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/nb/vernee_M5/device-vendor.mk)
 
 # Inherit from MTK_PROJECT_CONFIG
-MTK_PROJECT_CONFIG ?= device/nb/vernee_M5/ProjectConfig.mk)
+MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk)
 include $(MTK_PROJECT_CONFIG)
 
 # Charger and USB
@@ -47,7 +49,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    device/nb/vernee_M5/permissions/android.hardware.microphone.xml:system/etc/permissions/android.hardware.microphone.xml \
+    $(LOCAL_PATH)/permissions/android.hardware.microphone.xml:system/etc/permissions/android.hardware.microphone.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -64,35 +66,35 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.device_admin.xml:system/etc/permissions/android.software.device_admin.xml \
-    device/nb/vernee_M5/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+    $(LOCAL_PATH)/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     frameworks/native/data/etc/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-    device/nb/vernee_M5/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-    device/nb/vernee_M5/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-    device/nb/vernee_M5/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
-    device/nb/vernee_M5/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
-    device/nb/vernee_M5/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
-    device/nb/vernee_M5/permissions/platform.xml:system/etc/permissions/platform.xml
+    $(LOCAL_PATH)/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
+    $(LOCAL_PATH)/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
+    $(LOCAL_PATH)/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
+    $(LOCAL_PATH)/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
+    $(LOCAL_PATH)/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
+    $(LOCAL_PATH)/permissions/platform.xml:system/etc/permissions/platform.xml
 
 
 # Audio
-$(call inherit-product, device/nb/vernee_M5/configs/audio/audio_param/audio.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/audio/audio_param/audio.mk)
 
 # Bluetooth
-$(call inherit-product, device/nb/vernee_M5/bluetooth/bluetooth.mk)
+$(call inherit-product, $(LOCAL_PATH)/bluetooth/bluetooth.mk)
 
 # Carrier configs
-$(call inherit-product, device/nb/vernee_M5/configs/carrier/carrier.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/carrier/carrier.mk)
 
 # Media
-$(call inherit-product, device/nb/vernee_M5/media/media.mk)
+$(call inherit-product, $(LOCAL_PATH)/media/media.mk)
 
 # Internet access
-$(call inherit-product, device/nb/vernee_M5/ip/ip.mk)
+$(call inherit-product, $(LOCAL_PATH)/ip/ip.mk)
 
 # Other configuration files
-$(call inherit-product, device/nb/vernee_M5/configs/configs.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/configs.mk)
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -127,4 +129,4 @@ $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.m
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 
 # Inherit the rest from mt6755-common
-$(call inherit-product, device/nb/vernee_M5/mt6755.mk)
+$(call inherit-product, $(LOCAL_PATH)/mt6755.mk)
