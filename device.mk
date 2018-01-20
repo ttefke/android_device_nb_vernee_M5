@@ -33,10 +33,6 @@ $(call inherit-product-if-exists, vendor/nb/vernee_M5/device-vendor.mk)
 MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 
-# Charger and USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.usb.vid=2970
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
