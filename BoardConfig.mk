@@ -73,24 +73,8 @@ TARGET_USES_64_BIT_BINDER := true
 BOARD_KERNEL_BASE := 0x40080000 #Ramdisk base is 0x45000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_KERNEL_CMDLINE := console=tty0
-BOARD_KERNEL_CMDLINE += console=ttyMT0,921600n1
-BOARD_KERNEL_CMDLINE += root=/dev/ram
-BOARD_KERNEL_CMDLINE += vmalloc=496M
-BOARD_KERNEL_CMDLINE += slub_max_order=0
-BOARD_KERNEL_CMDLINE += slub_debug=O
-BOARD_KERNEL_CMDLINE += androidboot.hardware=mt6755
-BOARD_KERNEL_CMDLINE += androidboot.verifiedbootstate=orange
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
-BOARD_KERNEL_CMDLINE += printk.disable_uart=1
-BOARD_KERNEL_CMDLINE += bootprof.pl_t=1005
-BOARD_KERNEL_CMDLINE += bootprof.lk_t=8513
-BOARD_KERNEL_CMDLINE += boot_reason=0
-BOARD_KERNEL_CMDLINE += androidboot.serialno=KOG9K17912D01321
-BOARD_KERNEL_CMDLINE += androidboot.bootreason=power_key
-BOARD_KERNEL_CMDLINE += gpt=1
-BOARD_KERNEL_CMDLINE += usb2jtag_mode=0
 
 BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x40080000 --ramdisk_offset 0x4920000
 
