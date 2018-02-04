@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 
-$(call inherit-product-if-exists, vendor/nb/vernee_M5/device-vendor.mk)
+$(call inherit-product, vendor/nb/vernee_M5/device-vendor.mk)
 
 # Inherit from MTK_PROJECT_CONFIG
 MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
