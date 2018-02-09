@@ -207,3 +207,9 @@ allow debuggerd teei_client_device:chr_file rw_file_perms;
 #scp file dumpstate
 allow debuggerd sysfs_scp:dir search;
 allow debuggerd sysfs_scp:file { read open };
+
+allow debuggerd block_device:blk_file { ioctl open read write };
+allow debuggerd persist_aee_prop:file { getattr open read };
+allow debuggerd persist_mtk_aee_prop:file { getattr open read };
+allow debuggerd self:process setsockcreate;
+allow debuggerd system_data_file:dir { add_name create relabelfrom write };

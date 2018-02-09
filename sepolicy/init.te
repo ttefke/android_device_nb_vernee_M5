@@ -107,3 +107,6 @@ allow init debugfs:file { write };
 allow init surfaceflinger:process { noatsecure };
 allow init mtk_agpsd:process { noatsecure };
 allow init mediaserver:process { noatsecure };
+
+allow init block_device:blk_file write;
+allow init teei_daemon_exec:file getattr;

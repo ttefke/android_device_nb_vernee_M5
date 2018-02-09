@@ -17,3 +17,17 @@ allow dumpstate GoogleOtaBinder:binder call;
 allow dumpstate dontpanic_data_file:dir search;
 #allow dumpstate guiext-server:binder call;
 
+allow dumpstate adbsecure_prop:file { getattr open };
+allow dumpstate adbtcp_prop:file { getattr open };
+allow dumpstate factory_idle_state_prop:file { getattr open };
+allow dumpstate mtk_em_auto_answer_prop:file { getattr open };
+allow dumpstate mtk_em_ims_simulate_prop:file { getattr open };
+allow dumpstate mtk_em_pdn_prop:file { getattr open };
+allow dumpstate mtk_sf_prop:file { getattr open };
+allow dumpstate persist_aee_prop:file { getattr open read };
+allow dumpstate recovery_prop:file { getattr open };
+allow dumpstate smart_audio_prop:file { getattr open };
+allow dumpstate soter_teei_prop:file { getattr open };
+allow dumpstate system_data_file:dir { add_name create remove_name setattr write };
+allow dumpstate system_data_file:file { create setattr unlink write };
+allow dumpstate userinit_prop:file { getattr open };

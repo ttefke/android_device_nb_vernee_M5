@@ -78,3 +78,8 @@ allow surfaceflinger mtk_perf_service:service_manager find;
 # Operation : Migration
 # Purpose : allow surfaceflinger to find pq_service
 allow surfaceflinger pq_service:service_manager { find };
+
+allow surfaceflinger guiext-server_service:service_manager add;
+allow surfaceflinger debug_bq_dump_prop:file { getattr open read };
+allow surfaceflinger mtk_sf_prop:file { getattr open read };
+allow surfaceflinger persist_aee_prop:file { getattr open read };

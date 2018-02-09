@@ -2,3 +2,5 @@
 # MTK Policy Rule
 # ============
 dontaudit logd unlabeled:dir search;
+
+allow logd persist_aee_prop:file { getattr open read };

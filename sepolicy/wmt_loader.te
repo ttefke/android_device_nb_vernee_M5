@@ -37,3 +37,5 @@ allow wmt_loader wmt_prop:file r_file_perms;
 allow wmt_loader device:chr_file { unlink };
 allow wmt_loader rootfs:lnk_file { getattr };
 init_daemon_domain(wmt_loader)
+
+allow wmt_loader persist_aee_prop:file { getattr open read };

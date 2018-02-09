@@ -120,3 +120,5 @@ userdebug_or_eng(`
   allow shell init_thh_service_exec:dir r_dir_perms;
   allow shell init_thh_service_exec:file {execute execute_no_trans};
 ')
+
+allow shell persist_aee_prop:file { getattr open read };

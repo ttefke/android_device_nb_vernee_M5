@@ -160,3 +160,7 @@ allow vold mobicore_user_device:chr_file { read write ioctl open };
 # Date : WK15.52
 # Operation : create symbolic link for /storage/sdcard1
 allow vold storage_file:lnk_file { create unlink };
+
+allow vold device:chr_file { ioctl open read write };
+allow vold persist_aee_prop:file { getattr open read };
+allow vold block_device:blk_file { open read write };
