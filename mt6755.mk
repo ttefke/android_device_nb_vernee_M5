@@ -93,6 +93,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
    libmtk_symbols
 
+# Messaging
+PRODUCT_PACKAGES += \
+    messaging \
+    Stk
+
 # Power
 PRODUCT_PACKAGES += \
     power.default \
