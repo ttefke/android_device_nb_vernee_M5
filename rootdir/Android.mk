@@ -89,5 +89,3 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := sbin/slideshow
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
-
-#init.environ.rc missing
