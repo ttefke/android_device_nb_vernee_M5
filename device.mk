@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/nb/vernee_M5/device-vendor.mk)
 
 # Inherit from MTK_PROJECT_CONFIG
-MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk)
+MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 
 # Charger and USB
