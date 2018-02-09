@@ -29,16 +29,46 @@ PRODUCT_COPY_FILES += \
 
 # Root
 PRODUCT_PACKAGES += \
+    enableswap.sh \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
     fstab.mt6755 \
+    init \
+    init.aee.rc \
+    init.common_svc.rc \
+    init.connectivity.rc \
+    init.environ.rc \
+    init.epdg.rc \
+    init.microtrust.rc \
+    init.modem.rc \
     init.mt6755.rc \
-    init.mt6755.modem.rc \
     init.mt6755.usb.rc \
+    init.project.rc \
+    init.rc \
+    init.recovery.mt6755.rc \
+    init.rilproxy.rc \
+    init.usb.configfs.rc \
+    init.usb.rc \
+    init.volte.rc \
+    init.zygote32.rc \
+    init.zygote64_32.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
     ueventd.mt6755.rc \
-    atStartCit.sh
-
-# Recovery Ramdisk
-PRODUCT_PACKAGES += \
-    init.recovery.mt6755.rc
+    ueventd.rc \
+    verity_key \
+    atStartCit.sh \
+    verity_red_1.png \
+    verity_red_2.png \
+    fuelgauged_static \
+    multi_init \
+    slideshow \
+    ueventd \
+    watchdogd
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
