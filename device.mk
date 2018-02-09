@@ -138,3 +138,5 @@ $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.m
 
 # Inherit the rest from mt6755-common
 $(call inherit-product, $(DEVICE_PATH)/mt6755.mk)
+
+DEVICE_BRINGUP := true
