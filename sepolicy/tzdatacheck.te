@@ -1,2 +1,0 @@
- #============= tzdatacheck ==============
-allow tzdatacheck persist_aee_prop:file { getattr open read };

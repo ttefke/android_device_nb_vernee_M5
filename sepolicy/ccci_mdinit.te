@@ -111,4 +111,3 @@ allow ccci_mdinit persist_ril_prop:file { read open getattr };
 allow ccci_mdinit mediatek_prop:file { read open getattr ioctl };
 allow ccci_mdinit mtk_md_prop:file { read open getattr ioctl };
 allow ccci_mdinit rootfs:lnk_file { getattr };
-allow ccci_mdinit persist_aee_prop:file { getattr open read };

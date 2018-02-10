@@ -2,5 +2,3 @@
 # MTK Policy Rule
 # ============
 
-allow lmkd persist_aee_prop:file { getattr open read };
-allow servicemanager persist_aee_prop:file { getattr open read };

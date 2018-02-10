@@ -18,4 +18,3 @@ allow vdc fon_image_data_file:dir { search write add_name};
 allow vdc fon_image_data_file:file create;
 allow vdc fon_image_data_file:file { read write open };
 
-allow vdc persist_aee_prop:file { getattr open read };
