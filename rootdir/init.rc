@@ -4,7 +4,7 @@
 # This is a common source of Android security bugs.
 #
 
-import /init.environ.rc
+import /init.environ.mt6755.rc
 import /init.usb.rc
 import /init.${ro.hardware}.rc
 import /init.usb.configfs.rc

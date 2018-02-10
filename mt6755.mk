@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
     init.common_svc.rc \
     init.connectivity.rc \
     init.environ.rc \
+    init.environ.mt6755.rc \
     init.epdg.rc \
     init.microtrust.rc \
     init.modem.rc \

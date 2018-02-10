@@ -4,7 +4,7 @@
 # This is a common source of Android security bugs.
 #
 import factory_init.connectivity.rc
-import /init.environ.rc
+import /init.environ.mt6755.rc
 import init.fon.rc
 import init.trustonic.rc
 import init.microtrust.rc

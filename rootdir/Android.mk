@@ -23,6 +23,7 @@ $(call add-rootdir-targets, \
     init.common_svc.rc \
     init.connectivity.rc \
     init.epdg.rc \
+    init.environ.mt6755.rc \
     init.microtrust.rc \
     init.modem.rc \
     init.mt6755.rc \
@@ -89,5 +90,3 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := sbin/slideshow
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
-
-#init.environ.rc missing

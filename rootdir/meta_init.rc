@@ -3,7 +3,7 @@
 # IMPORTANT: Do not create world writable files or directories.
 # This is a common source of Android security bugs.
 #
-import /init.environ.rc
+import /init.environ.mt6755.rc
 import init.fon.rc
 import init.aee.rc
 import init.trustonic.rc
