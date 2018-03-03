@@ -1,6 +1,7 @@
 # from device/nb/vernee_M5/system.prop
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
+ro.kernel.android.checkjni=0
 
 # wifi
 wifi.interface=wlan0
