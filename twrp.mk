@@ -37,3 +37,4 @@ TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := false
 TW_DEFAULT_LANGUAGE := en-US 
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/twrp.fstab
+TW_EVENT_LOGGING := true # Temporary
