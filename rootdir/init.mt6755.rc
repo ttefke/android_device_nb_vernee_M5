@@ -1563,4 +1563,4 @@ on property:ontim.cit.tp2=2
     chmod 0664  /proc/class/ms-touchscreen-msg20xx/device/test
 
 on property:dev.bootcomplete=1
-    setprop sys.io.scheduler "bfq"
+    setprop sys.io.scheduler "cfq"
