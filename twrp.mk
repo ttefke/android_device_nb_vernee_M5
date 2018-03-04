@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+COMMON_PATH := device/nb/vernee_M5
+
 RECOVERY_VARIANT := twrp
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 DEVICE_RESOLUTION := 720x1280
@@ -34,3 +36,4 @@ TW_USE_TOOLBOX := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := false
 TW_DEFAULT_LANGUAGE := en-US 
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/twrp.fstab
