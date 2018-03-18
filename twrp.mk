@@ -34,6 +34,4 @@ TW_ALWAYS_RMRF := true
 TARGET_RECOVERY_INITRC := $(COMMON_PATH)/recovery/etc/init.recovery.mt6755.rc
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_SUPERSU := true
-TW_EXTRA_LANGUAGES := false
-TW_DEFAULT_LANGUAGE := en-US 
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/twrp.fstab
