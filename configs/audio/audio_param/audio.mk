@@ -15,13 +15,13 @@
 
 # Copy configuration files
 PRODUCT_COPY_FILES += \
-    device/nb/vernee_M5/configs/audio/audio_param/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
-    device/nb/vernee_M5/configs/audio/audio_param/audio_effects.conf:system/etc/audio_effects.conf \
-    device/nb/vernee_M5/configs/audio/audio_param/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
-    device/nb/vernee_M5/configs/audio/audio_param/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
-    device/nb/vernee_M5/configs/audio/audio_param/default_volume_tables.xml:system/etc/default_volume_tables.xml \
-    device/nb/vernee_M5/configs/audio/audio_param/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
-    device/nb/vernee_M5/configs/audio/audio_param/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
+    device/nb/vernee_M5/configs/audio/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
+    device/nb/vernee_M5/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    device/nb/vernee_M5/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    device/nb/vernee_M5/configs/audio/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    device/nb/vernee_M5/configs/audio/default_volume_tables.xml:system/etc/default_volume_tables.xml \
+    device/nb/vernee_M5/configs/audio/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    device/nb/vernee_M5/configs/audio/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
     device/nb/vernee_M5/configs/audio/audio_param/audio_device.xml:system/vendor/etc/audio_device.xml \
     device/nb/vernee_M5/configs/audio/audio_param/audio_em.xml:system/vendor/etc/audio_em.xml \
     device/nb/vernee_M5/configs/audio/audio_param/audio_policy.conf:system/vendor/etc/audio_policy.conf \

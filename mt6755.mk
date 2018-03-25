@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
     init.environ.rc \
     init.environ.mt6755.rc \
     init.epdg.rc \
+    init.mal.rc \
     init.microtrust.rc \
     init.modem.rc \
     init.mt6755.rc \
@@ -53,6 +54,7 @@ PRODUCT_PACKAGES += \
     init.usb.configfs.rc \
     init.usb.rc \
     init.volte.rc \
+    init.wod.rc \
     init.zygote32.rc \
     init.zygote64_32.rc \
     meta_init.connectivity.rc \
@@ -118,7 +120,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
-    $(LOCAL_PATH)/configs/slp_conf:system/etc/slp_conf \
     $(LOCAL_PATH)/configs/WMT_SOC.cfg:system/vendor/firmware/WMT_SOC.cfg
 
 # Mediatek platform
@@ -191,7 +192,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml \
     $(LOCAL_PATH)/configs/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
-    $(LOCAL_PATH)/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg
+    $(LOCAL_PATH)/configs/mtk_omx_core.cfg:system/vendor/etc/mtk_omx_core.cfg
 
 ifeq ($(NXP_SMARTPA_SUPPORT), yes)
 PRODUCT_COPY_FILES += \

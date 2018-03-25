@@ -1,0 +1,27 @@
+on post-fs-data
+    mkdir /data/ipsec 0700 root root
+    mkdir /data/ipsec/wo 0600 root root
+    mkdir /dev/net/ 0700 root root
+
+# on post-fs-data && property:ro.build.type=eng
+#     start epdg_wod
+
+# on post-fs-data && property:ro.build.type=userdebug
+#     start epdg_wod
+
+# on post-fs-data && property:ro.build.type=user
+#     start epdg_wod
+
+#on property:persist.mtk_epdg_support=1
+#    start epdg_wod
+
+service epdg_wod /vendor/bin/epdg_wod
+    class late_start
+    socket wod_action stream 660 root system
+    socket wod_sim    stream 660 root system
+    socket wod_ipsec  stream 660 root system
+
+    user root
+    group root system log inet radio net_admin
+#    disabled
+

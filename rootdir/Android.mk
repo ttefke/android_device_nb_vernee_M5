@@ -106,3 +106,18 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := sbin/slideshow
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
+
+# Vendor init files
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.mal.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := vendor/etc/init/init.mal.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/vendor/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.wod.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := vendor/etc/init/init.wod.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/vendor/etc/init
+include $(BUILD_PREBUILT)

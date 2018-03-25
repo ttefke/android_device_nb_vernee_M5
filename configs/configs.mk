@@ -16,7 +16,9 @@
 # Copy config files which aren't included by anything else
 # ProjectConfig.mk and system.prop are included by other scripts
 PRODUCT_COPY_FILES += \
+    device/nb/vernee_M5/configs/3dwidgets.xml:system/vendor/etc/appwidget/3dwidgets.xml \
     device/nb/vernee_M5/configs/Conf_MultipleTest.ini:system/etc/Conf_MultipleTest.ini \
+    device/nb/vernee_M5/configs/disableapplist.txt:system/vendor/etc/disableapplist.txt \
     device/nb/vernee_M5/configs/event-log-tags:system/etc/event-log-tags \
     device/nb/vernee_M5/configs/aee-config:system/vendor/etc/aee-config \
     device/nb/vernee_M5/configs/factory.ini:system/vendor/etc/factory.ini \
@@ -27,4 +29,5 @@ PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/configs/perfservapplist.txt:system/vendor/etc/perfservapplist.txt \
     device/nb/vernee_M5/configs/perfservscntbl.txt:system/vendor/etc/perfservscntbl.txt \
     device/nb/vernee_M5/configs/recovery.fstab:system/vendor/etc/recovery.fstab \
+    device/nb/vernee_M5/configs/resmonwhitelist.txt:system/vendor/etc/resmonwhitelist.txt \
     device/nb/vernee_M5/configs/emdlogger_usb_config.prop:system/vendor/etc/emdlogger_usb_config.prop
