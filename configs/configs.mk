@@ -18,8 +18,6 @@
 PRODUCT_COPY_FILES += \
     device/nb/vernee_M5/configs/Conf_MultipleTest.ini:system/etc/Conf_MultipleTest.ini \
     device/nb/vernee_M5/configs/event-log-tags:system/etc/event-log-tags \
-    device/nb/vernee_M5/configs/mediacodec-seccomp.policy:system/etc/seccomp_policy/mediacodec-seccomp.policy \
-    device/nb/vernee_M5/configs/mediaextractor-seccomp.policy:system/etc/seccomp_policy/mediaextractor-seccomp.policy \
     device/nb/vernee_M5/configs/aee-config:system/vendor/etc/aee-config \
     device/nb/vernee_M5/configs/factory.ini:system/vendor/etc/factory.ini \
     device/nb/vernee_M5/configs/fm_cust.cfg:system/vendor/firmware/fm_cust.cfg \
