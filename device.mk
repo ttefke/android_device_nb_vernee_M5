@@ -34,6 +34,10 @@ $(call inherit-product, vendor/nb/vernee_M5/vernee_M5-vendor.mk)
 MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 
+# Copy ProjectConfig.mk
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
