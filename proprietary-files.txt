@@ -216,9 +216,22 @@ framework/oat/arm64/uiautomator.odex
 framework/oat/arm64/wifi-service.odex
 framework/oat/arm64/wm.odex
 
-
-# Lib files: we'll copy them now, try to build them later
+# MTK hardware
+lib/hw/audio.a2dp.default.so
+lib/hw/audio.primary.default.so
+lib/hw/audio.r_submix.default.so
+lib/hw/audio.usb.default.so
+lib/hw/audio_policy.default.so
+lib/hw/audio_policy.stub.so
+lib/hw/bluetooth.default.so
+lib/hw/camera.default.so
 lib/hw/gatekeeper.mt6750.so
+lib/hw/gralloc.default.so
+lib/hw/keystore.default.so
+lib/hw/local_time.default.so
+lib/hw/power.default.so
+lib/hw/vibrator.default.so
+
 lib/libMTKAudioTimeStretch.so
 lib/liba3m.so
 lib/libaudio-resampler.so
@@ -237,9 +250,25 @@ lib/libmediatek_exceptionlog.so
 lib/libmtee.so
 
 # 64-bit
+
+# MTK hardware
+lib64/hw/audio.a2dp.default.so
+lib64/hw/audio.primary.default.so
+lib64/hw/audio.r_submix.default.so
+lib64/hw/audio.usb.default.so
+lib64/hw/audio_policy.default.so
+lib64/hw/audio_policy.stub.so
+lib64/hw/camera.default.so
+lib64/hw/fingerprint.default.so
 lib64/hw/fpsensor_fingerprint.default.so
 lib64/hw/gatekeeper.mt6750.so
 lib64/hw/goodix.fingerprint.default.so
+lib64/hw/gralloc.default.so
+lib64/hw/keystore.default.so
+lib64/hw/local_time.default.so
+lib64/hw/power.default.so
+lib64/hw/vibrator.default.so
+
 lib64/libMTKAudioTimeStretch.so
 lib64/liba3m.so
 lib64/libaudio-resampler.so
