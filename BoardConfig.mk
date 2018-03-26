@@ -121,6 +121,9 @@ PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
 MTK_HWC_SUPPORT := yes
 MTK_HWC_VERSION := 1.5.0
 
+# Override renderscript driver
+OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
+
 # Mediatek support
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
