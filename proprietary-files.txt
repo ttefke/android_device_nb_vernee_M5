@@ -324,8 +324,8 @@ priv-app/SimProcessor/oat/arm64/SimProcessor.odex
 
 # AtciService
 vendor/app/AtciService.apk
-vendor/app/oat/arm/AtciService.odex
-vendor/app/oat/arm64/AtciService.odex
+vendor/app/AtciService/oat/arm/AtciService.odex
+vendor/app/AtciService/oat/arm64/AtciService.odex
 
 # AutoDialer
 vendor/app/AutoDialer/AutoDialer.apk
@@ -555,11 +555,11 @@ vendor/etc/mddb/MDDB_InfoCustomAppSrcP_MT6750_S00_MOLY_LR11_W1603_MD_MP_V76_P4_1
 vendor/etc/mddb/mdm_layout_desc_1_ulwctg_n.dat
 
 # CaCerts
-vendor/etc/security/594f1775.0
-vendor/etc/security/7651b327.0
-vendor/etc/security/848ea856.0
-vendor/etc/security/c542733d.0
-vendor/etc/security/f336e3d1.0
+vendor/etc/security/cacerts_supl/594f1775.0
+vendor/etc/security/cacerts_supl/7651b327.0
+vendor/etc/security/cacerts_supl/848ea856.0
+vendor/etc/security/cacerts_supl/c542733d.0
+vendor/etc/security/cacerts_supl/f336e3d1.0
 
 # Voicecommand
 vendor/etc/voicecommand/training/ubmfile/64.dat
@@ -619,8 +619,9 @@ vendor/framework/oat/arm64/CustomPropInterface.odex
 # DRM
 vendor/lib/drm/libdrmctaplugin.so
 vendor/lib/drm/libdrmmtkplugin.so
-vendor/lib/libmockdrmcryptoplugin.so
-vendor/lib/libwvdrmengine.so
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
 
 # EGL
 vendor/lib/egl/libGLES_mali.so
@@ -893,11 +894,11 @@ vendor/lib64/egl/libGLES_mali.so
 # HW
 vendor/lib64/hw/audio.primary.mt6750.so
 vendor/lib64/hw/audio.r_submix.mt6750.so
-vendor/lib64/hw/audio_usb.mt6750.so
+vendor/lib64/hw/audio.usb.mt6750.so
 vendor/lib64/hw/camera.mt6750.so
 vendor/lib64/hw/gps.mt6750.so
 vendor/lib64/hw/gralloc.mt6750.so
-vendor/lib64/hw/hwcompooser.mt6750.so
+vendor/lib64/hw/hwcompooser.mt6755.so
 vendor/lib64/hw/keystore.mt6750.so
 vendor/lib64/hw/lights.mt6750.so
 vendor/lib64/hw/memtrack.mt6750.so
@@ -954,7 +955,7 @@ vendor/lib64/libcam.camshot.so
 vendor/lib64/libcam.device1.so
 vendor/lib64/libcam.device3.so
 vendor/lib64/libcam.exif.so
-vendor/lib64/libcam.exit.v3.so
+vendor/lib64/libcam.exif.v3.so
 vendor/lib64/libcam.hal3a.v3.dng.so
 vendor/lib64/libcam.hal3a.v3.so
 vendor/lib64/libcam.halsensor.so
@@ -991,7 +992,7 @@ vendor/lib64/libdrmmtkutil.so
 vendor/lib64/libdrmmtkwhitelist.so
 vendor/lib64/libeffect.facebeautypp.so
 vendor/lib64/libeffecthal.base.so
-vendor/lib64/libeffect.JPG.so
+vendor/lib64/libeffecthal.JPG.so
 vendor/lib64/libem_audio_jni.so
 vendor/lib64/libem_bt_jni.so
 vendor/lib64/libem_gpio_jni.so
