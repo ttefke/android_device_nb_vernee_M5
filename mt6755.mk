@@ -107,9 +107,6 @@ PRODUCT_PACKAGES += \
     libfmjni \
     FMRadio
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/proprietary/wileyfox/porridge/lib/hw/radio.fm.mt6735.so:system/lib/hw/radio.fm.mt6755.so
-
 # GPS
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
