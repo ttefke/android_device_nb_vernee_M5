@@ -201,7 +201,7 @@ framework/oat/arm64/ethernet-service.odex
 framework/oat/arm64/hid.odex
 framework/oat/arm64/ime.odex
 framework/oat/arm64/input.odex
-framework/oat/arm64/java.obex.odex
+framework/oat/arm64/javax.obex.odex
 framework/oat/arm64/media_cmd.odex
 framework/oat/arm64/mediatek-feature-runningbooster.odex
 framework/oat/arm64/monkey.odex
@@ -352,7 +352,7 @@ priv-app/SimProcessor/oat/arm64/SimProcessor.odex
 
 
 # AtciService
-vendor/app/AtciService.apk
+vendor/app/AtciService/AtciService.apk
 vendor/app/AtciService/oat/arm/AtciService.odex
 vendor/app/AtciService/oat/arm64/AtciService.odex
 
@@ -927,7 +927,7 @@ vendor/lib64/hw/audio.usb.mt6750.so
 vendor/lib64/hw/camera.mt6750.so
 vendor/lib64/hw/gps.mt6750.so
 vendor/lib64/hw/gralloc.mt6750.so
-vendor/lib64/hw/hwcompooser.mt6755.so
+vendor/lib64/hw/hwcomposer.mt6755.so
 vendor/lib64/hw/keystore.mt6750.so
 vendor/lib64/hw/lights.mt6750.so
 vendor/lib64/hw/memtrack.mt6750.so
