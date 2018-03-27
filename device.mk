@@ -24,9 +24,10 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
-
 
 $(call inherit-product, vendor/nb/vernee_M5/vernee_M5-vendor.mk)
 
@@ -37,9 +38,6 @@ include $(MTK_PROJECT_CONFIG)
 # Copy ProjectConfig.mk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk
-
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -101,10 +99,10 @@ $(call inherit-product, $(DEVICE_PATH)/bluetooth/bluetooth.mk)
 $(call inherit-product, $(DEVICE_PATH)/configs/carrier/carrier.mk)
 
 # Media
-$(call inherit-product, $(DEVICE_PATH)/media/media.mk)
+$(call inherit-product, $(DEVICE_PATH)/configs/media/media.mk)
 
 # Internet access
-$(call inherit-product, $(DEVICE_PATH)/ip/ip.mk)
+$(call inherit-product, $(DEVICE_PATH)/configs/ip/ip.mk)
 
 # Other configuration files
 $(call inherit-product, $(DEVICE_PATH)/configs/configs.mk)
@@ -133,19 +131,9 @@ PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
 PRODUCT_PROPERTY_OVERRIDES += persist.radio.default.sim=0
 PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsds
 
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
-
 # Dalvik configurations
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 
 # Inherit the rest from mt6755-common
 $(call inherit-product, $(DEVICE_PATH)/mt6755.mk)
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    ro.debuggable=1 \
-    persist.service.adb.enable=1

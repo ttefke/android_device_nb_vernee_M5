@@ -18,16 +18,6 @@
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
-
 # Root
 PRODUCT_PACKAGES += \
     enableswap.sh \
@@ -83,20 +73,17 @@ ifneq ($(TARGET_BUILD_VARIANT), user)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
-    ro.secure=0
+    ro.secure=0 \
+    persist.service.adb.enable=1
 endif
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
     libaudiopolicymanagerdefault \
     libtinyalsa \
     libtinycompress \
     libtinymix \
     libtinyxml \
-    libfs_mgr
 
 # Display
 PRODUCT_PACKAGES += \
@@ -104,16 +91,13 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    libfmjni \
     FMRadio
 
 # GPS
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_PACKAGES += \
-    libcurl \
-    libepos \
-    gps.mt6755
+    libepos
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
@@ -127,16 +111,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     messaging \
     Stk
-
-# Power
-PRODUCT_PACKAGES += \
-    power.default \
-    power.mt6755
-
-# Radio dependencies
-PRODUCT_PACKAGES += \
-    muxreport \
-    terservice
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
@@ -169,20 +143,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayouts/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
     $(LOCAL_PATH)/keylayouts/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
-
-# Media
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
-
-ifeq ($(NXP_SMARTPA_SUPPORT), yes)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf_NXP:system/etc/audio_policy.conf
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
-endif
 
 # Build proprietary bits when available
 ifneq ($(MTKPATH),)
