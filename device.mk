@@ -145,3 +145,9 @@ $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.m
 $(call inherit-product, $(DEVICE_PATH)/mt6755.mk)
 
 DEVICE_BRINGUP := true
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1
