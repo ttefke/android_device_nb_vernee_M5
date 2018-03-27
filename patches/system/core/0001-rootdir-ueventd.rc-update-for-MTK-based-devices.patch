@@ -1,0 +1,34 @@
+From 2a7841bbd5a8a859cefaf3b97875c0c37ff9eaaa Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Tue, 27 Mar 2018 12:34:48 +0200
+Subject: [PATCH] rootdir/ueventd.rc: update for MTK-based devices
+
+---
+ rootdir/ueventd.rc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/rootdir/ueventd.rc b/rootdir/ueventd.rc
+index d16e02f23..6ef491c59 100644
+--- a/rootdir/ueventd.rc
++++ b/rootdir/ueventd.rc
+@@ -35,7 +35,7 @@ subsystem adf
+ /dev/dri/*                0666   root       graphics
+ 
+ # these should not be world writable
+-/dev/diag                 0660   system     qcom_diag
++/dev/diag                 0660   radio      radio
+ /dev/diag_arm9            0660   radio      radio
+ /dev/android_adb          0660   adb        adb
+ /dev/android_adb_enable   0660   adb        adb
+@@ -45,7 +45,7 @@ subsystem adf
+ /dev/alarm                0664   system     radio
+ /dev/rtc0                 0640   system     system
+ /dev/tty0                 0660   root       system
+-/dev/graphics/*           0660   system     graphics
++/dev/graphics/*           0660   root       graphics
+ /dev/msm_hw3dm            0660   system     graphics
+ /dev/input/*              0660   root       input
+ /dev/eac                  0660   root       audio
+-- 
+2.16.2
+
