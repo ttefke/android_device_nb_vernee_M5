@@ -24,13 +24,14 @@ PRODUCT_PACKAGES += \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
+    file_contexts.bin \
     fstab.mt6755 \
     init \
+    init.rc \
     init.aee.rc \
     init.common_svc.rc \
     init.connectivity.rc \
     init.environ.rc \
-    init.environ.mt6755.rc \
     init.epdg.rc \
     init.mal.rc \
     init.microtrust.rc \
@@ -38,7 +39,6 @@ PRODUCT_PACKAGES += \
     init.mt6755.rc \
     init.mt6755.usb.rc \
     init.project.rc \
-    init.rc \
     init.recovery.mt6755.rc \
     init.rilproxy.rc \
     init.usb.configfs.rc \
@@ -64,9 +64,14 @@ PRODUCT_PACKAGES += \
     ueventd \
     watchdogd
 
+# Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_PATH)/recovery/sbin/fuelgauged_static:recovery/root/sbin/fuelgauged_static
+
+# Sepolicy
+PRODUCT_PACKAGES += \
+    sepolicy
 
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging

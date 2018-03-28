@@ -39,25 +39,19 @@ $(call add-rootdir-targets, \
     init.common_svc.rc \
     init.connectivity.rc \
     init.epdg.rc \
-    init.environ.mt6755.rc \
     init.microtrust.rc \
     init.modem.rc \
     init.mt6755.rc \
     init.mt6755.usb.rc \
     init.project.rc \
     init.rilproxy.rc \
-    init.usb.configfs.rc \
-    init.usb.rc \
     init.volte.rc \
-    init.zygote32.rc \
-    init.zygote64_32.rc \
     meta_init.connectivity.rc \
     meta_init.modem.rc \
     meta_init.project.rc \
     meta_init.rc \
     multi_init.rc \
-    ueventd.mt6755.rc \
-    ueventd.rc)
+    ueventd.mt6755.rc)
 
 # atStartCit.sh
 include $(CLEAR_VARS)
