@@ -57,7 +57,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := atStartCit.sh
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := system/bin/atStartCit.sh
-LOCAL_MODULE_PATH  := $(TARGET_OUT_SYSTEM)/bin
+LOCAL_MODULE_PATH  := $(TARGET_OUT)/bin
 include $(BUILD_PREBUILT)
 
 # warning images
@@ -104,12 +104,12 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := init.mal.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := vendor/etc/init/init.mal.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_SYSTEM)/vendor/etc/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT)/vendor/etc/init
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.wod.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := vendor/etc/init/init.wod.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_SYSTEM)/vendor/etc/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT)/vendor/etc/init
 include $(BUILD_PREBUILT)
