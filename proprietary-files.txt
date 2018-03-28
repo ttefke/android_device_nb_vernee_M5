@@ -490,7 +490,7 @@ vendor/bin/fsck_msdos_mtk
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
 vendor/bin/ged_srv
-vendor/bin/geomagneticid
+vendor/bin/geomagneticd
 vendor/bin/gsm0710muxd
 vendor/bin/gsm0710muxdmd2
 vendor/bin/ifaad
@@ -512,7 +512,7 @@ vendor/bin/memsicd
 vendor/bin/memsicd3416x
 vendor/bin/memsicd3680x
 vendor/bin/meta_tst
-vendor/bin/mvf_ut
+vendor/bin/mfv_ut
 vendor/bin/mnld
 vendor/bin/mobile_log_d
 vendor/bin/MPED
@@ -531,12 +531,12 @@ vendor/bin/perf_native_test
 vendor/bin/pq
 vendor/bin/program_binary_builder
 vendor/bin/program_binary_service
-vendor/bin/qmcX893d
+vendor/bin/qmcX983d
 vendor/bin/radvd
 vendor/bin/resize_ext4
 vendor/bin/rilproxy
 vendor/bin/rs2spir
-vendor/bin/rrt
+vendor/bin/rtt
 vendor/bin/s62xd
 vendor/bin/slpd
 vendor/bin/sn
@@ -1051,8 +1051,6 @@ vendor/lib64/libhydra.so
 vendor/lib64/libimageio_plat_drv.so
 vendor/lib64/libimageio.so
 vendor/lib64/libimsma_rtp.so
-vendor/thh/
-vendor/thh/
 vendor/lib64/libimsma_socketwrapper.so
 vendor/lib64/libimsma.so
 vendor/lib64/libion_mtk.so
