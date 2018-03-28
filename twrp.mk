@@ -15,6 +15,7 @@
 
 COMMON_PATH := device/nb/vernee_M5
 
+ifneq ($(WITH_TWRP),)
 RECOVERY_VARIANT := twrp
 DEVICE_RESOLUTION := 720x1280
 DEVICE_SCREEN_WIDTH := 720
@@ -34,3 +35,4 @@ TARGET_RECOVERY_INITRC := $(COMMON_PATH)/recovery/etc/init.recovery.mt6755.rc
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_SUPERSU := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/twrp.fstab
+endif
