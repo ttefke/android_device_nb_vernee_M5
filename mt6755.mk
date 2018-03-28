@@ -26,7 +26,6 @@ PRODUCT_PACKAGES += \
     factory_init.rc \
     file_contexts.bin \
     fstab.mt6755 \
-    init \
     init.rc \
     init.aee.rc \
     init.common_svc.rc \
@@ -72,6 +71,11 @@ PRODUCT_COPY_FILES += \
 # Sepolicy
 PRODUCT_PACKAGES += \
     sepolicy
+
+# init
+PRODUCT_PACKAGES += \
+    libinit \
+    init
 
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
