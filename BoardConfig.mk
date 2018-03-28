@@ -133,6 +133,10 @@ else
 endif
 BOARD_MEDIATEK_USES_GPS := true
 
+# Recovery
+TARGET_OTA_ASSERT_DEVICE := vernee_M5
+TARGET_USERIMAGES_USE_EXT4 := true
+
 # RIL
 BOARD_RIL_CLASS := ../../../device/nb/vernee_M5/ril
 

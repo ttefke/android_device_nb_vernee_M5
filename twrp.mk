@@ -34,5 +34,3 @@ TARGET_RECOVERY_INITRC := $(COMMON_PATH)/recovery/etc/init.recovery.mt6755.rc
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_SUPERSU := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/twrp.fstab
-TARGET_OTA_ASSERT_DEVICE := vernee_M5
-TARGET_USERIMAGES_USE_EXT4 := true
