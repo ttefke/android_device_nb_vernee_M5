@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
     libinit \
     init
 
+# Health daemon
+PRODUCT_PACKAGES += \
+    healthd
+
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
