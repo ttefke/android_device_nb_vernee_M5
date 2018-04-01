@@ -16,8 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq (,$(filter vernee_M5,$(TARGET_DEVICE)))
-  include $(call all-makefiles-under,$(LOCAL_PATH))
+ifeq ($(TARGET_DEVICE),vernee_M5)
+    include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
 
 # Some modules depend on $(KERNEL_OUT)/usr
