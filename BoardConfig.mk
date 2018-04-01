@@ -21,7 +21,7 @@ endif
 COMMON_PATH := device/nb/vernee_M5
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
-TARGET_BOARD_PLATFORM ?= mt6755
+TARGET_BOARD_PLATFORM = mt6750
 
 # Architecture
 TARGET_ARCH := arm64
@@ -37,6 +37,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_HAS_LARGE_FILESYSTEM := true
 
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
 MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
@@ -44,6 +45,8 @@ MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $
 
 BOARD_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
 BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
+
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Common properties
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
@@ -57,8 +60,10 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := mt6755
 
 # Kernel
+TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE := 0x40078000
@@ -70,8 +75,6 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --board "1509963705" --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --tags_offset 0x03f88000
 
 # Partition details
-#TODO: Set correct values
-TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE :=  50331648
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
