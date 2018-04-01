@@ -1,0 +1,27 @@
+From 51682e8f1c5cf3392913b30f6a74475b09e087b9 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Sun, 1 Apr 2018 16:04:58 +0200
+Subject: [PATCH 2/3] Increase devices partitions for MTK devices
+
+Change-Id: Iddd8b47445d683335ebb8d96f5236146ad4640f6
+---
+ Disk.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Disk.cpp b/Disk.cpp
+index 940cb70..952e86f 100644
+--- a/Disk.cpp
++++ b/Disk.cpp
+@@ -589,6 +589,9 @@ void Disk::notifyEvent(int event, const std::string& value) {
+ }
+ 
+ int Disk::getMaxMinors() {
++#ifdef BOARD_HAS_MTK_HARDWARE
++    return 49;
++#endif
+     // Figure out maximum partition devices supported
+     unsigned int majorId = major(mDevice);
+     switch (majorId) {
+-- 
+2.16.2
+
