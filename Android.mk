@@ -17,13 +17,6 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),vernee_M5)
+    $(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr)
     include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
-
-# Some modules depend on $(KERNEL_OUT)/usr
-# This folder is not created when using a prebuilt kernel
-# So let's create it
-ifneq ($(TARGET_PREBUILT_KERNEL),)
-  $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr:
-	mkdir -p $@
 endif
