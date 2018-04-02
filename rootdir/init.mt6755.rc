@@ -783,7 +783,7 @@ on property:vold.decrypt=trigger_post_fs_data
     write /proc/bootprof "INIT:vold.decrypt=trigger_post_fs_data"
 
 on property:vold.decrypt=trigger_restart_min_framework
-    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_min_framework"
+#    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_min_framework"
     start nvram_daemon
     start sysenv_daemon
     start start_modem
