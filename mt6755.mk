@@ -110,6 +110,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FMRadio
 
+# FS
+PRODUCT_PACKAGES += \
+    e2fsck \
+    fsck.f2fs \
+    mkfs.f2fs \
+    make_ext4fs
+
 # GPS
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
