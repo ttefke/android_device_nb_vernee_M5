@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
+# USB
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
