@@ -92,6 +92,10 @@ endif
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio_policy.default \
+    audio.r_submix.default \
+    audio.a2dp.default \
+    audio.usb.default \
     libaudiopolicymanagerdefault \
     libtinyalsa \
     libtinycompress \
@@ -108,6 +112,7 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
+    libfmjni \
     FMRadio
 
 # FS
@@ -121,6 +126,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_PACKAGES += \
+    libcurl \
     libepos
 
 PRODUCT_COPY_FILES += \
@@ -138,6 +144,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+
+# Sensor
+PRODUCT_PACKAGES += \
+    libem_sensor_jni
 
 # USB
 PRODUCT_PACKAGES += \

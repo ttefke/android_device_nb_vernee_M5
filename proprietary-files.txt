@@ -217,11 +217,7 @@ framework/oat/arm64/wifi-service.odex
 framework/oat/arm64/wm.odex
 
 # MTK hardware
-lib/hw/audio.a2dp.default.so
 lib/hw/audio.primary.default.so
-lib/hw/audio.r_submix.default.so
-lib/hw/audio.usb.default.so
-lib/hw/audio_policy.default.so
 lib/hw/audio_policy.stub.so
 lib/hw/bluetooth.default.so
 lib/hw/camera.default.so
@@ -235,7 +231,6 @@ lib/hw/vibrator.default.so
 lib/libMTKAudioTimeStretch.so
 lib/liba3m.so
 lib/libaudio-resampler.so
-lib/libcurl.so
 lib/libdcfdecoderjni.so
 lib/libem_citsensor_jni.so
 lib/libfpdfpSensorExtension.so
@@ -252,11 +247,7 @@ lib/libmtee.so
 # 64-bit
 
 # MTK hardware
-lib64/hw/audio.a2dp.default.so
 lib64/hw/audio.primary.default.so
-lib64/hw/audio.r_submix.default.so
-lib64/hw/audio.usb.default.so
-lib64/hw/audio_policy.default.so
 lib64/hw/audio_policy.stub.so
 lib64/hw/camera.default.so
 lib64/hw/fingerprint.default.so
@@ -438,7 +429,6 @@ vendor/priv-app/CDS_INFO/oat/arm64/CDS_INFO.odex
 
 # FMRadio
 vendor/priv-app/FMRadio/FMRadio.apk
-vendor/priv-app/FMRadio/lib/arm64/libfmjni.so
 vendor/priv-app/FMRadio/oat/arm64/FMRadio.odex
 
 # ImsService
@@ -781,7 +771,6 @@ vendor/lib/libem_gpio_jni.so
 vendor/lib/libem_lte_jni.so
 vendor/lib/libem_mbim_jni.so
 vendor/lib/libem_modem_jni.so
-vendor/lib/libem_sensor_jni.so
 vendor/lib/libem_support_jni.so
 vendor/lib/libem_usb_jni.so
 vendor/lib/libem_wifi_jni.so
@@ -793,7 +782,6 @@ vendor/lib/libfeatureiodrv.so
 vendor/lib/libfgauge.so
 vendor/lib/libfile_op.so
 vendor/lib/libfmcust.so
-vendor/lib/libfmjni.so
 vendor/lib/libfusion.so
 vendor/lib/libgas.so
 vendor/lib/libged.so
@@ -1028,7 +1016,6 @@ vendor/lib64/libem_gpio_jni.so
 vendor/lib64/libem_lte_jni.so
 vendor/lib64/libem_mbim_jni.so
 vendor/lib64/libem_modem_jni.so
-vendor/lib64/libem_sensor_jni.so
 vendor/lib64/libem_support_jni.so
 vendor/lib64/libem_usb_jni.so
 vendor/lib64/libem_wifi_jni.so
@@ -1039,7 +1026,6 @@ vendor/lib64/libfeatureio.so
 vendor/lib64/libfeatureiodrv.so
 vendor/lib64/libfile_op.so
 vendor/lib64/libfmcust.so
-vendor/lib64/libfmjni.so
 vendor/lib64/libgas.so
 vendor/lib64/libged.so
 vendor/lib64/libgpu_aux.so
