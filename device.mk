@@ -110,6 +110,10 @@ $(call inherit-product, $(DEVICE_PATH)/configs/media/media.mk)
 # Internet access
 $(call inherit-product, $(DEVICE_PATH)/configs/ip/ip.mk)
 
+# legacy apache http client
+PRODUCT_COPY_FILES += \
+    prebuilts/sdk/org.apache.http.legacy/org.apache.http.legacy.jar:system/framework/org.apache.http.legacy.jar
+
 # Other configuration files
 $(call inherit-product, $(DEVICE_PATH)/configs/configs.mk)
 
