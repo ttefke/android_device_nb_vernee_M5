@@ -182,6 +182,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayouts/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
     $(LOCAL_PATH)/keylayouts/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
 
+# XML
+PRODUCT_PACKAGES += \
+    libxml2
+
 # Build proprietary bits when available
 ifneq ($(MTKPATH),)
 $(call inherit-product-if-exists, $(MTKPATH)/config/mt6755.mk)
