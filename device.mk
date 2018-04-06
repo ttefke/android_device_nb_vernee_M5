@@ -131,6 +131,10 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     fingerprintd
 
+# FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
+
 # GPS
 PRODUCT_PACKAGES += \
     YGPS
