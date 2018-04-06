@@ -185,8 +185,3 @@ PRODUCT_COPY_FILES += \
 # XML
 PRODUCT_PACKAGES += \
     libxml2
-
-# Build proprietary bits when available
-ifneq ($(MTKPATH),)
-$(call inherit-product-if-exists, $(MTKPATH)/config/mt6755.mk)
-endif

@@ -14,10 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(MTKPATH),)
--include $(MTKPATH)/BoardConfigVendor.mk
-endif
-
 COMMON_PATH := device/nb/vernee_M5
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
