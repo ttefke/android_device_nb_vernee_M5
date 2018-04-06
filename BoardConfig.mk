@@ -123,6 +123,9 @@ SMALLER_FONT_FOOTPRINT := true
 # Override renderscript driver
 OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
+# Media
+BOARD_USES_MTK_MEDIA_PROFILES := true
+
 # Mediatek support
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
