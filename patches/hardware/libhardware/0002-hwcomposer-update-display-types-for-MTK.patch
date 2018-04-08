@@ -1,0 +1,49 @@
+From 514204b579835d08267465948f198a51c89c9397 Mon Sep 17 00:00:00 2001
+From: Tobias Tefke <tobias.tefke@gmail.com>
+Date: Sun, 8 Apr 2018 18:30:13 +0200
+Subject: [PATCH 2/2] hwcomposer: update display types for MTK
+
+Change-Id: Ifa6577e80c60b7c801d243bde592dc9b7d0adf6d
+---
+ include/hardware/hwcomposer.h      | 2 +-
+ include/hardware/hwcomposer_defs.h | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/include/hardware/hwcomposer.h b/include/hardware/hwcomposer.h
+index 28877e1..4595d45 100644
+--- a/include/hardware/hwcomposer.h
++++ b/include/hardware/hwcomposer.h
+@@ -287,7 +287,7 @@ typedef struct hwc_layer_1 {
+              */
+             hwc_region_t surfaceDamage;
+ 
+-#ifdef QTI_BSP
++#if defined (QTI_BSP) || defined (MTK_HWC)
+             /* Color for Dim Layer */
+             hwc_color_t color;
+ #endif
+diff --git a/include/hardware/hwcomposer_defs.h b/include/hardware/hwcomposer_defs.h
+index dc1eceb..e32e9e6 100644
+--- a/include/hardware/hwcomposer_defs.h
++++ b/include/hardware/hwcomposer_defs.h
+@@ -254,7 +254,7 @@ enum {
+ enum {
+     HWC_DISPLAY_PRIMARY     = 0,
+     HWC_DISPLAY_EXTERNAL    = 1,    // HDMI, DP, etc.
+-#ifdef QTI_BSP
++#if defined(QTI_BSP) || defined (MTK_HWC)
+     HWC_DISPLAY_TERTIARY    = 2,
+     HWC_DISPLAY_VIRTUAL     = 3,
+ 
+@@ -271,7 +271,7 @@ enum {
+ enum {
+     HWC_DISPLAY_PRIMARY_BIT     = 1 << HWC_DISPLAY_PRIMARY,
+     HWC_DISPLAY_EXTERNAL_BIT    = 1 << HWC_DISPLAY_EXTERNAL,
+-#ifdef QTI_BSP
++#if defined (QTI_BSP) || defined (MTK_HWC)
+     HWC_DISPLAY_TERTIARY_BIT    = 1 << HWC_DISPLAY_TERTIARY,
+ #endif
+     HWC_DISPLAY_VIRTUAL_BIT     = 1 << HWC_DISPLAY_VIRTUAL,
+-- 
+2.16.3
+
