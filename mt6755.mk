@@ -185,3 +185,7 @@ PRODUCT_COPY_FILES += \
 # XML
 PRODUCT_PACKAGES += \
     libxml2
+
+# Logging
+PRODUCT_PACKAGES += \
+    liblogwrap
