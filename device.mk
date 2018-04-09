@@ -158,5 +158,4 @@ $(call inherit-product, $(DEVICE_PATH)/mt6755.mk)
 
 # Device bringup
 PRODUCT_PACKAGES += \
-    busybox \
     su
