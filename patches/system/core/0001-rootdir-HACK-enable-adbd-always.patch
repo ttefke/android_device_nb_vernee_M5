@@ -1,0 +1,25 @@
+From a0df92f8801f9b69b12b91f6e3b02eaceef7b8f2 Mon Sep 17 00:00:00 2001
+From: Wang Xuerui <idontknw.wang@gmail.com>
+Date: Fri, 30 Sep 2016 21:01:05 +0800
+Subject: [PATCH 1/2] rootdir: HACK enable adbd always
+
+Change-Id: I16a01bd85f9daabeb3bc2b9342c081372a3e7b67
+---
+ liblog/logger_write.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/liblog/logger_write.c b/liblog/logger_write.c
+index c7b5a8415..6184e045b 100644
+--- a/liblog/logger_write.c
++++ b/liblog/logger_write.c
+@@ -401,6 +401,7 @@ LIBLOG_ABI_PUBLIC int __android_log_buf_write(int bufID, int prio,
+         !strncmp(tag, "IMS", 3) || /* Any log tag with "IMS" as the prefix */
+         !strcmp(tag, "AT") ||
+         !strcmp(tag, "GSM") ||
++        !strcmp(tag, "ccci_fsd") ||
+         !strcmp(tag, "STK") ||
+         !strcmp(tag, "CDMA") ||
+         !strcmp(tag, "PHONE") ||
+-- 
+2.16.3
+
