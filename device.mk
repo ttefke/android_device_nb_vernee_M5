@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_program_binary_builder
+
 # Telephony
 SIM_COUNT := 2
 PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
