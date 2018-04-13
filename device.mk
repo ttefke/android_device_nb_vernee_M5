@@ -145,7 +145,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_program_binary_builder
+    libshim_program_binary_builder \
+    libshim_vtservice
 
 # Telephony
 SIM_COUNT := 2
