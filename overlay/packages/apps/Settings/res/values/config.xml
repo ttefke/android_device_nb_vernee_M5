@@ -18,4 +18,8 @@
     <!-- This is used to determine whether to hide the
          preferred application install location settings-->
     <bool name="config_hide_app_install_location" translatable="false">false</bool>
+    <!-- Config voice over lte in wireless settings begin -->
+    <bool name="config_voice_over_lte_enabled">true</bool>
+    <!-- When true enable gesture setting. -->
+    <bool name="config_gesture_settings_enabled">true</bool>
 </resources>
