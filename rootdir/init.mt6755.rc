@@ -27,7 +27,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/vendor/bin/program_binary_builder|libshim_program_binary_builder.so:/system/vendor/bin/vtservice|libshim_vtservice.so"
+    export LD_SHIM_LIBS "/system/vendor/lib/libgui_ext.so|libshim_libgui_ext.so:/system/vendor/lib64/libgui_ext.so|libshim_libgui_ext.so:/system/vendor/bin/program_binary_builder|libshim_program_binary_builder.so:/system/vendor/bin/vtservice|libshim_vtservice.so"
     # Load persistent dm-verity state
     verity_load_state
 

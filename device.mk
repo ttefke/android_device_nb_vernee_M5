@@ -145,6 +145,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_libgui_ext \
     libshim_program_binary_builder \
     libshim_vtservice
 
