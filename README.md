@@ -1,3 +1,10 @@
+# !WARNING!
+
+## This is a development snapshot (work in progress).
+## This means that many features are not working as intended or not working at all.
+## Only use this if you know what you are doing! You have been warned!
+
+
 Device configuration for Vernee M5 (vernee_M5)
 ===========================================
 
