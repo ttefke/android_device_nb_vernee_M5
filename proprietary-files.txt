@@ -19,9 +19,6 @@ etc/runningbooster/platform_list.txt
 etc/trustzone.bin
 
 # Some stuff we just take for experimental purposes
-etc/preferred-apps/google.xml
-etc/sysconfig/google.xml
-media/shutanimation.zip
 media/video/edge.png
 media/video/edge720p.png
 media/video/gen30.mp4
@@ -86,135 +83,24 @@ usr/srec/en-US/word_confidence_classifier
 usr/srec/en-US/wordlist.syms
 
 # Frameworks
-framework/com.google.android.maps.jar
-framework/com.google.android.media.effects.jar
 framework/mediatek-common.jar
 framework/mediatek-feature-runningbooster.jar
 framework/mediatek-framework.jar
 framework/mediatek-telephony-common.jar
-framework/arm/boot-apache-xml.art
-framework/arm/boot-apache-xml.oat
-framework/arm/boot-bouncycastle.art
-framework/arm/boot-bouncycastle.oat
-framework/arm/boot-conscrypt.art
-framework/arm/boot-conscrypt.oat
-framework/arm/boot-core-junit.art
-framework/arm/boot-core-junit.oat
-framework/arm/boot-core-libart.art
-framework/arm/boot-core-libart.oat
-framework/arm/boot-ext.art
-framework/arm/boot-ext.oat
-framework/arm/boot-framework.art
-framework/arm/boot-framework.oat
-framework/arm/boot-ims-common.art
-framework/arm/boot-ims-common.oat
 framework/arm/boot-mediatek-common.art
 framework/arm/boot-mediatek-common.oat
 framework/arm/boot-mediatek-framework.art
 framework/arm/boot-mediatek-framework.oat
 framework/arm/boot-mediatek-telephony-common.art
 framework/arm/boot-mediatek-telephony-common.oat
-framework/arm/boot-okhttp.art
-framework/arm/boot-okhttp.oat
-framework/arm/boot-org.apache.http.legacy.boot.art
-framework/arm/boot-org.apache.http.legacy.boot.oat
-framework/arm/boot-telephony-common.art
-framework/arm/boot-telephony-common.oat
-framework/arm/boot-voip-common.art
-framework/arm/boot-voip-common.oat
-framework/arm/boot.art
-framework/arm/boot.oat
-framework/arm64/boot-apache-xml.art
-framework/arm64/boot-apache-xml.oat
-framework/arm64/boot-bouncycastle.art
-framework/arm64/boot-bouncycastle.oat
-framework/arm64/boot-conscrypt.art
-framework/arm64/boot-conscrypt.oat
-framework/arm64/boot-core-junit.art
-framework/arm64/boot-core-junit.oat
-framework/arm64/boot-core-libart.art
-framework/arm64/boot-core-libart.oat
-framework/arm64/boot-ext.art
-framework/arm64/boot-ext.oat
-framework/arm64/boot-framework.art
-framework/arm64/boot-framework.oat
-framework/arm64/boot-ims-common.art
-framework/arm64/boot-ims-common.oat
 framework/arm64/boot-mediatek-common.art
 framework/arm64/boot-mediatek-common.oat
 framework/arm64/boot-mediatek-framework.art
 framework/arm64/boot-mediatek-framework.oat
 framework/arm64/boot-mediatek-telephony-common.art
 framework/arm64/boot-mediatek-telephony-common.oat
-framework/arm64/boot-okhttp.art
-framework/arm64/boot-okhttp.oat
-framework/arm64/boot-org.apache.http.legacy.boot.art
-framework/arm64/boot-org.apache.http.legacy.boot.oat
-framework/arm64/boot-telephony-common.art
-framework/arm64/boot-telephony-common.oat
-framework/arm64/boot-voip-common.art
-framework/arm64/boot-voip-common.oat
-framework/arm64/boot.art
-framework/arm64/boot.oat
-framework/oat/arm/am.odex
-framework/oat/arm/android.test.runner.odex
-framework/oat/arm/appwidget.odex
-framework/oat/arm/bmgr.odex
-framework/oat/arm/bu.odex
-framework/oat/arm/com.android.future.usb.accessory.odex
-framework/oat/arm/com.android.location.provider.odex
-framework/oat/arm/com.android.media.remotedisplay.odex
-framework/oat/arm/com.android.mediadrm.signer.odex
-framework/oat/arm/com.google.android.maps.odex
-framework/oat/arm/com.google.android.media.effects.odex
-framework/oat/arm/content.odex
-framework/oat/arm/dpm.odex
-framework/oat/arm/hid.odex
-framework/oat/arm/ime.odex
-framework/oat/arm/input.odex
-framework/oat/arm/javax.obex.odex
-framework/oat/arm/media_cmd.odex
 framework/oat/arm/mediatek-feature-runningbooster.odex
-framework/oat/arm/monkey.odex
-framework/oat/arm/pm.odex
-framework/oat/arm/requestsync.odex
-framework/oat/arm/settings.odex
-framework/oat/arm/sm.odex
-framework/oat/arm/svc.odex
-framework/oat/arm/telecom.odex
-framework/oat/arm/uiautomator.odex
-framework/oat/arm/wm.odex
-framework/oat/arm64/am.odex
-framework/oat/arm64/android.test.runner.odex
-framework/oat/arm64/appwidget.odex
-framework/oat/arm64/bmgr.odex
-framework/oat/arm64/bu.odex
-framework/oat/arm64/com.android.future.usb.accessory.odex
-framework/oat/arm64/com.android.location.provider.odex
-framework/oat/arm64/com.android.media.remotedisplay.odex
-framework/oat/arm64/com.android.mediadrm.signer.odex
-framework/oat/arm64/com.google.android.maps.odex
-framework/oat/arm64/com.google.android.media.effects.odex
-framework/oat/arm64/content.odex
-framework/oat/arm64/dpm.odex
-framework/oat/arm64/ethernet-service.odex
-framework/oat/arm64/hid.odex
-framework/oat/arm64/ime.odex
-framework/oat/arm64/input.odex
-framework/oat/arm64/javax.obex.odex
-framework/oat/arm64/media_cmd.odex
 framework/oat/arm64/mediatek-feature-runningbooster.odex
-framework/oat/arm64/monkey.odex
-framework/oat/arm64/pm.odex
-framework/oat/arm64/requestsync.odex
-framework/oat/arm64/services.odex
-framework/oat/arm64/settings.odex
-framework/oat/arm64/sm.odex
-framework/oat/arm64/svc.odex
-framework/oat/arm64/telecom.odex
-framework/oat/arm64/uiautomator.odex
-framework/oat/arm64/wifi-service.odex
-framework/oat/arm64/wm.odex
 
 # MTK hardware
 lib/hw/audio.primary.default.so
@@ -265,7 +151,6 @@ lib64/liba3m.so
 lib64/libaudio-resampler.so
 lib64/libdefcontainer_jni.so
 lib64/libem_citsensor_jni.so
-lib64/libfilterpack_facedetect.so
 lib64/libfpdfpSensorExtension.so
 lib64/libfs_mgr.so
 lib64/libfti2cjni.so
@@ -285,23 +170,9 @@ lib64/libyv12util.so
 
 # System apps
 
-# ApplicationsProvider
-app/ApplicationsProvider/ApplicationsProvider.apk
-app/ApplicationsProvider/oat/arm64/ApplicationsProvider.odex
-
 # CITTest
 app/CITTest/CITTest.apk
 app/CITTest/oat/arm64/CITTest.odex
-
-# DuraSpeed
-app/DuraSpeed/DuraSpeed.apk
-app/DuraSpeed/oat/arm64/DuraSpeed.odex
-
-# FaceLock
-app/FaceLock/FaceLock.apk
-app/FaceLock/lib/arm64/libfacenet.so
-app/FaceLock/lib/arm64/libfrsdk.so
-app/FaceLock/oat/arm64/FaceLock.odex
 
 # GFManager
 app/GFManager/GFManager.apk
@@ -319,16 +190,9 @@ app/fpExtensionService/oat/arm64/fpExtensionService.odex
 priv-app/CIT/CIT.apk
 priv-app/CIT/oat/arm64/CIT.odex
 
-# ConfigUpdater
-priv-app/ConfigUpdater/ConfigUpdater.apk
-priv-app/ConfigUpdater/oat/arm64/ConfigUpdater.odex
-
 # Device info
 priv-app/DeviceInfo/DeviceInfo.apk
 priv-app/DeviceInfo/oat/arm64/DeviceInfo.odex
-
-# GmsCore
-priv-app/GmsCore/GmsCore.apk
 
 # NbAgingTest
 priv-app/NbAgingTest/NbAgingTest.apk
@@ -363,10 +227,6 @@ vendor/app/BtTool/oat/arm64/BtTool.odex
 vendor/app/CalendarImporter/CalendarImporter.apk
 vendor/app/CalendarImporter/oat/arm64/CalendarImporter.odex
 
-# MTK Camera
-vendor/app/Camera/Camera.apk
-vendor/app/Camera/oat/arm64/Camera.odex
-
 # DrmProvider
 vendor/app/DrmProvider/DrmProvider.apk
 vendor/app/DrmProvider/oat/arm64/DrmProvider.odex
@@ -374,14 +234,6 @@ vendor/app/DrmProvider/oat/arm64/DrmProvider.odex
 # EngineerMode
 vendor/app/EngineerMode/EngineerMode.apk
 vendor/app/EngineerMode/oat/arm64/EngineerMode.odex
-
-# FileManager
-vendor/app/FileManager/FileManager.apk
-vendor/app/FileManager/oat/arm64/FileManager.odex
-
-# Gba
-vendor/app/Gba/Gba.apk
-vendor/app/Gba/oat/arm64/Gba.odex
 
 # LocationEM2
 vendor/app/LocationEM2/LocationEM2.apk
@@ -1158,3 +1010,12 @@ vendor/thh/uTAgent
 # DHCP keys
 vendor/etc/wide-dhcpv6/dhcp6cctlkey
 vendor/etc/wide-dhcpv6/dhcp6sctlkey
+
+# Thermal configuration
+vendor/.tp/.ht120.mtc
+vendor/.tp/.thermal_meta.conf
+vendor/.tp/.thermal_policy_00
+vendor/.tp/.thermal_policy_01
+vendor/.tp/.thermal_policy_02
+vendor/.tp/thermal.conf
+vendor/.tp/thermal.off.conf
