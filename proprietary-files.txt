@@ -105,7 +105,6 @@ framework/oat/arm64/mediatek-feature-runningbooster.odex
 # MTK hardware
 lib/hw/audio.primary.default.so
 lib/hw/audio_policy.stub.so
-lib/hw/bluetooth.default.so
 lib/hw/camera.default.so
 lib/hw/gatekeeper.mt6750.so
 lib/hw/gralloc.default.so
