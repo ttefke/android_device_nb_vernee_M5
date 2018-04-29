@@ -151,4 +151,6 @@
         <item>SUPL_VER=0x10000</item>
         <item>SUPL_MODE=1</item>
     </string-array>
+
+    <bool name="single_hand_mode">false</bool>
 </resources>
