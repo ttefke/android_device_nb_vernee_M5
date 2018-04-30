@@ -1393,10 +1393,9 @@ on property:ro.build.type=user
 on property:ro.build.type=userdebug
     start emsvr_user
 
-# ONTIM<qiwenquan><mantis:NA><2016-10-17><CIT GSensorCali> begin
 on property:ontim.cit.gsensor.cali=1
     write  /sys/ontim_dev_debug/gsensor/gsensor_cali 1
-# ONTIM<qiwenquan><mantis:NA><2016-10-17><CIT GSensorCali> end
+
 service emsvr_user /vendor/bin/em_svr
     disabled
     user system
@@ -1419,13 +1418,7 @@ service shutdown /system/bin/shutdown
 service NvRAMAgent /vendor/bin/nvram_agent_binder
     class main
     user system
-#<ONTIM><xuhaifeng><2017-03-03><NA><add to net_bt_stack group to enable read by APK> begin
-#    group system net_bt_stack
-#<ONTIM><xuhaifeng><2017-03-03><NA><add to net_bt_stack group to enable read by APK> end
-
-#<ONTIM><xiaona><2017-08-03><NA><add to bluetooth net_bt_stack group to enable read by APK> begin
     group system net_bt_stack bluetooth
-#<ONTIM><xiaona><2017-08-03><NA><add to bluetooth net_bt_stack group to enable read by APK> end
 
 service thermalloadalgod /vendor/bin/thermalloadalgod
     class main
@@ -1657,19 +1650,15 @@ service osi /system/bin/osi
     oneshot
     seclabel u:r:osi:s0
 
-#ONTIM<liben><NA><2016.08.16><When Runin test for charging,Synchronize the modification with the driver for Cairo4G> begin
 on property:debug.runin.battery=1
    write  /sys/bus/platform/devices/battery/charging_onoff_ctrl 1
 on property:debug.runin.battery=2
    write  /sys/bus/platform/devices/battery/charging_onoff_ctrl 0
-#ONTIM<liben><NA><2016.08.16><When Runin test for charging,Synchronize the modification with the driver for Cairo4G> end
 
-#ONTIM<zhangguang><NA><2016-12-14><add sensorAPKTest Cairo4G> begin
 on property:ontim.sensor.test.send=1
     write /sys/bus/platform/drivers/als_ps/lsample ${ontim.sensor.test.apk}
-	 setprop ontim.sensor.test.send 0
-#ONTIM<zhangguang><NA><2016-12-14><add sensorAPKTest Cairo4G> end
-#ONTIM<qiwenquan><NA><2016-09-05><add AutoCit to Cairo4G> begin
+    setprop ontim.sensor.test.send 0
+
 on property:debug.autocit.running=1
     start atstartcit
     
@@ -1680,18 +1669,16 @@ service atstartcit /system/bin/sh /system/bin/atStartCit.sh
     group root
     oneshot
     seclabel u:r:shell:s0
-#ONTIM<qiwenquan><NA><2016-09-05><add AutoCit to Cairo4G> end
-#ONTIM<qiwenquan><NA><2017-7-26><add TPTest for CIT begin
+
 on property:debug.synaptics.test=1
     chmod 0666  /dev/rmi0
     
 on property:debug.synaptics.test=0
     chmod 0600  /dev/rmi0
-#ONTIM<qiwenquan><NA><2017-7-26><add TPTest for CIT> end
-#ONTIM<qiwenquan><NA><2016-12-29><modify mstar  TP Test for CIT begin
+
 on property:ontim.cit.tp2=1
     chmod 0666  /proc/class/ms-touchscreen-msg20xx/device/test
     
 on property:ontim.cit.tp2=2
     chmod 0664  /proc/class/ms-touchscreen-msg20xx/device/test
-#ONTIM<qiwenquan><NA><2016-12-29><modify mstar  TP Test for CIT> end
+
