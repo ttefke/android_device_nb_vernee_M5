@@ -126,11 +126,6 @@ PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprintd
-
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap

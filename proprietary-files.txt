@@ -2,6 +2,7 @@
 # binaries from bin
 bin/badblocks
 bin/fp_ca
+bin/fingerprintd
 bin/goodixfingerprintd
 bin/gzip_static
 bin/make_f2fs
