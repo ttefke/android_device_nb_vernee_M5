@@ -251,10 +251,6 @@ vendor/app/MTKLogger/oat/arm64/MTKLogger.odex
 vendor/app/MTKThermalManager/MTKThermalManager.apk
 vendor/app/MTKThermalManager/oat/arm64/MTKThermalManager.odex
 
-# MiraVision
-vendor/app/MiraVision/MiraVision.apk
-vendor/app/MiraVision/oat/arm64/MiraVision.odex
-
 # Omacp
 vendor/app/Omacp/Omacp.apk
 vendor/app/Omacp/oat/arm64/Omacp.odex
@@ -521,7 +517,6 @@ vendor/lib/libDR.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libJpgDecPipe.so
 vendor/lib/libJpgEncPipe.so
-vendor/lib/libMiraVision_jni.so
 vendor/lib/libMtkOmxAdpcmDec.so
 vendor/lib/libMtkOmxAdpcmEnc.so
 vendor/lib/libMtkOmxApeDec.so
@@ -913,7 +908,6 @@ vendor/lib64/libmemoryDumpEncoder.so
 vendor/lib64/libmemorydumper.so
 vendor/lib64/libmhalImageCodec.so
 vendor/lib64/libminiui.so
-vendor/lib64/libMiraVision_jni.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libmrdump.so
