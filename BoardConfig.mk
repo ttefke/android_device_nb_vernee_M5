@@ -132,14 +132,6 @@ BOARD_USES_MTK_HARDWARE := true
 MTK_HARDWARE := true
 MTK_SEPOLICY := true
 
-# GPS
-ifeq ($(MTK_GPS_SUPPORT), yes)
-    BOARD_GPS_LIBRARIES := true
-else
-    BOARD_GPS_LIBRARIES := false
-endif
-BOARD_MEDIATEK_USES_GPS := true
-
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := vernee_M5
 TARGET_USERIMAGES_USE_EXT4 := true
