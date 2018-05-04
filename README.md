@@ -37,3 +37,27 @@ USB | micro 2.0
 Audio  | 3.5mm jack, MP3/ACC/AAC/WAV/AMR
 Release Date | 01.09.2017
 
+
+Building LineageOS for Vernee M5
+===========================================
+
+1. Add this repository to your roomservice.xml
+
+2. Extract proprietary blobs using the extract-files.sh script
+
+3. Apply the patches using the patches/install.sh script. Call this script from Lineage root.
+
+
+Install LineageOS with TWRP
+===========================================
+
+0. [Install TWRP](https://forum.xda-developers.com/android/development/recovery-vernee-m5-t3769597/post76036919#post76036919)
+
+1. Format userdata partition using fastboot (we can not decrypt data for now).
+
+2. Directly boot into TWRP (hold volume up + power keys after formatting userdata)
+
+3. Flash the zip
+
+4. Resize data partition to correct its size (TWRP: Wipe -> Advanced Wipe -> 
+Select data partition -> Repair or change file system -> Resize file system)
