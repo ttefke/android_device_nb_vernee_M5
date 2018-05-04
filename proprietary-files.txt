@@ -12,10 +12,6 @@ bin/pppd_dt
 etc/firmware/MC3451_V0x0A_FW.bin
 etc/firmware/gt9xx_fw.bin
 
-# Runningbooster settings
-etc/permissions/com.mediatek.runningbooster.xml
-etc/runningbooster/platform_list.txt
-
 # Other proprietary stuff
 etc/trustzone.bin
 
@@ -85,7 +81,6 @@ usr/srec/en-US/wordlist.syms
 
 # Frameworks
 framework/mediatek-common.jar
-framework/mediatek-feature-runningbooster.jar
 framework/mediatek-framework.jar
 framework/mediatek-telephony-common.jar
 framework/arm/boot-mediatek-common.art
@@ -100,8 +95,6 @@ framework/arm64/boot-mediatek-framework.art
 framework/arm64/boot-mediatek-framework.oat
 framework/arm64/boot-mediatek-telephony-common.art
 framework/arm64/boot-mediatek-telephony-common.oat
-framework/oat/arm/mediatek-feature-runningbooster.odex
-framework/oat/arm64/mediatek-feature-runningbooster.odex
 
 # MTK hardware
 lib/hw/audio.primary.default.so
