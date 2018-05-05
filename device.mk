@@ -123,10 +123,6 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     FlipFlap
 
-# GPS
-PRODUCT_PACKAGES += \
-    YGPS
-
 # Snap
 PRODUCT_PACKAGES += \
     Snap

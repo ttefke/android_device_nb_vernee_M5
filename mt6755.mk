@@ -126,8 +126,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_PACKAGES += \
-    libcurl \
-    libepos
+    libcurl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
