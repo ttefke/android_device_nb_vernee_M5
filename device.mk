@@ -85,15 +85,8 @@ PRODUCT_COPY_FILES += \
 # default.prop overrides
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.all_log=0 \
-    ro.adb.secure=1 \
-    ro.oem_unlock_supported=1 \
-    persist.service.acm.enable=0 \
-    ro.secure=1 \
-    ro.debuggable=0 \
     persist.sys.usb.config=mtp \
-    ro.mount.fs=EXT4 \
-    camera.disable_zsl_mode=1 \
-    ro.bootimage.build.fingerprint=vernee/vernee_M5/vernee_M5:7.0/vernee_M5/C0011061821:user/release-keys
+    camera.disable_zsl_mode=1
 
 # Audio
 $(call inherit-product, $(DEVICE_PATH)/configs/audio/audio_param/audio.mk)
