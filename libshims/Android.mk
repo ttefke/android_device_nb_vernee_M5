@@ -18,7 +18,6 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libgui_ext.cpp
 LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
 LOCAL_MODULE := libshim_libgui_ext
-LOCAL_CLANG := false
 LOCAL_C_INCLUDES += system-core
 LOCAL_CXX_STL := none
 LOCAL_SANITIZE := never
@@ -30,7 +29,6 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := program_binary_builder.cpp
 LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
 LOCAL_MODULE := libshim_program_binary_builder
-LOCAL_CLANG := false
 LOCAL_CXX_STL := none
 LOCAL_SANITIZE := never
 LOCAL_MODULE_TAGS := optional
@@ -41,7 +39,6 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := vtservice.cpp
 LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
 LOCAL_MODULE := libshim_vtservice
-LOCAL_CLANG := false
 LOCAL_CXX_STL := none
 LOCAL_SANITIZE := never
 LOCAL_MODULE_TAGS := optional
