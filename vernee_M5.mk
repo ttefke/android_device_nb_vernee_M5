@@ -303,6 +303,9 @@ $(call inherit-product, $(DEVICE_PATH)/configs/configs.mk)
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 
+# HIDL
+$(call inherit-product, $(DEVICE_PATH)/hidl.mk)
+
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
