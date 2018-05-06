@@ -324,7 +324,7 @@ $(call inherit-product, $(DEVICE_PATH)/hidl.mk)
 
 ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
-ADDITIONAL_DEFAULT_PROPERTIES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     ro.secure=0 \
