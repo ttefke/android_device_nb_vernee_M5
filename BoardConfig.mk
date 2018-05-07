@@ -101,12 +101,6 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
 
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-		WITH_DEXPREOPT ?= true
-  endif
-endif
-
 # Display
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
