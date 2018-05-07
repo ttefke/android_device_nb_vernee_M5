@@ -101,9 +101,8 @@ BOARD_CONNECTIVITY_MODULE := conn_soc
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
+# LineageHW
+BOARD_HARDWARE_CLASS += $(COMMON_PATH)/lineagehw
 
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
