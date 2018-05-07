@@ -190,7 +190,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudiopolicymanagerdefault \
     libtinyalsa \
-    libtinycompress \
     libtinymix \
     libtinyxml \
 
