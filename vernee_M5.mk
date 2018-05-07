@@ -259,13 +259,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-ifneq ($(TARGET_BUILD_VARIANT), user)
 # Mediatek logging service
 PRODUCT_PACKAGES += \
     mobile_log_d \
     netdiag \
     tcpdump
-endif
 
 # Key Layouts
 PRODUCT_COPY_FILES += \
@@ -321,11 +319,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # HIDL
 $(call inherit-product, $(DEVICE_PATH)/hidl.mk)
 
-ifneq ($(TARGET_BUILD_VARIANT), user)
 # ADB Debugging
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     ro.secure=0 \
     persist.service.adb.enable=1
-endif
