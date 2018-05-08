@@ -17,7 +17,6 @@ on post-fs-data
 # Connectivity related device nodes & configuration (end)
 #
 
-
 on boot
 
 #
@@ -33,23 +32,11 @@ service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/
     user system
     group system
 
-# GPS
-#service mnld /vendor/bin/mnld
-#    class main
-#    user gps
-#    group gps inet misc sdcard_rw sdcard_r media_rw system radio
-#    socket mnld stream 660 gps system
-
 service MPED /vendor/bin/MPED
     class main
     user gps
     group gps inet misc sdcard_rw sdcard_r media_rw system
     socket MPED stream 660 gps system
-
-#service BGW /vendor/bin/BGW
-#    user system
-#    group gps system radio
-#    class main
 
 #
 # Connectivity related services (End)

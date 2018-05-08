@@ -399,8 +399,6 @@ on post-fs-data
     chmod 0440 /dev/devmap
     chown root system /dev/devmap
 
-
-
     #change partition permission
     exec /vendor/etc/partition_permission.sh
     
@@ -428,16 +426,9 @@ on post-fs-data
     mkdir /data/nvram/md2 0770 root system
     mkdir /data/nvram/md3  0770 root system
     mkdir /data/md3	0770 root system
-#  Build-in Modified - S
-#    insmod /vendor/lib/modules/ccci_plat.ko
-#    insmod /vendor/lib/modules/ccci.ko
-#  Build-in Modified - E
-#   chown ccci ccci /sys/class/BOOT/BOOT/boot/md
     chown radio radio /sys/kernel/ccci/boot
 
     # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/M4U_device
     
     #set mlock limit to infinate (for m4u operation)
@@ -452,7 +443,6 @@ on post-fs-data
 
     #VideoCodec
     chmod 0666 /dev/Vcodec
-
 
     mkdir /data/amit/
 
@@ -654,18 +644,6 @@ service factory_no_image /vendor/bin/factory
 service mobile_log_d /vendor/bin/mobile_log_d
 	class main
 
-#service hald /vendor/bin/hald
-#    class main
-#    socket hald stream 0660 root system
-    
-#service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant
-#    group wifi
-#    disabled
-#    oneshot    
-#
-# Connectivity related services (End)
-#
-#
 ## Custom service area (END)
 
 

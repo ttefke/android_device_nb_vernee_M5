@@ -12,22 +12,10 @@ service akmd8963 /system/bin/akmd8963
 
 
 on post-fs
-
-
-    
- 		
- 
-    
-
-
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
 on boot
-
-
-
-
 
 service spm_script /vendor/bin/spm_loader
     user root

@@ -23,11 +23,6 @@ on post-fs-data
     mkdir /data/nvram/md  0770 root system
     mkdir /data/nvram/md3  0770 root system
     mkdir /data/md3	0770 root system
-#  Build-in Modified - S
-#    insmod /vendor/lib/modules/ccci_plat.ko
-#    insmod /vendor/lib/modules/ccci.ko
-#  Build-in Modified - E
-#   chown radio radio /sys/class/BOOT/BOOT/boot/md
     chown radio radio /sys/kernel/ccci/boot
 
 #SeLinux

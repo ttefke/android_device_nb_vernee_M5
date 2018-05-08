@@ -78,11 +78,6 @@ service MPED /vendor/bin/MPED
     group gps inet misc sdcard_rw sdcard_r media_rw system
     socket MPED stream 660 gps system
 
-#service BGW /vendor/bin/BGW
-#    user system
-#    group gps system radio
-#    class main
-
 # Wlan
 service wifi2agps /vendor/bin/wifi2agps
     class main
