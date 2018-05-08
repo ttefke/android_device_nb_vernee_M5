@@ -148,6 +148,13 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 # SELinux
 BOARD_SECCOMP_POLICY := $(COMMON_PATH)/seccomp
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libgui_ext.so|libshim_libgui_ext.so \
+    /system/vendor/lib64/libgui_ext.so|libshim_libgui_ext.so \
+    /system/vendor/bin/program_binary_builder|libshim_program_binary_builder.so \
+    /system/vendor/bin/vtservice|libshim_vtservice.so
+
 # Wireless
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_DRIVER := NL80211
