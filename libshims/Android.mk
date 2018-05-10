@@ -44,3 +44,41 @@ LOCAL_SANITIZE := never
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    camera_shim.cpp
+
+LOCAL_SHARED_LIBRARIES := \
+    libui \
+    libbase \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0 \
+    libgui
+
+LOCAL_MODULE := libshim_camera
+LOCAL_MODULE_TAGS := optional
+LOCAL_MULTILIB := 32
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := vtmal.cpp
+LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
+LOCAL_MODULE := libshim_vtmal
+LOCAL_CXX_STL := none
+LOCAL_SANITIZE := never
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := sensorlistener.cpp
+LOCAL_SHARED_LIBRARIES := libbinder libutils libcutils
+LOCAL_MODULE := libshim_sensorlistener
+LOCAL_CXX_STL := none
+LOCAL_SANITIZE := never
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)

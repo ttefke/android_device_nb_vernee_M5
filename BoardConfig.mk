@@ -153,6 +153,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libgui_ext.so|libshim_libgui_ext.so \
     /system/vendor/lib64/libgui_ext.so|libshim_libgui_ext.so \
     /system/vendor/bin/program_binary_builder|libshim_program_binary_builder.so \
+    /system/vendor/lib/libshowlogo.so|libshim_camera.so \
+    /system/vendor/lib/libvtmal.so|libshim_vtmal.so \
+    /system/vendor/lib/libmpe.sensorlistener.so|libshim_sensorlistener \
     /system/vendor/bin/vtservice|libshim_vtservice.so
 
 # Wireless
