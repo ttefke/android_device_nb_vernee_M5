@@ -1,10 +1,3 @@
-#
-# Rilproxy related services (Begin)
-#
-
-#
-# Rilproxy used to control ril request/urc/response for gsm rild and c2k rild
-#
 service ril-proxy /vendor/bin/rilproxy -l mtk-rilproxy.so
     class core
     socket rild stream 660 root radio
@@ -50,8 +43,3 @@ service ril-daemon-mtk /vendor/bin/mtkrild
 
 on property:ril.rilproxy=1
     start ril-proxy
-
-
-#
-# Rilproxy related services (End)
-#

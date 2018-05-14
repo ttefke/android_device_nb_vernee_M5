@@ -1,7 +1,3 @@
-#
-# MAL related services (Begin)
-#
-
 on property:ril.mal=0
     stop mal-daemon
     stop md-daemon
@@ -43,7 +39,3 @@ service imsm-daemon /vendor/bin/volte_imsm_md
     group radio cache inet misc log system wifi
     oneshot
     disabled
-
-#
-# MAL related services (End)
-#

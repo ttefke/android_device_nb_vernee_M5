@@ -16,7 +16,6 @@ on fs
     chown keystore shell /dev/ut_keymaster
     chmod 0660 /dev/ut_keymaster
 
-
     write /proc/bootprof "start teei_daemon (on fs)"
     start teei_daemon
     write /proc/bootprof "start teei_daemon end (on fs)"
@@ -66,13 +65,11 @@ on post-fs-data
     setprop soter.encrypt.state OK
     write /proc/bootprof "start teei cfg end (on restorecon-thh)"
 
-# teei service daemon
 service teei_daemon /system/vendor/bin/teei_daemon
     class core
     user system
     group system
     disabled
-   # oneshot
 
 on property:soter.teei.init=INIT_OK
      start init_thh_service
@@ -87,10 +84,8 @@ service init_thh_service /system/vendor/bin/init_thh startload
     disabled
     oneshot
 
-# ifaa daemon
 service ifaad /system/bin/ifaad
     class core
     user system
     group system
     disabled
-#    oneshot

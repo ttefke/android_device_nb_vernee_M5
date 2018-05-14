@@ -11,5 +11,3 @@ service epdg_wod /vendor/bin/epdg_wod
 
     user root
     group root system log inet radio net_admin
-#    disabled
-

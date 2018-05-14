@@ -44,14 +44,12 @@ on post-fs-data
     chmod 660 /dev/ttyGS1
     chown system /dev/ttyGS1
 
-#add by liliang.bao
     chmod 0666 /sys/tp/isKeyRevert
     chmod 0666 /sys/tp/isNavBarEnable
     chmod 0666 /sys/tp/isKeyDisEnable
     chown system system /sys/tp/isKeyRevert
     chown system system /sys/tp/isNavBarEnable
     chown system system /sys/tp/isKeyDisEnable
-#add by cz
     chmod 0666 /sys/tp/SMWP
     chmod 0666 /sys/tp/GESTURE
     chown system system /sys/tp/SMWP
@@ -62,13 +60,13 @@ service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/
     class late_start
     disabled
 
-
 service atci_service /system/bin/atci_service
 	socket atci-service stream 660 radio system
 	socket atci-serv-fw stream 660 radio system
 	user root
-        disabled
+    disabled
 	group radio system
+
 service atcid-daemon-u /system/bin/atcid
 	user system
 	group radio system media
@@ -84,6 +82,7 @@ service atcid-daemon-e /system/bin/atcid
 on early_property:ro.build.type=eng
 start atci_service
 start atcid-daemon-e
+
 service audio-daemon /system/bin/audiocmdservice_atci
     class main
     socket atci-audio stream 660 media system
@@ -101,9 +100,9 @@ service spm_script /system/bin/spm_loader
 on init
     chmod 0777 /dev/fpsensor
     chown system system /dev/fpsensor
-	 
-	 chmod 0777 /dev/cs_spi
+    chmod 0777 /dev/cs_spi
     chown system system /dev/cs_spi
+
 on post-fs-data
     mkdir /data/fpsensor
     chown system system /data/fpsensor
@@ -130,5 +129,4 @@ service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
     group system   
-
 

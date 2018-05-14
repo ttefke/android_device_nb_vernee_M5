@@ -34,9 +34,6 @@ on init
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
-    # if primary storage is physical, set ro.vold.primary_physical to 1
-    # setprop ro.vold.primary_physical 1
-
 # Temp Backward compatibility
     mkdir /protect_f 0771 system system
     mkdir /protect_s 0771 system system
@@ -60,8 +57,6 @@ on init
 on late-init
     write /proc/bootprof "INIT:late-init"
 
-# mount different fs start
-
 on property:persist.mediatek.fg.disable=1
     write /sys/devices/platform/battery_meter/FG_daemon_disable 1
 
@@ -81,19 +76,17 @@ on charger
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
-		chmod 0666 /dev/kmsg
-		write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
+    chmod 0666 /dev/kmsg
+    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     start fuelgauged
     start kpoc_charger
     start servicemanager
     write /sys/class/android_usb/android0/enable 1
 
 on fs
-	mkdir /drvinfo 0777 system system
-	chown system system /drvinfo
-	chmod 0777 /drvinfo	
-
-
+    mkdir /drvinfo 0777 system system
+    chown system system /drvinfo
+    chmod 0777 /drvinfo
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
     mount_all /fstab.mt6755
@@ -102,7 +95,6 @@ on fs
     write /proc/bootprof "INIT:Mount_END"
 
 on fs
-
    mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
     # Update dm-verity state and set partition.*.verified properties
     verity_update_state
@@ -157,8 +149,6 @@ on post-fs-data
     chmod 0771 /nvcfg
     restorecon_recursive /nvcfg
 
-    # create basic filesystem structure
-    # mkdir /data/nvram 2770 root system
     # We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
     chmod 0771 /nvdata
@@ -192,8 +182,6 @@ on post-fs-data
 #Runin
     mkdir /data/local/ddrtest 0751 root root
 
-# -----------------------
-# Add by MTK
     # md32 boot
     chown root system /dev/md32
     chmod 0440 /dev/md32
@@ -394,7 +382,7 @@ on post-fs-data
     chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_ut
 
     mkdir /data/amit/ 0770 system system
-		mkdir /data/misc/sensor 0774 system system
+    mkdir /data/misc/sensor 0774 system system
     mkdir /data/misc/akmd 0770 system system
     mkdir /data/misc/s62x 0771 compass compass
     mkdir /data/acdapi/ 0770 system system
@@ -406,7 +394,7 @@ on post-fs-data
     chown system /sys/devices/platform/msensor/driver/cpsreptz
     chown system /sys/devices/platform/gsensor/driver/cpsopmode
     chown system /sys/devices/platform/gsensor/driver/cpsrange
-    mkdir	/data/mcube 0664 system system
+    mkdir /data/mcube 0664 system system
 
     chown system /sys/class/input/input1/enable
     chown system /sys/class/input/input1/delay
@@ -508,8 +496,6 @@ on post-fs-data
     chmod 0660 /dev/fm
     chown media media /dev/fm
 
-    # device apc settings
-
     # device info /proc interface
     mknod /dev/devmap c 196 0;
     chmod 0440 /dev/devmap
@@ -585,7 +571,6 @@ on post-fs-data
     chmod 0660 /dev/MTK_SMI
     chown media media /dev/MTK_SMI
 
-
    #change partition permission
 
     chmod 0640 /mtd@sec_ro
@@ -643,16 +628,11 @@ on post-fs-data
 
     chmod 0666 /dev/exm0
 
-	#Thermal
-	mkdir /data/.tp/ 0775 system system
-
-# End of adding by MTK drivers
-# -----------------------
+    #Thermal
+    mkdir /data/.tp/ 0775 system system
 
 on boot
     write /proc/bootprof "INIT:boot"
-
-
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
@@ -681,7 +661,6 @@ on boot
     chown radio system /sys/power/tuxonice/do_hibernate
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
-
 
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
@@ -774,12 +753,6 @@ on boot
     write /sys/block/mmcblk0/queue/add_random 0
     write /sys/block/mmcblk0/queue/iosched/slice_idle 0
     write /sys/block/mmcblk0/bdi/read_ahead_kb 128
-
-
-on property:ro.board.platform=mt6753
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1300000
 
 on property:vold.decrypt=trigger_reset_main
     write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
@@ -879,6 +852,7 @@ on property:ftrace.buffer.log=off
 on property:debug.MB.prdebug=1
     write /sys/kernel/debug/dynamic_debug/control "file *mediatek* +p"
     write /sys/kernel/debug/dynamic_debug/control "file *gpu* -p"
+
 on property:debug.MB.prdebug=0
     write /sys/kernel/debug/dynamic_debug/control "file *mediatek* -p"
 
@@ -893,7 +867,6 @@ service bugreport /system/bin/dumpstate -d -p -B \
     oneshot
     keycodes 114 115 116
 
-# start ged_srv
 on property:sys.boot_completed=1
     start ged_srv
 
@@ -911,7 +884,6 @@ service ged_srv /vendor/bin/ged_srv
 service netdiag /vendor/bin/netdiag
     class main
     socket netdiag stream 0664 root inet
-
 
 service nvram_daemon /vendor/bin/nvram_daemon
     class main
@@ -980,12 +952,10 @@ service aal /vendor/bin/aal
     user system
     group system graphics
 
-# FOTA upgrade
 service rbfota /vendor/bin/fota1
     class main
     disabled
     oneshot
-
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BK -dd
     class main
@@ -1151,28 +1121,14 @@ service bluetoothd /system/bin/bluetoothd -n
     class main
     socket bluetooth stream 660 bluetooth bluetooth
     socket dbus_bluetooth stream 660 bluetooth bluetooth
-    # init.rc does not yet support applying capabilities, so run as root and
-    # let bluetoothd drop uid to bluetooth with the right linux capabilities
     group bluetooth net_bt_admin misc
     disabled
 
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
 service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
     user root
     group radio cache inet misc
     disabled
     oneshot
-
-##
-#
-#  Modem related services (End)
-#
 
 service agpsd /vendor/bin/mtk_agpsd
     class main
@@ -1229,12 +1185,14 @@ service emdlogger2 /vendor/bin/emdlogger2
     group system shell radio sdcard_rw inet sdcard_r media_rw
     disabled
     oneshot
+
 service emdlogger3 /vendor/bin/emdlogger3
     class main
     user shell
     group system shell radio sdcard_rw inet sdcard_r media_rw
     disabled
     oneshot
+
 service emdlogger5 /vendor/bin/emdlogger5
     class main
     user shell
@@ -1254,10 +1212,6 @@ service md_monitor /vendor/bin/md_monitor
     user system
     group system radio sdcard_rw inet sdcard_r media_rw
 
-#
-#sensor service (begin)
-#
-
 service msensord /vendor/bin/msensord
     class main
     oneshot
@@ -1267,6 +1221,7 @@ service s62xd /vendor/bin/s62xd
     user compass
     group system
     class main
+
 service ami304d /vendor/bin/ami304d
     user system
     group system
@@ -1319,6 +1274,7 @@ service akmd09911 /vendor/bin/akmd09911
     user system
     group system
     class main
+
 service bmm050d /vendor/bin/bmm050d
     disabled
     user system
@@ -1330,14 +1286,16 @@ service bmm056d /vendor/bin/bmm056d
     user system
     group system
     class main
+
 service mc6420d /vendor/bin/mc6420d
     disabled
     user system
     group system
     class main
+
 service qmc5983d /vendor/bin/qmc5983d
-     disabled
-	 user system
+    disabled
+    user system
     group system
     class main
 
@@ -1346,6 +1304,7 @@ service orientationd /vendor/bin/orientationd
     user system
     group system input
     class main
+
 service AcdApiDaemon /vendor/bin/AcdApiDaemon
     disabled
     user system
@@ -1368,13 +1327,7 @@ service mc64xxd /vendor/bin/mc64xxd
     user system
     group system
     class main
-#
-#sensor service (end)
-#
 
-#
-#emsvr service (start)
-#
 on property:ro.build.type=eng
     start emsvr
 
@@ -1397,10 +1350,6 @@ service emsvr /vendor/bin/em_svr
     user root
     group net_bt_stack
 
-#
-#emsvr service (end)
-#
-
 service shutdown /system/bin/shutdown
     user root
     group root
@@ -1415,7 +1364,6 @@ service thermalloadalgod /vendor/bin/thermalloadalgod
     class main
     user system
     group system
-
 
 service thermal_manager /vendor/bin/thermal_manager
     class main
@@ -1457,7 +1405,6 @@ service poad /vendor/bin/poad
     group system
     oneshot
 
-#monitor battery status
 service batterywarning /vendor/bin/batterywarning
     class main
     user shell
@@ -1468,13 +1415,11 @@ service MtkCodecService /vendor/bin/MtkCodecService
     user system
     group audio media sdcard_r
 
-# GuiExt Server init
 service guiext-server /vendor/bin/guiext-server
     class main
     user system
     group system graphics
 
-# OperaMax Service
 service OperaMaxSystem /system/bin/OperaMaxSystem
     socket tunman stream 0666 system system
     class main
@@ -1489,34 +1434,13 @@ on property:persist.service.operamax=0
 service kpoc_charger /vendor/bin/kpoc_charger
     class charger
 
-###########add for 3Gdongle
-
 on boot
-#
-# change the right of ip-up ip-down scripts(begin)
-#
 chmod 777 /etc/ppp/ip-up
 chmod 777 /etc/ppp/ip-down
-#
-# change the right of ip-up ip-down scripts(end)
-#
-
-#
-# change the right of ip-up-ppp0 ip-down-ppp0 scripts(begin)
-#
 chmod 777 /etc/ppp/ip-up-ppp0
 chmod 777 /etc/ppp/ip-down-ppp0
-#
-# change the right of ip-up ip-down scripts(end)
-#
-
-#set the property of persiste.radio.reset_on_switch
 setprop persist.radio.reset_on_switch false
-#end
-
-#set the property of rild.mark_switchuser
 setprop rild.mark_switchuser 0
-#end
 
 chmod 0644 /vendor/lib/libzteevdo-ril.so
 chomd 0644 /vendor/lib/zterilPara
@@ -1525,9 +1449,6 @@ chmod 4755 /system/bin/pppd
 chown root /vendor/bin/chat
 chmod 4755 /vendor/bin/chat
 
-#
-#ril-daemon (begin)
-#
 service ril-3gddaemon /vendor/bin/rild_dongle
     class main
     socket rild-dongle stream 660 root radio
@@ -1536,52 +1457,29 @@ service ril-3gddaemon /vendor/bin/rild_dongle
     group radio cache inet misc audio log
     disabled
 
-#
-#ril-daemon (end)
-#
-
-#
-#usbdongled(begin)
-#
 service usbdongled /vendor/bin/dongled
     class main
 	user root
 	group radio cache inet misc
 	enabled
 
-
-#
-#usbdongled(end)
-#
-
-#
-# add the service for call pppd(begin)
-#
 service zpppd_gprs /vendor/bin/init.gprs-pppd
     user root
 	group radio cache inet misc
 	disabled
 	oneshot
-#
-# add the service for call pppd(end)
-#
 
-#
-# add the service for reboot to meta mode
-#
 service pre_meta /vendor/bin/pre_meta
     class main
     disabled
     oneshot
 
-# Program binary service
 service program_binary /vendor/bin/program_binary_service
     class late_start
     user system
     group graphics
     oneshot
 
-# MBIMD Service
 service mbimd /vendor/bin/mbimd debug
     disabled
     oneshot
@@ -1592,7 +1490,6 @@ on property:service.mbim.enable=0
 on property:service.mbim.enable=1
     start mbimd
 
-# uniservice pack native service
 service usp_service /vendor/bin/usp_service
     user system
     group root system radio
@@ -1615,8 +1512,6 @@ on property:persist.mtk_usp_native_start=0
     start mal-daemon
     start epdg_wod
 
-# Thermal Indicator Service
-
 service ThermalIndicator /vendor/bin/thermalindicator
 	class core
 	disabled
@@ -1627,7 +1522,6 @@ on property:debug.mtk.thermalindicator=0
 on property:debug.mtk.thermalindicator=1
 	start ThermalIndicator
 
-# VSIM service (vendor OSI)
 service osi /system/bin/osi
     class main
     user root
@@ -1637,6 +1531,7 @@ service osi /system/bin/osi
 
 on property:debug.runin.battery=1
    write  /sys/bus/platform/devices/battery/charging_onoff_ctrl 1
+
 on property:debug.runin.battery=2
    write  /sys/bus/platform/devices/battery/charging_onoff_ctrl 0
 

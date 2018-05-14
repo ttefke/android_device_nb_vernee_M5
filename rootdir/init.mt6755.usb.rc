@@ -15,7 +15,6 @@ on fs
     chown system system /sys/class/android_usb/android0/f_acm/port_index
     chmod 0660 /sys/class/android_usb/android0/f_acm/port_index
 
-
 on post-fs-data
     chown radio system /sys/class/usb_rawbulk/data/enable
     chmod 0660 /sys/class/usb_rawbulk/data/enable
@@ -699,8 +698,6 @@ on property:sys.usb.config=gs1gs3,dual_acm
     start adbd
     setprop sys.usb.state ${sys.usb.config}
     setprop sys.usb.acm_idx 1,2,4
-    
-###############################################
 
 on property:sys.usb.config=mass_storage,dual_acm
     write /sys/class/android_usb/android0/enable 0

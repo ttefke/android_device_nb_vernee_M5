@@ -1,6 +1,4 @@
-#======================lovelyfonts start=======================
 import /init.lovelyfonts.rc
-#======================lovelyfonts end  =======================
 
 on property:hotknot.hotknot_native=1
     start hotknot_native
@@ -18,4 +16,3 @@ service pppd_btdun /vendor/bin/pppd_btdun silent pppbt-setsockname ppp.bt.dun pp
     class late_start
     user bluetooth
     group vpn net_admin net_raw
-

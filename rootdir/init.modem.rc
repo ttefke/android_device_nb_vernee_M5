@@ -16,7 +16,6 @@ on early-init
     setprop net.perf.cpu.freq 1144000,1144000,0,0
 
 on post-fs-data
-
     write /proc/bootprof "post-fs-data: on modem start"
 
     # Modem related device nodes
@@ -119,10 +118,6 @@ service viarild /vendor/bin/viarild -l /vendor/lib/libviatelecom-withuim-ril.so 
     disabled
     oneshot
 
-#
-#  Modem related services (Begin)
-#
-
 service permission_check /vendor/bin/permission_check
     class main
     user root
@@ -171,15 +166,6 @@ service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
     disabled 
     oneshot
 
-#
-#
-#  Modem related services (End)
-#
-
-#Add by hp.chen for 
-#
-#   Telephony Early Read service
-#
 service terservice /vendor/bin/terservice
     class core
     user radio
