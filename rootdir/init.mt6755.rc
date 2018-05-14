@@ -199,7 +199,7 @@ on post-fs-data
 
     # radvd
     mkdir /data/misc/radvd 0770 system system
-    chmod 444 /etc/radvd/radvd.conf
+    chmod 444 /system/vendor/etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
     chmod 666 /dev/mali0
@@ -999,18 +999,18 @@ service dhcp_inform /system/bin/dhcpcd -s -BK -A
     disabled
     oneshot
 
-service dhcpv6_inform /vendor/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cSIP.conf" -Dfi
+service dhcpv6_inform /vendor/bin/dhcp6c -c "/system/vendor/etc/wide-dhcpv6/dhcp6cSIP.conf" -Dfi
     class main
     user root
     group system radio dhcp net_admin net_raw
     disabled
     oneshot
 
-service dhcp6cDNS_wlan0 /vendor/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cDNS.conf" -Df wlan0
+service dhcp6cDNS_wlan0 /vendor/bin/dhcp6c -c "/system/vendor/etc/wide-dhcpv6/dhcp6cDNS.conf" -Df wlan0
     disabled
     oneshot
 
-service dhcp6c_wlan0 /vendor/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6c.conf" -Df wlan0
+service dhcp6c_wlan0 /vendor/bin/dhcp6c -c "/system/vendor/etc/wide-dhcpv6/dhcp6c.conf" -Df wlan0
     disabled
     oneshot
 
@@ -1020,7 +1020,7 @@ on property:service.dhcp6c_wlan0.enable=0
 on property:service.dhcp6c_wlan0.enable=1
     start dhcp6c_wlan0
 
-service dhcp6c_PD /vendor/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cPD.conf" -Df
+service dhcp6c_PD /vendor/bin/dhcp6c -c "/system/vendor/etc/wide-dhcpv6/dhcp6cPD.conf" -Df
     disabled
     oneshot
 

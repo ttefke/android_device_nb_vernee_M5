@@ -84,7 +84,7 @@ service init_thh_service /system/vendor/bin/init_thh startload
     disabled
     oneshot
 
-service ifaad /system/bin/ifaad
+service ifaad /system/vendor/bin/ifaad
     class core
     user system
     group system
