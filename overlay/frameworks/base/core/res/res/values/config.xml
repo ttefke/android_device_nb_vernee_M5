@@ -177,6 +177,10 @@
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
+    <!-- Minimum screen brightness setting allowed by the power manager.
+    The user is forbidden from setting the brightness below this level. -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+
     <bool name="config_automatic_brightness_available">true</bool>
 
     <integer-array name="config_autoBrightnessLevels">
@@ -200,7 +204,7 @@
     </integer-array>
 
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>0</item>
+        <item>1</item>
         <item>12</item>
         <item>91</item>
         <item>103</item>
