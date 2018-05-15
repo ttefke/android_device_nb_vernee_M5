@@ -48,13 +48,7 @@ on property:sys.usb.config=acm
 
 #2.adb
 on property:sys.usb.config=adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
-    write /sys/class/android_usb/android0/idProduct 201C
-    write /sys/class/android_usb/android0/functions ${sys.usb.config}
-    write /sys/class/android_usb/android0/enable 1
-    start adbd
-    setprop sys.usb.state ${sys.usb.config}
+    setprop sys.usb.config "mtp,adb"
 
 #3.adb,acm
 on property:sys.usb.config=adb,acm
