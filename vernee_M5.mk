@@ -291,6 +291,9 @@ $(call inherit-product, $(DEVICE_PATH)/configs/media/media.mk)
 # Internet access
 $(call inherit-product, $(DEVICE_PATH)/configs/ip/ip.mk)
 
+# Thermal configuration
+$(call inherit-product, $(DEVICE_PATH)/configs/thermal/thermal.mk)
+
 # Other configuration files
 $(call inherit-product, $(DEVICE_PATH)/configs/configs.mk)
 

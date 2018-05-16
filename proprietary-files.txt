@@ -998,11 +998,3 @@ vendor/thh/uTAgent
 vendor/etc/wide-dhcpv6/dhcp6cctlkey
 vendor/etc/wide-dhcpv6/dhcp6sctlkey
 
-# Thermal configuration
-vendor/.tp/.ht120.mtc
-vendor/.tp/.thermal_meta.conf
-vendor/.tp/.thermal_policy_00
-vendor/.tp/.thermal_policy_01
-vendor/.tp/.thermal_policy_02
-vendor/.tp/thermal.conf
-vendor/.tp/thermal.off.conf
