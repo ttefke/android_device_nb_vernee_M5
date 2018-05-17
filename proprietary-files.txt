@@ -1,4 +1,3 @@
-
 # binaries from bin
 bin/badblocks
 bin/fp_ca
@@ -79,23 +78,6 @@ usr/srec/en-US/voice_actions_compiler.config
 usr/srec/en-US/word_confidence_classifier
 usr/srec/en-US/wordlist.syms
 
-# Frameworks
-framework/mediatek-common.jar
-framework/mediatek-framework.jar
-framework/mediatek-telephony-common.jar
-framework/arm/boot-mediatek-common.art
-framework/arm/boot-mediatek-common.oat
-framework/arm/boot-mediatek-framework.art
-framework/arm/boot-mediatek-framework.oat
-framework/arm/boot-mediatek-telephony-common.art
-framework/arm/boot-mediatek-telephony-common.oat
-framework/arm64/boot-mediatek-common.art
-framework/arm64/boot-mediatek-common.oat
-framework/arm64/boot-mediatek-framework.art
-framework/arm64/boot-mediatek-framework.oat
-framework/arm64/boot-mediatek-telephony-common.art
-framework/arm64/boot-mediatek-telephony-common.oat
-
 # MTK hardware
 lib/hw/audio.primary.default.so
 lib/hw/audio_policy.stub.so
@@ -161,129 +143,13 @@ lib64/libmediatek_exceptionlog.so
 lib64/libmtee.so
 lib64/libyv12util.so
 
-# System apps
-
-# CITTest
-app/CITTest/CITTest.apk
-app/CITTest/oat/arm64/CITTest.odex
-
-# GFManager
-app/GFManager/GFManager.apk
-app/GFManager/oat/arm64/GFManager.odex
-
-# GFTest
-app/GFTest/GFTest.apk
-app/GFTest/oat/arm64/GFTest.odex
-
-# fpExtensionService
-app/fpExtensionService/fpExtensionService.apk
-app/fpExtensionService/oat/arm64/fpExtensionService.odex
-
-# CIT
-priv-app/CIT/CIT.apk
-priv-app/CIT/oat/arm64/CIT.odex
-
-# Device info
-priv-app/DeviceInfo/DeviceInfo.apk
-priv-app/DeviceInfo/oat/arm64/DeviceInfo.odex
-
-# NbAgingTest
-priv-app/NbAgingTest/NbAgingTest.apk
-priv-app/NbAgingTest/oat/arm64/NbAgingTest.odex
-
-# SimProcessor
-priv-app/SimProcessor/SimProcessor.apk
-priv-app/SimProcessor/oat/arm64/SimProcessor.odex
-
-
 # Vendor apps
-
-
-# AtciService
-vendor/app/AtciService/AtciService.apk
-vendor/app/AtciService/oat/arm/AtciService.odex
-vendor/app/AtciService/oat/arm64/AtciService.odex
-
-# AutoDialer
-vendor/app/AutoDialer/AutoDialer.apk
-vendor/app/AutoDialer/oat/arm64/AutoDialer.odex
-
-# BatteryWarning
-vendor/app/BatteryWarning/BatteryWarning.apk
-vendor/app/BatteryWarning/oat/arm64/BatteryWarning.odex
-
-# BtTool
-vendor/app/BtTool/BtTool.apk
-vendor/app/BtTool/oat/arm64/BtTool.odex
-
-# CalendarImporter
-vendor/app/CalendarImporter/CalendarImporter.apk
-vendor/app/CalendarImporter/oat/arm64/CalendarImporter.odex
-
-# DrmProvider
-vendor/app/DrmProvider/DrmProvider.apk
-vendor/app/DrmProvider/oat/arm64/DrmProvider.odex
-
-# EngineerMode
-vendor/app/EngineerMode/EngineerMode.apk
-vendor/app/EngineerMode/oat/arm64/EngineerMode.odex
-
-# LocationEM2
-vendor/app/LocationEM2/LocationEM2.apk
-vendor/app/LocationEM2/oat/arm64/LocationEM2.odex
-
-# MDMLSample
-vendor/app/MDMLSample/MDMLSample.apk
-vendor/app/MDMLSample/oat/arm64/MDMLSample.odex
 
 # MTKLogger
 vendor/app/MTKLogger/MTKLogger.apk
-vendor/app/MTKLogger/oat/arm64/MTKLogger.odex
-
-# MTKThermalManager
-vendor/app/MTKThermalManager/MTKThermalManager.apk
-vendor/app/MTKThermalManager/oat/arm64/MTKThermalManager.odex
-
-# Omacp
-vendor/app/Omacp/Omacp.apk
-vendor/app/Omacp/oat/arm64/Omacp.odex
-
-# SchedulePowerOnOff
-vendor/app/SchedulePowerOnOff/SchedulePowerOnOff.apk
-vendor/app/SchedulePowerOnOff/oat/arm64/SchedulePowerOnOff.odex
-
-# SensorHub
-vendor/app/SensorHub/SensorHub.apk
-vendor/app/SensorHub/oat/arm64/SensorHub.odex
-
-# SimRecoveryTestTool
-vendor/app/SimRecoveryTestTool/SimRecoveryTestTool.apk
-vendor/app/SimRecoveryTestTool/oat/arm64/SimRecoveryTestTool.odex
 
 # YGPS
 vendor/app/YGPS/YGPS.apk
-vendor/app/YGPS/oat/arm64/YGPS.odex
-
-# CDS_INFO
-vendor/priv-app/CDS_INFO/CDS_INFO.apk
-vendor/priv-app/CDS_INFO/oat/arm64/CDS_INFO.odex
-
-# FMRadio
-vendor/priv-app/FMRadio/FMRadio.apk
-vendor/priv-app/FMRadio/oat/arm64/FMRadio.odex
-
-# ImsService
-vendor/priv-app/ImsService/ImsService.apk
-vendor/priv-app/ImsService/oat/arm64/ImsService.odex
-
-# Stk1
-vendor/priv-app/Stk1/Stk1.apk
-vendor/priv-app/Stk1/oat/arm64/Stk1.odex
-
-# WfoService
-vendor/priv-app/WfoService/WfoService.apk
-vendor/priv-app/WfoService/oat/arm64/WfoService.odex
-
 
 # Vendor binaries
 vendor/bin/aee
@@ -337,6 +203,7 @@ vendor/bin/mbimd
 vendor/bin/mc6420d
 vendor/bin/md_ctrl
 vendor/bin/md_monitor
+vendor/bin/md_monitor_ctrl
 vendor/bin/mdlogger
 vendor/bin/memorydumper
 vendor/bin/memsicd
@@ -961,22 +828,10 @@ vendor/lib64/libwifitest.so
 vendor/lib64/libwo.so
 vendor/lib64/volte_imsm.so
 
-
 # MTK media
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 vendor/media/images/drm_disable_icon.png
-
-# MTK operator
-vendor/operator/app/FT_Terminal_Test/FT_Terminal_Test.apk
-vendor/operator/app/RawDataTest/RawDataTest.apk
-
-# MTK plugins
-vendor/plugin/FwkPlugin/FwkPlugin.apk
-vendor/plugin/FwkPlugin/FwkPlugin.mpinfo
-vendor/plugin/FwkPlugin/oat/arm/FwkPlugin.odex
-vendor/plugin/FwkPlugin/oat/arm64/FwkPlugin.odex
-vendor/plugin/Signatures/mplugin_guard.xml
 
 # MTK resources
 vendor/res/images/lcd_test_00.png
@@ -997,4 +852,3 @@ vendor/thh/uTAgent
 # DHCP keys
 vendor/etc/wide-dhcpv6/dhcp6cctlkey
 vendor/etc/wide-dhcpv6/dhcp6sctlkey
-
