@@ -52,7 +52,7 @@ public class MtkEccList extends PhoneNumberUtils {
 
     /** @hide */
     public static class EccEntry {
-        public static final String ECC_LIST_PATH = "/system/etc/ecc_list.xml";
+        public static final String ECC_LIST_PATH = "/system/vendor/etc/ecc_list.xml";
         public static final String ECC_ENTRY_TAG = "EccEntry";
         public static final String ECC_ATTR = "Ecc";
         public static final String CATEGORY_ATTR = "Category";
