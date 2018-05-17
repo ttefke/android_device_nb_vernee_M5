@@ -2,7 +2,7 @@
 <EccTable>
     <!--
         The attribute definition for tag EccEntry:
-        - Ecc: the emergnecy number
+        - Ecc: the emergency number
         - Category: the service category
         - Condition: there are following values:
             - 0: ecc only when no sim
@@ -19,6 +19,4 @@
     <EccEntry Ecc="118" Category="0" Condition="0" />
     <EccEntry Ecc="119" Category="0" Condition="0" />
     <EccEntry Ecc="999" Category="0" Condition="0" />
-    <!-- Add for Malaysis Digi operator -->
-    <EccEntry Ecc="999" Category="0" Condition="1" Plmn = "502 FFF" />
 </EccTable>
