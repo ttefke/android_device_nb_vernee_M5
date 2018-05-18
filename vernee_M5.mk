@@ -221,10 +221,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
     $(LOCAL_PATH)/configs/WMT_SOC.cfg:system/vendor/firmware/WMT_SOC.cfg
 
-# Mediatek platform
-PRODUCT_PACKAGES += \
-   libmtk_symbols
-
 # Messaging
 PRODUCT_PACKAGES += \
     messaging \
