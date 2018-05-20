@@ -151,6 +151,10 @@ TARGET_SCREEN_WIDTH := 720
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.mt6750
+
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap

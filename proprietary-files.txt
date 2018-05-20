@@ -86,7 +86,6 @@ lib/hw/gatekeeper.mt6750.so
 lib/hw/gralloc.default.so
 lib/hw/keystore.default.so
 lib/hw/local_time.default.so
-lib/hw/power.default.so
 lib/hw/vibrator.default.so
 
 lib/libMTKAudioTimeStretch.so
@@ -118,7 +117,6 @@ lib64/hw/goodix.fingerprint.default.so
 lib64/hw/gralloc.default.so
 lib64/hw/keystore.default.so
 lib64/hw/local_time.default.so
-lib64/hw/power.default.so
 lib64/hw/vibrator.default.so
 
 lib64/libMTKAudioTimeStretch.so
