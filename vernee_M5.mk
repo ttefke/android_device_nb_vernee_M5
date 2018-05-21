@@ -155,6 +155,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     power.mt6750
 
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    vibrator.mt6750
+
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap
