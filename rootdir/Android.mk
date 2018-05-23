@@ -29,10 +29,6 @@ endef
 
 $(call add-rootdir-targets, \
     enableswap.sh \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    files_contexts.bin \
     fstab.mt6755 \
     fstab.vernee_M5 \
     init.aee.rc \
@@ -46,11 +42,6 @@ $(call add-rootdir-targets, \
     init.project.rc \
     init.rilproxy.rc \
     init.volte.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    multi_init.rc \
     ueventd.mt6755.rc)
 
 # atStartCit.sh
@@ -81,14 +72,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := fuelgauged_static
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := sbin/fuelgauged_static
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
-include $(BUILD_PREBUILT)
-
-# sbin: multi_init
-include $(CLEAR_VARS)
-LOCAL_MODULE       := multi_init
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := sbin/multi_init
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 

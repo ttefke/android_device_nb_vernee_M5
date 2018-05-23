@@ -6,12 +6,6 @@
 /dev/block/mtd(.*)?     u:object_r:mtd_device:s0
 
 #############################
-# Executables
-# Meta/Factory Mode multi_init
-/sbin/multi_init		u:object_r:init_exec:s0
-
-
-#############################
 # Data files
 #
 /data/aee_exp(/.*)?  u:object_r:aee_exp_data_file:s0
@@ -418,7 +412,6 @@
 /system/bin/eemcs_mdinit u:object_r:eemcs_mdinit_exec:s0
 /system/bin/emdlogger[0-9]+ u:object_r:emdlogger_exec:s0
 /system/bin/em_svr u:object_r:em_svr_exec:s0
-/system/bin/factory u:object_r:factory_exec:s0
 /system/bin/flashlessd u:object_r:flashlessd_exec:s0
 /system/bin/fuelgauged u:object_r:fuelgauged_exec:s0
 /system/bin/ged_srv u:object_r:ged_srv_exec:s0
@@ -440,7 +433,6 @@
 /system/bin/mdlogger u:object_r:mdlogger_exec:s0
 /system/bin/memsicd3416x u:object_r:memsicd3416x_exec:s0
 /system/bin/memsicd u:object_r:memsicd_exec:s0
-/system/bin/meta_tst u:object_r:meta_tst_exec:s0
  
 /system/bin/mmc_ffu u:object_r:mmc_ffu_exec:s0
 /system/bin/emmc_rw_debug u:object_r:emmc_rw_debug_exec:s0

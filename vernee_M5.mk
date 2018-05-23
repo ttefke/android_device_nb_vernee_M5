@@ -43,10 +43,6 @@ PRODUCT_COPY_FILES += \
 # Root
 PRODUCT_PACKAGES += \
     enableswap.sh \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    file_contexts.bin \
     fstab.mt6755 \
     fstab.vernee_M5 \
     init.rc \
@@ -69,11 +65,6 @@ PRODUCT_PACKAGES += \
     init.wod.rc \
     init.zygote32.rc \
     init.zygote64_32.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    multi_init.rc \
     ueventd.mt6755.rc \
     ueventd.rc \
     verity_key \
@@ -81,7 +72,6 @@ PRODUCT_PACKAGES += \
     verity_red_1.png \
     verity_red_2.png \
     fuelgauged_static \
-    multi_init \
     slideshow \
     ueventd \
     watchdogd
