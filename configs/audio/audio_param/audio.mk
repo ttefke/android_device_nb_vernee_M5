@@ -20,7 +20,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml \
     device/nb/vernee_M5/configs/audio/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
-    device/nb/vernee_M5/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
     device/nb/vernee_M5/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
     device/nb/vernee_M5/configs/audio/audio_param/audio_device.xml:system/vendor/etc/audio_device.xml \
     device/nb/vernee_M5/configs/audio/audio_param/audio_em.xml:system/vendor/etc/audio_em.xml \

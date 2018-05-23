@@ -231,9 +231,6 @@ PRODUCT_PACKAGES += \
     messaging \
     Stk
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
-
 # Sensor
 PRODUCT_PACKAGES += \
     libem_sensor_jni
