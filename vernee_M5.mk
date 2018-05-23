@@ -219,9 +219,6 @@ PRODUCT_PACKAGES += \
     mkfs.f2fs \
     make_ext4fs
 
-# GPS
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
 PRODUCT_PACKAGES += \
     libcurl
 
