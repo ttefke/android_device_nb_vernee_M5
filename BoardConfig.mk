@@ -130,6 +130,7 @@ TARGET_OTA_ASSERT_DEVICE := vernee_M5
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # RIL
+BOARD_PROVIDES_RILD := true
 BOARD_RIL_CLASS := ../../../device/nb/vernee_M5/ril
 SIM_COUNT := 2
 
