@@ -16,7 +16,6 @@
 # Copy config files which aren't included by anything else
 # ProjectConfig.mk and system.prop are included by other scripts
 PRODUCT_COPY_FILES += \
-    device/nb/vernee_M5/configs/3dwidgets.xml:system/vendor/etc/appwidget/3dwidgets.xml \
     device/nb/vernee_M5/configs/Conf_MultipleTest.ini:system/etc/Conf_MultipleTest.ini \
     device/nb/vernee_M5/configs/disableapplist.txt:system/vendor/etc/disableapplist.txt \
     device/nb/vernee_M5/configs/event-log-tags:system/etc/event-log-tags \

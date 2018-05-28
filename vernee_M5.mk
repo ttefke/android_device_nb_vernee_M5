@@ -32,10 +32,6 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, vendor/nb/vernee_M5/vernee_M5-vendor.mk)
 
-# Inherit from MTK_PROJECT_CONFIG
-MTK_PROJECT_CONFIG ?= $(DEVICE_PATH)/ProjectConfig.mk
-include $(MTK_PROJECT_CONFIG)
-
 # Copy ProjectConfig.mk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/ProjectConfig.mk:system/vendor/data/misc/ProjectConfig.mk
@@ -111,18 +107,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    $(DEVICE_PATH)/permissions/android.hardware.microphone.xml:system/etc/permissions/android.hardware.microphone.xml \
-    $(DEVICE_PATH)/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
-    $(DEVICE_PATH)/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-    $(DEVICE_PATH)/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-    $(DEVICE_PATH)/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
-    $(DEVICE_PATH)/permissions/platform.xml:system/etc/permissions/platform.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # default.prop overrides
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.all_log=0 \
-    persist.sys.usb.config=mtp \
     camera.disable_zsl_mode=1
 
 # legacy apache http client
