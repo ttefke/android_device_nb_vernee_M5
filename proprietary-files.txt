@@ -331,12 +331,6 @@ vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_SlimLog_DspAllOff.bin
 vendor/firmware/customfilter/catcher_filter_1_ulwctg_n__Default.bin
 vendor/firmware/customfilter/catcher_filter_1_ulwctg_n_meta.bin
 
-# MTK framework
-vendor/framework/CustomPropInterface.jar
-vendor/framework/mediatek-res/mediatek-res.apk
-vendor/framework/oat/arm/CustomPropInterface.odex
-vendor/framework/oat/arm64/CustomPropInterface.odex
-
 # MTK libraries
 
 # DRM
