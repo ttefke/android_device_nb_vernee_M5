@@ -47,8 +47,6 @@ Building LineageOS for Vernee M5
 
 3. Apply the patches using the patches/install.sh script. Call this script from Lineage root.
 
-4. Clone the code for the HALs: [repository](https://github.com/ngc4622/android_hardware_mediatek_mt6750)
-
 
 Install LineageOS with TWRP
 ===========================================
