@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \
-    vibrator.mt6750
+    vibrator.default
 
 # FlipFlap
 PRODUCT_PACKAGES += \
