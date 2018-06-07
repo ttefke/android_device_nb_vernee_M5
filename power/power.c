@@ -93,6 +93,11 @@ void set_feature(struct power_module *module, feature_t feature, int state)
 {
 }
 
+static int get_feature(struct power_module *module, feature_t feature)
+{
+    return -1;
+}
+
 static struct hw_module_methods_t power_module_methods = {
     .open = NULL,
 };
@@ -100,7 +105,7 @@ static struct hw_module_methods_t power_module_methods = {
 struct power_module HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
-        .module_api_version = POWER_MODULE_API_VERSION_0_2,
+        .module_api_version = POWER_MODULE_API_VERSION_0_3,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = POWER_HARDWARE_MODULE_ID,
         .name = "MTK Power HAL",
@@ -112,4 +117,5 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .setInteractive = power_set_interactive,
     .powerHint = power_hint,
     .setFeature = set_feature,
+    .getFeature = get_feature,
 };
