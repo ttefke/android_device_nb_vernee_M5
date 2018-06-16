@@ -22,16 +22,6 @@ for dir in $dirs ; do
 	echo " "
 done
 
-dirs="frameworks/base"
-
-for dir in $dirs ; do
-	cd $rootdirectory
-	cd $dir
-	echo "Applying $dir patches..."
-	git am $rootdirectory/device/nb/vernee_M5/patches/$dir/*.patch
-	echo " "
-done
-
 dirs="frameworks/native"
 
 for dir in $dirs ; do
