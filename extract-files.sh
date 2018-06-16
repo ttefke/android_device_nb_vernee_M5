@@ -62,9 +62,3 @@ setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false "$CLEAN_VENDOR"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
-
-echo "********************************************************************"
-echo "* Some vendor files can not be pulled using this script.           *"
-echo "* Please download the ROM and copy the vendor/bin folder manually. *"
-echo "* Also copy system/bin/goodixfingerprintd                          *"
-echo "********************************************************************"
